@@ -1368,6 +1368,24 @@
     "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/26_0_0_cc1d942727c/Turnip-R1-26.0.0.zip"
   },
   {
+    "id": "renderer-driver-whitebelyash-tu-v32-mainline-turnip-v32",
+    "name": "Mainline Turnip v32 (Whitebelyash)",
+    "type": "RendererDriver",
+    "source": "whitebelyash/AdrenoToolsDrivers",
+    "verName": "mainline-turnip-V32",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/whitebelyash/AdrenoToolsDrivers/releases/download/tu_v32/mainline-turnip-V32.zip"
+  },
+  {
+    "id": "renderer-driver-whitebelyash-tu-v32-mainline-turnip-sync-v32",
+    "name": "Mainline Turnip v32 sync (Whitebelyash)",
+    "type": "RendererDriver",
+    "source": "whitebelyash/AdrenoToolsDrivers",
+    "verName": "mainline-turnip-sync-V32",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/whitebelyash/AdrenoToolsDrivers/releases/download/tu_v32/mainline-turnip-sync-V32.zip"
+  },
+  {
     "id": "container-beamng-drive-0.20-snapdragon-8-gen-3",
     "name": "Snapdragon 8 Gen 3",
     "type": "Container",
@@ -1413,7 +1431,7 @@
     "tags": [
       "Stable",
       "Galaxy Z Fold8 Ultra",
-      "Snapdragon 8 Elite",
+      "Snapdragon 8 Elite Gen 5",
       "12 GB RAM",
       "Proton 11",
       "Box64",
