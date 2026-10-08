@@ -14,7 +14,7 @@ The binaries are **not** stored in git. Each one is a GitHub Release asset, with
 | --- | --- |
 | `id` | Stable identifier. Never changes once published, even if the name, version or URL do. |
 | `name` | Display name. Free text, can be changed at any time. |
-| `type` | Component type (`DXVK`, `Box64`, `FEXCore`, `RendererDriver` for Adrenotools Turnip zips, ...). |
+| `type` | Component type (`DXVK`, `Box64`, `FEXCore`, `RendererDriver` for Adrenotools Turnip zips, `Container` for game configs, ...). |
 | `verName` | Version string the app uses internally. For ARM64EC builds it must contain `arm64ec`, the app filters on that. |
 | `verCode` | Integer version, bump it when you republish the same `id`. |
 | `remoteUrl` | Direct download URL of the `.wcp`. |
@@ -45,3 +45,35 @@ scripts/dxvk/pack.py 3.1.1 dxvk-3.1.1.tar.gz out dist
 ```
 
 `dxvk-3.1.1.tar.gz` is the asset from the upstream release.
+
+## Game containers
+
+Ready-made container configs, shown in the app under **+ > For a game** (pick a game, then a game version, then a config).
+
+```
+containers/
+  <game-slug>/
+    game.json                  {"name": "Display name"}
+    <game-version>/
+      <config>.wcfg            a Winlator container profile (exported from the app)
+      configs.json             optional, {"<config>.wcfg": {"name", "description", "tags"}}
+```
+
+`contents.json` lists each config as a flat `Container` entry:
+
+| Field | Meaning |
+| --- | --- |
+| `id` | Stable identifier, like every other entry. |
+| `name` | Config display name. Free text. |
+| `gameId`, `gameName` | Game slug (the directory) and display name. |
+| `gameVersion` | Game version (the directory). Newest is listed first in the app. |
+| `description`, `tags` | Shown under the config name. Optional. |
+| `remoteUrl` | Direct link to the `.wcfg`. |
+
+Don't edit those entries by hand. Add or change files under `containers/` and run:
+
+```sh
+python3 scripts/containers/build-registry.py
+```
+
+It rewrites only the `Container` entries of `contents.json`. A config's components (Proton, DXVK, drivers...) are downloaded by the app when the container is created.

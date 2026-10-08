@@ -1366,5 +1366,22 @@
     "verName": "Turnip-R1-26.0.0",
     "verCode": 1,
     "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/26_0_0_cc1d942727c/Turnip-R1-26.0.0.zip"
+  },
+  {
+    "id": "container-beamng-drive-0.20-snapdragon-8-gen-3",
+    "name": "Snapdragon 8 Gen 3",
+    "type": "Container",
+    "gameId": "beamng-drive",
+    "gameName": "BeamNG.drive",
+    "gameVersion": "0.20",
+    "description": "Proton 9.0 x86_64, Box64 0.4.4, DXVK 2.7.1 gplasync, Turnip Gen8 V36.",
+    "tags": [
+      "Snapdragon 8 Gen 3",
+      "Turnip",
+      "Box64"
+    ],
+    "verName": "0.20",
+    "verCode": 1,
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.20/snapdragon-8-gen-3.wcfg"
   }
 ]

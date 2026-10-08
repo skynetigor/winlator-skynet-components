@@ -1,0 +1,7 @@
+{
+  "snapdragon-8-gen-3.wcfg": {
+    "name": "Snapdragon 8 Gen 3",
+    "description": "Proton 9.0 x86_64, Box64 0.4.4, DXVK 2.7.1 gplasync, Turnip Gen8 V36.",
+    "tags": ["Snapdragon 8 Gen 3", "Turnip", "Box64"]
+  }
+}
