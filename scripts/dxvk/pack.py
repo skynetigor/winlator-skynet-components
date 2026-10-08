@@ -23,6 +23,9 @@ def pack(stage, out, prof):
     with tarfile.open(out, 'w:xz') as t:
         t.add(f'{stage}/profile.json', 'profile.json')
         for d in ('system32', 'syswow64'):
+            # Directory entries are required: the app's extractor does not create parent folders,
+            # so a tar with only file entries fails with ERR_BADTAR.
+            t.add(f'{stage}/{d}', d, recursive=False)
             for n in DLLS:
                 t.add(f'{stage}/{d}/{n}.dll', f'{d}/{n}.dll')
 
