@@ -1,0 +1,15 @@
+{
+  "fold8-ultra-stable.wcfg": {
+    "name": "Galaxy Z Fold8 Ultra, stable",
+    "description": "The most stable setup tried on a Galaxy Z Fold8 Ultra (12 GB / 512 GB): West Coast and Italy load well. Proton 11.0-2 x86_64, Box64 0.4.4, DXVK 2.6-2 gplasync, Turnip Gen8 V36, CPU cores 4-7.",
+    "tags": [
+      "Stable",
+      "Galaxy Z Fold8 Ultra",
+      "Snapdragon 8 Elite",
+      "12 GB RAM",
+      "Proton 11",
+      "Box64",
+      "Turnip"
+    ]
+  }
+}
