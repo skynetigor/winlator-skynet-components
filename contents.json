@@ -1,0 +1,1370 @@
+[
+  {
+    "id": "dxvk-3.1.1",
+    "name": "DXVK 3.1.1",
+    "type": "DXVK",
+    "verName": "3.1.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1.1/dxvk-3.1.1.wcp"
+  },
+  {
+    "id": "dxvk-3.1.1-arm64ec",
+    "name": "DXVK 3.1.1 (ARM64EC)",
+    "type": "DXVK",
+    "verName": "3.1.1-arm64ec",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1.1/dxvk-3.1.1-arm64ec.wcp"
+  },
+  {
+    "id": "dxvk-3.1",
+    "name": "DXVK 3.1",
+    "type": "DXVK",
+    "verName": "3.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1/dxvk-3.1.wcp"
+  },
+  {
+    "id": "dxvk-3.1-arm64ec",
+    "name": "DXVK 3.1 (ARM64EC)",
+    "type": "DXVK",
+    "verName": "3.1-arm64ec",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1/dxvk-3.1-arm64ec.wcp"
+  },
+  {
+    "id": "dxvk-3.0.2",
+    "name": "DXVK 3.0.2",
+    "type": "DXVK",
+    "verName": "3.0.2",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.2/dxvk-3.0.2.wcp"
+  },
+  {
+    "id": "dxvk-3.0.2-arm64ec",
+    "name": "DXVK 3.0.2 (ARM64EC)",
+    "type": "DXVK",
+    "verName": "3.0.2-arm64ec",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.2/dxvk-3.0.2-arm64ec.wcp"
+  },
+  {
+    "id": "dxvk-3.0.1",
+    "name": "DXVK 3.0.1",
+    "type": "DXVK",
+    "verName": "3.0.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.1/dxvk-3.0.1.wcp"
+  },
+  {
+    "id": "dxvk-3.0.1-arm64ec",
+    "name": "DXVK 3.0.1 (ARM64EC)",
+    "type": "DXVK",
+    "verName": "3.0.1-arm64ec",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.1/dxvk-3.0.1-arm64ec.wcp"
+  },
+  {
+    "id": "dxvk-3.0",
+    "name": "DXVK 3.0",
+    "type": "DXVK",
+    "verName": "3.0",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0/dxvk-3.0.wcp"
+  },
+  {
+    "id": "dxvk-3.0-arm64ec",
+    "name": "DXVK 3.0 (ARM64EC)",
+    "type": "DXVK",
+    "verName": "3.0-arm64ec",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0/dxvk-3.0-arm64ec.wcp"
+  },
+  {
+    "id": "wine-9.20-x86_64",
+    "name": "Wine 9.20 (x86_64)",
+    "type": "Wine",
+    "verName": "wine-9.20-x86_64",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/releases/download/1.0/wine-9.20.wcp"
+  },
+  {
+    "id": "box64-0.3.5",
+    "name": "Box64 0.3.5",
+    "type": "Box64",
+    "verName": "0.3.5",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/ziad9267/Winlator-Contents/raw/refs/heads/main/Box64/box64-0.3.5.wcp"
+  },
+  {
+    "id": "box64-036fix",
+    "name": "Box64 036fix",
+    "type": "Box64",
+    "verName": "036fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/Box64/box64-036fix.wcp"
+  },
+  {
+    "id": "box64-0.3.7",
+    "name": "Box64 0.3.7",
+    "type": "Box64",
+    "verName": "0.3.7",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/Box64/box64-0.3.7.wcp"
+  },
+  {
+    "id": "box64-0.3.8",
+    "name": "Box64 0.3.8",
+    "type": "Box64",
+    "verName": "0.3.8",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/Box64/box64-0.3.8.wcp"
+  },
+  {
+    "id": "box64-0.3.9",
+    "name": "Box64 0.3.9",
+    "type": "Box64",
+    "verName": "0.3.9",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/Box64/box64-0.3.9.wcp"
+  },
+  {
+    "id": "box64-0.4.1-fix",
+    "name": "Box64 0.4.1-fix",
+    "type": "Box64",
+    "verName": "0.4.1-fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/Box64/box64-0.4.1-fix.wcp"
+  },
+  {
+    "id": "box64-0.4.2-fix",
+    "name": "Box64 0.4.2-fix",
+    "type": "Box64",
+    "verName": "0.4.2-fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/Box64/box64-0.4.2-fix.wcp"
+  },
+  {
+    "id": "box64-0.4.4",
+    "name": "Box64 0.4.4",
+    "type": "Box64",
+    "verName": "0.4.4",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/Box64/box64-0.4.4.wcp"
+  },
+  {
+    "id": "wowbox64-0.3.7-5768989",
+    "name": "WOWBox64 0.3.7-5768989",
+    "type": "WOWBox64",
+    "verName": "0.3.7-5768989",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/WOWBox64/WowBox64-0.3.7-5768989.wcp"
+  },
+  {
+    "id": "wowbox64-0.3.9-056999e",
+    "name": "WOWBox64 0.3.9-056999e",
+    "type": "WOWBox64",
+    "verName": "0.3.9-056999e",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/WOWBox64/WOWBox64-0.3.9-056999e.wcp"
+  },
+  {
+    "id": "wowbox64-0.4.1-fix",
+    "name": "WOWBox64 0.4.1-fix",
+    "type": "WOWBox64",
+    "verName": "0.4.1-fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/WOWBox64/WOWBox64-0.4.1-fix.wcp"
+  },
+  {
+    "id": "wowbox64-0.4.2",
+    "name": "WOWBox64 0.4.2",
+    "type": "WOWBox64",
+    "verName": "0.4.2",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/WOWBox64/wowbox64-0.4.2.wcp"
+  },
+  {
+    "id": "wowbox64-0.4.4",
+    "name": "WOWBox64 0.4.4",
+    "type": "WOWBox64",
+    "verName": "0.4.4",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/WOWBox64/Wowbox64-0.4.4.wcp"
+  },
+  {
+    "id": "dxvk-1.5.5",
+    "name": "DXVK 1.5.5",
+    "type": "DXVK",
+    "verName": "1.5.5",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-1.5.5.wcp"
+  },
+  {
+    "id": "dxvk-1.7.2",
+    "name": "DXVK 1.7.2",
+    "type": "DXVK",
+    "verName": "1.7.2",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-1.7.2.wcp"
+  },
+  {
+    "id": "dxvk-1.9.4",
+    "name": "DXVK 1.9.4",
+    "type": "DXVK",
+    "verName": "1.9.4",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-1.9.4.wcp"
+  },
+  {
+    "id": "dxvk-1.10.3-async",
+    "name": "DXVK 1.10.3-async",
+    "type": "DXVK",
+    "verName": "1.10.3-async",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-1.10.3-async.wcp"
+  },
+  {
+    "id": "dxvk-11.1-sarek-async",
+    "name": "DXVK 11.1-sarek-async",
+    "type": "DXVK",
+    "verName": "11.1-sarek-async",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-11.1-sarek-async.wcp"
+  },
+  {
+    "id": "dxvk-1.12.0-sarek",
+    "name": "DXVK 1.12.0-sarek",
+    "type": "DXVK",
+    "verName": "1.12.0-sarek",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-sarek-1.12.0.wcp"
+  },
+  {
+    "id": "dxvk-2.3.1-gplasync",
+    "name": "DXVK 2.3.1-gplasync",
+    "type": "DXVK",
+    "verName": "2.3.1-gplasync",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.3.1-gplasync.wcp"
+  },
+  {
+    "id": "dxvk-2.4.1.1-gplasync-sp",
+    "name": "DXVK 2.4.1.1-gplasync-sp",
+    "type": "DXVK",
+    "verName": "2.4.1.1-gplasync-sp",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.4.1.1-gplasync-sp.wcp"
+  },
+  {
+    "id": "dxvk-2.4.1-fix",
+    "name": "DXVK 2.4.1-fix",
+    "type": "DXVK",
+    "verName": "2.4.1-fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.4.1-fix.wcp"
+  },
+  {
+    "id": "dxvk-2.4.1-arm64ec-gplasync",
+    "name": "DXVK 2.4.1-arm64ec-gplasync",
+    "type": "DXVK",
+    "verName": "2.4.1-arm64ec-gplasync",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.4.1-arm64ec-gplasync.wcp"
+  },
+  {
+    "id": "dxvk-2.5.3-1-gplasync",
+    "name": "DXVK 2.5.3-1-gplasync",
+    "type": "DXVK",
+    "verName": "2.5.3-1-gplasync",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.5.3-1-gplasync.wcp"
+  },
+  {
+    "id": "dxvk-2.6-2-gplasync",
+    "name": "DXVK 2.6-2-gplasync",
+    "type": "DXVK",
+    "verName": "2.6-2-gplasync",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.6-2-gplasync.wcp"
+  },
+  {
+    "id": "dxvk-2.6.2-arm64ec-gplasync",
+    "name": "DXVK 2.6.2-arm64ec-gplasync",
+    "type": "DXVK",
+    "verName": "2.6.2-arm64ec-gplasync",
+    "verCode": 0,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.6.2-arm64ec-gplasync.wcp"
+  },
+  {
+    "id": "dxvk-2.7.1-gplasync",
+    "name": "DXVK 2.7.1-gplasync",
+    "type": "DXVK",
+    "verName": "2.7.1-gplasync",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.7.1-gplasync.wcp"
+  },
+  {
+    "id": "dxvk-2.7.1-arm64ec-gplasync-fix-leegao",
+    "name": "DXVK 2.7.1-arm64ec-gplasync-fix-leegao",
+    "type": "DXVK",
+    "verName": "2.7.1-arm64ec-gplasync-fix-leegao",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.7.1-arm64ec-gplasync-fix-leegao.wcp"
+  },
+  {
+    "id": "dxvk-3.1-a6xx",
+    "name": "DXVK 3.1-a6xx",
+    "type": "DXVK",
+    "verName": "3.1-a6xx",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-3.1-a6xx.wcp"
+  },
+  {
+    "id": "dxvk-3.1-arm64ec-gplasync",
+    "name": "DXVK 3.1-arm64ec-gplasync",
+    "type": "DXVK",
+    "verName": "3.1-arm64ec-gplasync",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-gplasync-arm64ec-3.1.1-1.wcp"
+  },
+  {
+    "id": "fexcore-241214",
+    "name": "FEXCore 241214",
+    "type": "FEXCore",
+    "verName": "241214",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/ziad9267/Winlator-Contents/raw/refs/heads/main/FEXCore/fexcore_241214.wcp"
+  },
+  {
+    "id": "fexcore-2505",
+    "name": "FEXCore 2505",
+    "type": "FEXCore",
+    "verName": "2505",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/fexcore-2505.wcp"
+  },
+  {
+    "id": "fexcore-2507-fix",
+    "name": "FEXCore 2507_fix",
+    "type": "FEXCore",
+    "verName": "2507_fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/fexcore_2507_fix.wcp"
+  },
+  {
+    "id": "fexcore-2508.1",
+    "name": "FEXCore 2508.1",
+    "type": "FEXCore",
+    "verName": "2508.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2508.1.wcp"
+  },
+  {
+    "id": "fexcore-2509.1",
+    "name": "FEXCore 2509.1",
+    "type": "FEXCore",
+    "verName": "2509.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2509.1.wcp"
+  },
+  {
+    "id": "fexcore-2510.1",
+    "name": "FEXCore 2510.1",
+    "type": "FEXCore",
+    "verName": "2510.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2510.1.wcp"
+  },
+  {
+    "id": "fexcore-2511",
+    "name": "FEXCore 2511",
+    "type": "FEXCore",
+    "verName": "2511",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2511.wcp"
+  },
+  {
+    "id": "fexcore-2512",
+    "name": "FEXCore 2512",
+    "type": "FEXCore",
+    "verName": "2512",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2512.wcp"
+  },
+  {
+    "id": "fexcore-2601",
+    "name": "FEXCore 2601",
+    "type": "FEXCore",
+    "verName": "2601",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2601.wcp"
+  },
+  {
+    "id": "fexcore-2601-aabdded-nightly",
+    "name": "FEXCore 2601-aabdded-nightly",
+    "type": "FEXCore",
+    "verName": "2601-aabdded-nightly",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/FEXCore-2601-aabdded.wcp"
+  },
+  {
+    "id": "fexcore-2603",
+    "name": "FEXCore 2603",
+    "type": "FEXCore",
+    "verName": "2603",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2603.wcp"
+  },
+  {
+    "id": "fexcore-2604",
+    "name": "FEXCore 2604",
+    "type": "FEXCore",
+    "verName": "2604",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2604.wcp"
+  },
+  {
+    "id": "fexcore-2605",
+    "name": "FEXCore 2605",
+    "type": "FEXCore",
+    "verName": "2605",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2605.wcp"
+  },
+  {
+    "id": "fexcore-2607",
+    "name": "FEXCore 2607",
+    "type": "FEXCore",
+    "verName": "2607",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2607.wcp"
+  },
+  {
+    "id": "fexcore-2608",
+    "name": "FEXCore 2608",
+    "type": "FEXCore",
+    "verName": "2608",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2608.wcp"
+  },
+  {
+    "id": "fexcore-2609",
+    "name": "FEXCore 2609",
+    "type": "FEXCore",
+    "verName": "2609",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2609.wcp"
+  },
+  {
+    "id": "fexcore-2610",
+    "name": "FEXCore 2610",
+    "type": "FEXCore",
+    "verName": "2610",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/2610.wcp"
+  },
+  {
+    "id": "vkd3d-2.7-proton",
+    "name": "VKD3D 2.7-proton",
+    "type": "VKD3D",
+    "verName": "2.7-proton",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-proton-2.7.wcp"
+  },
+  {
+    "id": "vkd3d-2.9-proton",
+    "name": "VKD3D 2.9-proton",
+    "type": "VKD3D",
+    "verName": "2.9-proton",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-proton-2.9.wcp"
+  },
+  {
+    "id": "vkd3d-2.12-proton",
+    "name": "VKD3D 2.12-proton",
+    "type": "VKD3D",
+    "verName": "2.12-proton",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-proton-2.12.wcp"
+  },
+  {
+    "id": "vkd3d-2.14.1-arm64ec",
+    "name": "VKD3D 2.14.1-arm64ec",
+    "type": "VKD3D",
+    "verName": "2.14.1-arm64ec",
+    "verCode": 0,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-2.14.1-arm64ec.wcp"
+  },
+  {
+    "id": "vkd3d-proton-3.0a",
+    "name": "VKD3D proton-3.0a",
+    "type": "VKD3D",
+    "verName": "proton-3.0a.wcp",
+    "verCode": 0,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-proton-3.0a.wcp"
+  },
+  {
+    "id": "vkd3d-arm64ec-3.0a",
+    "name": "VKD3D arm64ec-3.0a",
+    "type": "VKD3D",
+    "verName": "arm64ec-3.0a.wcp",
+    "verCode": 0,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-arm64ec-3.0a.wcp"
+  },
+  {
+    "id": "vkd3d-proton-3.0b-2763dd2",
+    "name": "VKD3D proton-3.0b-2763dd2",
+    "type": "VKD3D",
+    "verName": "proton-3.0b-2763dd2",
+    "verCode": 0,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-proton-3.0b-2763dd2.wcp"
+  },
+  {
+    "id": "vkd3d-3.0.1-gamesir",
+    "name": "VKD3D 3.0.1-gamesir",
+    "type": "VKD3D",
+    "verName": "3.0.1-gamesir",
+    "verCode": 0,
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/VKD3D/vkd3d-3.0.1-Gamesir.wcp"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v891.7-v891.7",
+    "name": "v891.7 (StevenMXZ v891.7)",
+    "type": "RendererDriver",
+    "verName": "v891.7",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v891.7/v891.7.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v863.1-a7xx-v863.1",
+    "name": "v863.1 (StevenMXZ v863.1_a7xx)",
+    "type": "RendererDriver",
+    "verName": "v863.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v863.1_a7xx/v863.1.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v37-turnip-gen8-v37",
+    "name": "Turnip_Gen8_V37 (StevenMXZ v37)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V37",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_Gen8_V37.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v37-turnip-gen8-v37-patch",
+    "name": "Turnip_Gen8_V37_patch (StevenMXZ v37)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V37_patch",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_Gen8_V37_patch.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v37-turnip-v26.3.0-r6-oneui",
+    "name": "Turnip_v26.3.0-R6-Oneui (StevenMXZ v37)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R6-Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_v26.3.0-R6-Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v37-turnip-v26.3.0-r6",
+    "name": "Turnip_v26.3.0-R6 (StevenMXZ v37)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R6",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_v26.3.0-R6.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v36-turnip-gen8-v36",
+    "name": "Turnip_Gen8_V36 (StevenMXZ v36)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V36",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v36/Turnip_Gen8_V36.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v35-turnip-gen8-v35",
+    "name": "Turnip_Gen8_V35 (StevenMXZ v35)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V35",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v35/Turnip_Gen8_V35.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v34-turnip-gen8-v34",
+    "name": "Turnip_Gen8_V34 (StevenMXZ v34)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V34",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v34/Turnip_Gen8_V34.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v33-turnip-gen8-v33",
+    "name": "Turnip_Gen8_V33 (StevenMXZ v33)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V33",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v33/Turnip_Gen8_V33.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v32-turnip-gen8-v32",
+    "name": "Turnip_Gen8_V32 (StevenMXZ v32)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V32",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v32/Turnip_Gen8_V32.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r5-turnip-v26.3.0-r5-oneui",
+    "name": "Turnip_v26.3.0-R5-Oneui (StevenMXZ v26.3.0-R5)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R5-Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R5/Turnip_v26.3.0-R5-Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r5-turnip-v26.3.0-r5",
+    "name": "Turnip_v26.3.0-R5 (StevenMXZ v26.3.0-R5)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R5",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R5/Turnip_v26.3.0-R5.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r4-turnip-v26.3.0-r4-oneui",
+    "name": "Turnip_v26.3.0-R4-Oneui (StevenMXZ v26.3.0-R4)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R4-Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R4/Turnip_v26.3.0-R4-Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r4-turnip-v26.3.0-r4",
+    "name": "Turnip_v26.3.0-R4 (StevenMXZ v26.3.0-R4)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R4",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R4/Turnip_v26.3.0-R4.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r3-turnip-v26.3.0-r3-oneui",
+    "name": "Turnip_v26.3.0-R3-Oneui (StevenMXZ v26.3.0-R3)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R3-Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R3/Turnip_v26.3.0-R3-Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r3-turnip-v26.3.0-r3",
+    "name": "Turnip_v26.3.0-R3 (StevenMXZ v26.3.0-R3)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R3",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R3/Turnip_v26.3.0-R3.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r2-turnip-v26.3.0-r2-oneui",
+    "name": "Turnip_v26.3.0-R2-Oneui (StevenMXZ v26.3.0-R2)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R2-Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R2/Turnip_v26.3.0-R2-Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r2-turnip-v26.3.0-r2",
+    "name": "Turnip_v26.3.0-R2 (StevenMXZ v26.3.0-R2)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R2",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R2/Turnip_v26.3.0-R2.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r1-turnip-v26.3.0-r1-oneui",
+    "name": "Turnip_v26.3.0-R1-Oneui (StevenMXZ v26.3.0-R1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R1-Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R1/Turnip_v26.3.0-R1-Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.3.0-r1-turnip-v26.3.0-r1",
+    "name": "Turnip_v26.3.0-R1 (StevenMXZ v26.3.0-R1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.3.0-R1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R1/Turnip_v26.3.0-R1.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r8-turnip-v26.2.0-r8",
+    "name": "Turnip_v26.2.0-R8 (StevenMXZ v26.2.0-R8)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0-R8",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R8/Turnip_v26.2.0-R8.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r8-turnip-v26.2.0-r8-oneui",
+    "name": "Turnip_v26.2.0-R8_OneUI (StevenMXZ v26.2.0-R8)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0-R8_OneUI",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R8/Turnip_v26.2.0-R8_OneUI.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r7-turnip-v26.2.0-r7-oneui",
+    "name": "Turnip_v26.2.0-R7-Oneui (StevenMXZ v26.2.0-R7)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0-R7-Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R7/Turnip_v26.2.0-R7-Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r7-turnip-v26.2.0-r7",
+    "name": "Turnip_v26.2.0-R7 (StevenMXZ v26.2.0-R7)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0-R7",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R7/Turnip_v26.2.0-R7.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r6-turnip-v26.2.0-r6",
+    "name": "Turnip_v26.2.0-R6 (StevenMXZ v26.2.0-R6)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0-R6",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R6/Turnip_v26.2.0-R6.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r6-turnip-v26.2.0-r6-oneui",
+    "name": "Turnip_v26.2.0-R6_Oneui (StevenMXZ v26.2.0-R6)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0-R6_Oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R6/Turnip_v26.2.0-R6_Oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r5-turnip-v26.2.0-r5-oneui",
+    "name": "Turnip_v26.2.0-R5_OneUI (StevenMXZ v26.2.0-R5)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0-R5_OneUI",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R5/Turnip_v26.2.0-R5_OneUI.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r5-turnip-v26.2.0-r5",
+    "name": "Turnip_v26.2.0_R5 (StevenMXZ v26.2.0-R5)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0_R5",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R5/Turnip_v26.2.0_R5.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r5-turnip-v26.2.0-r5-patched",
+    "name": "Turnip_v26.2.0_R5_patched (StevenMXZ v26.2.0-R5)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0_R5_patched",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R5/Turnip_v26.2.0_R5_patched.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r4-turnio-v26.2.0-r4",
+    "name": "Turnio_v26.2.0_R4 (StevenMXZ v26.2.0-R4)",
+    "type": "RendererDriver",
+    "verName": "Turnio_v26.2.0_R4",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R4/Turnio_v26.2.0_R4.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r4-turnip-v26.2.0-r4-oneui",
+    "name": "Turnip_v26.2.0_R4_OneUI (StevenMXZ v26.2.0-R4)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0_R4_OneUI",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R4/Turnip_v26.2.0_R4_OneUI.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-v26.3.0-r3-turnip-26.2.0-r3-oneui",
+    "name": "Turnip_26.2.0_R3_OneUI (StevenMXZ turnip_v26.3.0_r3)",
+    "type": "RendererDriver",
+    "verName": "Turnip_26.2.0_R3_OneUI",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/turnip_v26.3.0_r3/Turnip_26.2.0_R3_OneUI.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-v26.3.0-r3-turnip-v26.2.0-r3",
+    "name": "Turnip_v26.2.0_R3 (StevenMXZ turnip_v26.3.0_r3)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0_R3",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/turnip_v26.3.0_r3/Turnip_v26.2.0_R3.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-gen-8-v31-turnip-gen8-v31",
+    "name": "Turnip_Gen8_V31 (StevenMXZ gen_8_v31)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V31",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/gen_8_v31/Turnip_Gen8_V31.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-gen-8-v30-turnip-gen8-v30",
+    "name": "Turnip_Gen8_V30 (StevenMXZ gen_8_v30)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V30",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/gen_8_v30/Turnip_Gen8_V30.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v29-turnip-gen8-v29",
+    "name": "Turnip_Gen8_V29 (StevenMXZ v29)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V29",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v29/Turnip_Gen8_V29.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r2-turnip-v26.2.0-r2",
+    "name": "Turnip_v26.2.0_R2 (StevenMXZ v26.2.0-R2)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0_R2",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R2/Turnip_v26.2.0_R2.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v28-turnip-gen8-v28",
+    "name": "Turnip_Gen8_V28 (StevenMXZ v28)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V28",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v28/Turnip_Gen8_V28.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.2.0-r1-turnip-v26.2.0-r1",
+    "name": "Turnip_v26.2.0_R1 (StevenMXZ v26.2.0-R1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.2.0_R1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R1/Turnip_v26.2.0_R1.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1.0-auto-turnip-new-autotuner-v26.1.0",
+    "name": "Turnip_New_Autotuner_v26.1.0 (StevenMXZ v26.1.0_auto)",
+    "type": "RendererDriver",
+    "verName": "Turnip_New_Autotuner_v26.1.0",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1.0_auto/Turnip_New_Autotuner_v26.1.0.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v27.1-turnip-gen8-v27",
+    "name": "Turnip_Gen8_V27 (StevenMXZ v27.1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V27",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v27.1/Turnip_Gen8_V27.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-26.1.0-r6-turnip-v26.1.0-r6",
+    "name": "Turnip_v26.1.0_R6 (StevenMXZ 26.1.0_r6)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.1.0_R6",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/26.1.0_r6/Turnip_v26.1.0_R6.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1.0-r5-turnip-v26.1.0-r5",
+    "name": "Turnip_v26.1.0_R5 (StevenMXZ v26.1.0-R5)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.1.0_R5",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1.0-R5/Turnip_v26.1.0_R5.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v863.1-v863.1",
+    "name": "v863.1 (StevenMXZ v863.1)",
+    "type": "RendererDriver",
+    "verName": "v863.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v863.1/v863.1.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v849-v849",
+    "name": "v849 (StevenMXZ v849)",
+    "type": "RendererDriver",
+    "verName": "v849",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v849/v849.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v849-v849-a6xx",
+    "name": "v849_a6xx (StevenMXZ v849)",
+    "type": "RendererDriver",
+    "verName": "v849_a6xx",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v849/v849_a6xx.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1.2-turnip-gen8-v26",
+    "name": "Turnip_Gen8_V26 (StevenMXZ v26.1.2)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V26",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1.2/Turnip_Gen8_V26.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1.0-r4-turnip-v26.1.0-r4",
+    "name": "Turnip_v26.1.0_R4 (StevenMXZ v26.1.0-R4)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.1.0_R4",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1.0-R4/Turnip_v26.1.0_R4.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-26.1.0v3-turnip-v26.1.0-r3",
+    "name": "Turnip_v26.1.0_R3 (StevenMXZ 26.1.0v3)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.1.0_R3",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/26.1.0v3/Turnip_v26.1.0_R3.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v27-turnip-gen8-v25",
+    "name": "Turnip_Gen8_V25 (StevenMXZ v27)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V25",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v27/Turnip_Gen8_V25.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1.0-turnip-gen8-v24",
+    "name": "Turnip_Gen8_V24 (StevenMXZ v26.1.0)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V24",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1.0/Turnip_Gen8_V24.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1.0-turnip-v26.0.0-autotuner",
+    "name": "Turnip_v26.0.0_Autotuner (StevenMXZ v26.1.0)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.0.0_Autotuner",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1.0/Turnip_v26.0.0_Autotuner.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1.0-turnip-v26.1.0-r2",
+    "name": "Turnip_v26.1.0_R2 (StevenMXZ v26.1.0)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.1.0_R2",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1.0/Turnip_v26.1.0_R2.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1-turnip-v26.0.0-autotuner",
+    "name": "Turnip_v26.0.0_Autotuner (StevenMXZ v26.1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.0.0_Autotuner",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1/Turnip_v26.0.0_Autotuner.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1-turnip-v26.1.0",
+    "name": "Turnip_v26.1.0 (StevenMXZ v26.1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.1.0",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1/Turnip_v26.1.0.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v26.1-turnip-v26.1.0-a6xx-fix",
+    "name": "Turnip_v26.1.0_a6xx_fix (StevenMXZ v26.1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.1.0_a6xx_fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.1/Turnip_v26.1.0_a6xx_fix.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v23-turnip-gen8-v23",
+    "name": "Turnip_Gen8_V23 (StevenMXZ v23)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V23",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v23/Turnip_Gen8_V23.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-m1-turnip-v26.0.0-m1",
+    "name": "Turnip_v26.0.0_M1 (StevenMXZ m1)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.0.0_M1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/m1/Turnip_v26.0.0_M1.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v22-turnip-gen8-v22",
+    "name": "Turnip_Gen8_V22 (StevenMXZ v22)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V22",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v22/Turnip_Gen8_V22.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v21-turnip-gen8-v21",
+    "name": "Turnip_Gen8_V21 (StevenMXZ v21)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V21",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v21/Turnip_Gen8_V21.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v20-turnip-gen8-v20",
+    "name": "Turnip_Gen8_V20 (StevenMXZ v20)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V20",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v20/Turnip_Gen8_V20.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v19-turnip-gen8-v19",
+    "name": "Turnip_Gen8_V19 (StevenMXZ v19)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V19",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v19/Turnip_Gen8_V19.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v18-turnip-gen8-v18",
+    "name": "Turnip_Gen8_V18 (StevenMXZ v18)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V18",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v18/Turnip_Gen8_V18.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v17-turnip-gen8-v17",
+    "name": "Turnip_Gen8_V17 (StevenMXZ v17)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V17",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v17/Turnip_Gen8_V17.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v16-turnip-gen8-v16",
+    "name": "Turnip_Gen8_V16 (StevenMXZ v16)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V16",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v16/Turnip_Gen8_V16.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v15-turnip-gen8-v15",
+    "name": "Turnip_Gen8_V15 (StevenMXZ v15)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V15",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v15/Turnip_Gen8_V15.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v14-turnip-gen8-v14",
+    "name": "Turnip_Gen8_V14 (StevenMXZ v14)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V14",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v14/Turnip_Gen8_V14.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v13-turnip-gen8-v13",
+    "name": "Turnip_Gen8_V13 (StevenMXZ v13)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V13",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v13/Turnip_Gen8_V13.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v12-turnip-gen8-v12",
+    "name": "Turnip_Gen8_V12 (StevenMXZ v12)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V12",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v12/Turnip_Gen8_V12.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v11-turnip-gen8-v11",
+    "name": "Turnip_Gen8_V11 (StevenMXZ v11)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V11",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v11/Turnip_Gen8_V11.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v10-turnip-gen8-v10-mr",
+    "name": "Turnip_Gen8_V10+MR (StevenMXZ v10)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V10+MR",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v10/Turnip_Gen8_V10%2BMR.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v10-turnip-gen8-v10",
+    "name": "Turnip_Gen8_V10 (StevenMXZ v10)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V10",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v10/Turnip_Gen8_V10.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-v9-turnip-gen8-v9",
+    "name": "Turnip_Gen8_V9 (StevenMXZ v9)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V9",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v9/Turnip_Gen8_V9.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-gen8-20260110-81f4eb0-turnip-gen8-hacks-81f4eb0",
+    "name": "Turnip-Gen8-Hacks-81f4eb0 (StevenMXZ Turnip-Gen8-20260110-81f4eb0)",
+    "type": "RendererDriver",
+    "verName": "Turnip-Gen8-Hacks-81f4eb0",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-Gen8-20260110-81f4eb0/Turnip-Gen8-Hacks-81f4eb0.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-dxvk-20260111-c15bde8-turnip-gen8-v6",
+    "name": "Turnip_Gen8_V6 (StevenMXZ Turnip-DXVK-20260111-c15bde8)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V6",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-DXVK-20260111-c15bde8/Turnip_Gen8_V6.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-a830-v7-20260111-d858792-turnip-gen8-v7",
+    "name": "Turnip_Gen8_V7 (StevenMXZ Turnip-A830-v7-20260111-d858792)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Gen8_V7",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-A830-v7-20260111-d858792/Turnip_Gen8_V7.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-main-20260108-5ac41be-turnip-main-5ac41be",
+    "name": "Turnip-Main-5ac41be (StevenMXZ Mesa-Main-20260108-5ac41be)",
+    "type": "RendererDriver",
+    "verName": "Turnip-Main-5ac41be",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-Main-20260108-5ac41be/Turnip-Main-5ac41be.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-performance-turnip-v26.0.0-dec-31-2025",
+    "name": "Turnip_v26.0.0_dec-31-2025 (StevenMXZ Turnip_performance)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.0.0_dec-31-2025",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip_performance/Turnip_v26.0.0_dec-31-2025.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-autotuner-20251228-05681ba-turnip-autotuner-05681ba",
+    "name": "Turnip_Autotuner_05681ba (StevenMXZ Turnip-Autotuner-20251228-05681ba)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Autotuner_05681ba",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-Autotuner-20251228-05681ba/Turnip_Autotuner_05681ba.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-26.0.0-turnip-v26.0.0-deck",
+    "name": "Turnip_V26.0.0_Deck (StevenMXZ 26.0.0)",
+    "type": "RendererDriver",
+    "verName": "Turnip_V26.0.0_Deck",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/26.0.0/Turnip_V26.0.0_Deck.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-main-a6xxfix-20251225-b3c983b-turnip-v26.0.0-2512",
+    "name": "Turnip_V26.0.0_2512 (StevenMXZ Mesa-Main-A6xxFix-20251225-b3c983b)",
+    "type": "RendererDriver",
+    "verName": "Turnip_V26.0.0_2512",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-Main-A6xxFix-20251225-b3c983b/Turnip_V26.0.0_2512.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-main-a6xxfix-20251222-166923b-turnip-v26.0.0-r2130",
+    "name": "Turnip_v26.0.0_R2130 (StevenMXZ Mesa-Main-A6xxFix-20251222-166923b)",
+    "type": "RendererDriver",
+    "verName": "Turnip_v26.0.0_R2130",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-Main-A6xxFix-20251222-166923b/Turnip_v26.0.0_R2130.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-sdk35-a6xx-20251215-01cf905-turnip-main-2615",
+    "name": "Turnip_Main_2615 (StevenMXZ Turnip-SDK35-A6xx-20251215-01cf905)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Main_2615",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-SDK35-A6xx-20251215-01cf905/Turnip_Main_2615.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-sdk33-a6xx-20251215-01cf905-turnip-26-a12sdk33",
+    "name": "Turnip-26_A12SDK33 (StevenMXZ Turnip-SDK33-A6xx-20251215-01cf905)",
+    "type": "RendererDriver",
+    "verName": "Turnip-26_A12SDK33",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-SDK33-A6xx-20251215-01cf905/Turnip-26_A12SDK33.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-pixelyion-20251214-430a593-turnip-pixelyion-tu-newat-430a593",
+    "name": "Turnip-PixelyIon-tu-newat-430a593 (StevenMXZ Turnip-PixelyIon-20251214-430a593)",
+    "type": "RendererDriver",
+    "verName": "Turnip-PixelyIon-tu-newat-430a593",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-PixelyIon-20251214-430a593/Turnip-PixelyIon-tu-newat-430a593.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-mr38808-20251213-f13bf85-turnip-deck",
+    "name": "Turnip_Deck (StevenMXZ Turnip-MR38808-20251213-f13bf85)",
+    "type": "RendererDriver",
+    "verName": "Turnip_Deck",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-MR38808-20251213-f13bf85/Turnip_Deck.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-main-a6xxfix-20251210-3b4d2c4-turnip-main-20251210-3b4d2c4-a6xx-fix",
+    "name": "turnip_main_20251210_3b4d2c4_a6xx_fix (StevenMXZ Mesa-Main-A6xxFix-20251210-3b4d2c4)",
+    "type": "RendererDriver",
+    "verName": "turnip_main_20251210_3b4d2c4_a6xx_fix",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-Main-A6xxFix-20251210-3b4d2c4/turnip_main_20251210_3b4d2c4_a6xx_fix.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-main-20251210-8b1340a-turnip-main-8b1340a",
+    "name": "Turnip-Main-8b1340a (StevenMXZ Mesa-Main-20251210-8b1340a)",
+    "type": "RendererDriver",
+    "verName": "Turnip-Main-8b1340a",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-Main-20251210-8b1340a/Turnip-Main-8b1340a.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-release-281125-turnip-281125",
+    "name": "Turnip-281125 (StevenMXZ Turnip-Release-281125)",
+    "type": "RendererDriver",
+    "verName": "Turnip-281125",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-Release-281125/Turnip-281125.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-release-281125-turnip-a6xx-1125",
+    "name": "Turnip-a6xx-1125 (StevenMXZ Turnip-Release-281125)",
+    "type": "RendererDriver",
+    "verName": "Turnip-a6xx-1125",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-Release-281125/Turnip-a6xx-1125.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-turnip-release-281125-turnip-oneui-1125",
+    "name": "Turnip-OneUI-1125 (StevenMXZ Turnip-Release-281125)",
+    "type": "RendererDriver",
+    "verName": "Turnip-OneUI-1125",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Turnip-Release-281125/Turnip-OneUI-1125.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-main-vk14-a6xx-mr35894-20251116-a18fbd7-turnip-20251116-a18fbd7-vk14-a6xx-mr35894",
+    "name": "turnip_20251116_a18fbd7_vk14_a6xx_mr35894 (StevenMXZ Mesa-Main-VK14-A6xx-MR35894-20251116-a18fbd7)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251116_a18fbd7_vk14_a6xx_mr35894",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-Main-VK14-A6xx-MR35894-20251116-a18fbd7/turnip_20251116_a18fbd7_vk14_a6xx_mr35894.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-pixelyion-20251029-cf8e1b81a63-turnip-20251029-cf8e1b81a63",
+    "name": "turnip_20251029_cf8e1b81a63 (StevenMXZ PixelyIon-20251029-cf8e1b81a63)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251029_cf8e1b81a63",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/PixelyIon-20251029-cf8e1b81a63/turnip_20251029_cf8e1b81a63.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251101-2e8b89e-turnip-20251101-2e8b89e",
+    "name": "turnip_20251101_2e8b89e (StevenMXZ Mesa-20251101-2e8b89e)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251101_2e8b89e",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251101-2e8b89e/turnip_20251101_2e8b89e.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251101-2e8b89e-turnip-20251101-2e8b89ec60f-oneui",
+    "name": "turnip_20251101_2e8b89ec60f_oneui (StevenMXZ Mesa-20251101-2e8b89e)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251101_2e8b89ec60f_oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251101-2e8b89e/turnip_20251101_2e8b89ec60f_oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251028-32b646c-turnip-20251028-32b646c",
+    "name": "turnip_20251028_32b646c (StevenMXZ Mesa-20251028-32b646c)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251028_32b646c",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251028-32b646c/turnip_20251028_32b646c.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251028-32b646c-turnip-20251028-ea24dce5e37-oneui",
+    "name": "turnip_20251028_ea24dce5e37_oneui (StevenMXZ Mesa-20251028-32b646c)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251028_ea24dce5e37_oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251028-32b646c/turnip_20251028_ea24dce5e37_oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251025-74afb20-turnip-20251025-74afb20",
+    "name": "turnip_20251025_74afb20 (StevenMXZ Mesa-20251025-74afb20)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251025_74afb20",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251025-74afb20/turnip_20251025_74afb20.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251025-74afb20-turnip-20251025-74afb200d36-oneui",
+    "name": "turnip_20251025_74afb200d36_oneui (StevenMXZ Mesa-20251025-74afb20)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251025_74afb200d36_oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251025-74afb20/turnip_20251025_74afb200d36_oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251022-ff51e6d-turnip-20251022-ade4ee9aae2-danil",
+    "name": "turnip_20251022_ade4ee9aae2_danil (StevenMXZ Mesa-20251022-ff51e6d)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251022_ade4ee9aae2_danil",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251022-ff51e6d/turnip_20251022_ade4ee9aae2_danil.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251022-ff51e6d-turnip-20251022-ff51e6d",
+    "name": "turnip_20251022_ff51e6d (StevenMXZ Mesa-20251022-ff51e6d)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251022_ff51e6d",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251022-ff51e6d/turnip_20251022_ff51e6d.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-mesa-20251022-ff51e6d-turnip-20251022-ff51e6dc9ed-oneui",
+    "name": "turnip_20251022_ff51e6dc9ed_oneui (StevenMXZ Mesa-20251022-ff51e6d)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251022_ff51e6dc9ed_oneui",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/Mesa-20251022-ff51e6d/turnip_20251022_ff51e6dc9ed_oneui.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-26-0-0-e38491eb185-ubwc-hint-turnip-20251022-26-0-0-ubwc-hint",
+    "name": "turnip_20251022_26_0_0_ubwc_hint (StevenMXZ 26_0_0_e38491eb185_ubwc_hint)",
+    "type": "RendererDriver",
+    "verName": "turnip_20251022_26_0_0_ubwc_hint",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/26_0_0_e38491eb185_ubwc_hint/turnip_20251022_26_0_0_ubwc_hint.zip"
+  },
+  {
+    "id": "renderer-driver-stevenmxz-26-0-0-cc1d942727c-turnip-r1-26.0.0",
+    "name": "Turnip-R1-26.0.0 (StevenMXZ 26_0_0_cc1d942727c)",
+    "type": "RendererDriver",
+    "verName": "Turnip-R1-26.0.0",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/26_0_0_cc1d942727c/Turnip-R1-26.0.0.zip"
+  }
+]
