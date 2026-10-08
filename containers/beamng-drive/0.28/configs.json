@@ -1,0 +1,12 @@
+{
+  "zink-turnip-26-3.wcfg": {
+    "name": "Zink + Turnip 26.3, 50 fps cap",
+    "description": "Proton 9.0 x86_64, Box64 0.4.2, DXVK 2.6-2 gplasync, Zink with Turnip 26.3.0-R4 (OneUI). 50 fps cap, FPS counter on.",
+    "tags": [
+      "Zink",
+      "Turnip",
+      "Box64",
+      "50 fps"
+    ]
+  }
+}

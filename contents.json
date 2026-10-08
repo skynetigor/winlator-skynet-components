@@ -1383,5 +1383,23 @@
     "verName": "0.20",
     "verCode": 1,
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.20/snapdragon-8-gen-3.wcfg"
+  },
+  {
+    "id": "container-beamng-drive-0.28-zink-turnip-26-3",
+    "name": "Zink + Turnip 26.3, 50 fps cap",
+    "type": "Container",
+    "gameId": "beamng-drive",
+    "gameName": "BeamNG.drive",
+    "gameVersion": "0.28",
+    "description": "Proton 9.0 x86_64, Box64 0.4.2, DXVK 2.6-2 gplasync, Zink with Turnip 26.3.0-R4 (OneUI). 50 fps cap, FPS counter on.",
+    "tags": [
+      "Zink",
+      "Turnip",
+      "Box64",
+      "50 fps"
+    ],
+    "verName": "0.28",
+    "verCode": 1,
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.28/zink-turnip-26-3.wcfg"
   }
 ]

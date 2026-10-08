@@ -1,0 +1,80 @@
+{
+  "format": "winlator-skynet-container",
+  "version": 1,
+  "exportedBy": "Winlator skyNET 1.1",
+  "exportedAt": "2026-10-06T18:54:09Z",
+  "components": [
+    {
+      "type": "Proton",
+      "version": "proton-9.0-x86_64"
+    },
+    {
+      "type": "Box64",
+      "version": "0.4.2"
+    },
+    {
+      "type": "FEXCore",
+      "version": "2601"
+    },
+    {
+      "type": "DXVK",
+      "version": "2.6-2-gplasync"
+    },
+    {
+      "type": "GraphicsDriver",
+      "version": "Turnip v26.3.0-R4-Oneui",
+      "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R4/Turnip_v26.3.0-R4-Oneui.zip"
+    },
+    {
+      "type": "RendererDriver",
+      "version": "Turnip v26.3.0-R4-Oneui",
+      "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.3.0-R4/Turnip_v26.3.0-R4-Oneui.zip"
+    }
+  ],
+  "container": {
+    "name": "BeamNG.drive 0.28 (Zink, Turnip 26.3)",
+    "screenSize": "1280x720",
+    "envVars": "WRAPPER_MAX_IMAGE_COUNT=0 ZINK_DESCRIPTORS=lazy ZINK_DEBUG=compact MESA_SHADER_CACHE_DISABLE=false MESA_SHADER_CACHE_MAX_SIZE=512MB mesa_glthread=true WINEESYNC=1",
+    "cpuList": "1,2,3,4,5,6,7",
+    "cpuListWoW64": "1,2,3,4,5,6,7",
+    "graphicsDriver": "zink",
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=Turnip v26.3.0-R4-Oneui;blacklistedExtensions=;maxDeviceMemory=8192;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=NVIDIA GeForce GTX 1060",
+    "rendererNative": false,
+    "rendererPresentMode": "mailbox",
+    "rendererDriverId": "Turnip v26.3.0-R4-Oneui",
+    "rendererFilterMode": 3,
+    "emulator": "Box64",
+    "dxwrapper": "dxvk+vkd3d",
+    "dxwrapperConfig": "version=2.6-2-gplasync,framerate=50,async=1,asyncCache=1,vkd3dVersion=None,vkd3dLevel=12_1,ddrawrapper=dd7to9,csmt=3,gpuName=NVIDIA GeForce GTX 480,videoMemorySize=2048,strict_shader_math=1,OffscreenRenderingMode=fbo,renderer=gl",
+    "audioDriver": "pulse-audio-gn",
+    "wincomponents": "direct3d=1,directsound=0,directmusic=0,directshow=0,directplay=0,xaudio=0,vcrun2010=1",
+    "showFPS": true,
+    "fullscreenStretched": false,
+    "startupSelection": 1,
+    "box64Version": "0.4.2",
+    "fexcorePreset": "INTERMEDIATE",
+    "fexcoreVersion": "2601",
+    "box64Preset": "PERFORMANCE",
+    "desktopTheme": "DARK,IMAGE,#0277bd,0",
+    "extraData": {
+      "useDisplayX": "0",
+      "surfaceFormat": "bgra8",
+      "trueDisplayX": "0",
+      "displayXPerformanceMode": "1",
+      "displayXPresentAtRefreshRate": "1",
+      "displayXBackPressure": "0",
+      "displayXPrecisePresentation": "0",
+      "oboeProfile": "low",
+      "oboeApi": "auto",
+      "oboeAdaptive": "1",
+      "oboeExclusive": "0",
+      "hudMode": "1",
+      "mouseWarpOverride": "disable",
+      "openGlDefaultInitialized": "1",
+      "autoMesaGlVersionOverride": "0",
+      "startupSelection": "1"
+    },
+    "midiSoundFont": "",
+    "wineVersion": "proton-9.0-x86_64"
+  }
+}
