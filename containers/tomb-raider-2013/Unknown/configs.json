@@ -1,8 +1,10 @@
 {
   "zink-dxvk-2-3-1.wcfg": {
     "name": "Zink + DXVK 2.3.1, 1024x768",
-    "description": "Proton 9.0 x86_64, Box64 0.4.4 (PERFORMANCE), DXVK 2.3.1, Zink on the system Vulkan driver, 1024x768. Frame generation is left off: in our logs it crashed the game when the swapchain was created.",
+    "description": "Runs at Ultra graphics on a Galaxy Z Fold8 Ultra. Proton 9.0 x86_64, Box64 0.4.4 (PERFORMANCE), DXVK 2.3.1, Zink on the system Vulkan driver, 1024x768. Frame generation is left off: in our logs it crashed the game when the swapchain was created.",
     "tags": [
+      "Ultra settings",
+      "Galaxy Z Fold8 Ultra",
       "Zink",
       "DXVK 2.3.1",
       "Proton 9",
