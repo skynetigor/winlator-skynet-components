@@ -1,0 +1,13 @@
+{
+  "zink-dxvk-2-3-1.wcfg": {
+    "name": "Zink + DXVK 2.3.1, 1024x768",
+    "description": "Proton 9.0 x86_64, Box64 0.4.4 (PERFORMANCE), DXVK 2.3.1, Zink on the system Vulkan driver, 1024x768. Frame generation is left off: in our logs it crashed the game when the swapchain was created.",
+    "tags": [
+      "Zink",
+      "DXVK 2.3.1",
+      "Proton 9",
+      "Box64",
+      "1024x768"
+    ]
+  }
+}

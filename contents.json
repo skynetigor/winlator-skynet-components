@@ -1440,5 +1440,24 @@
     "verName": "0.34",
     "verCode": 1,
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.34/fold8-ultra-stable.wcfg"
+  },
+  {
+    "id": "container-tomb-raider-2013-Unknown-zink-dxvk-2-3-1",
+    "name": "Zink + DXVK 2.3.1, 1024x768",
+    "type": "Container",
+    "gameId": "tomb-raider-2013",
+    "gameName": "Tomb Raider (2013)",
+    "gameVersion": "Unknown",
+    "description": "Proton 9.0 x86_64, Box64 0.4.4 (PERFORMANCE), DXVK 2.3.1, Zink on the system Vulkan driver, 1024x768. Frame generation is left off: in our logs it crashed the game when the swapchain was created.",
+    "tags": [
+      "Zink",
+      "DXVK 2.3.1",
+      "Proton 9",
+      "Box64",
+      "1024x768"
+    ],
+    "verName": "Unknown",
+    "verCode": 1,
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/tomb-raider-2013/Unknown/zink-dxvk-2-3-1.wcfg"
   }
 ]
