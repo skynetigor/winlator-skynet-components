@@ -1509,6 +1509,27 @@
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.34/fold8-ultra-stable.wcfg"
   },
   {
+    "id": "container-beamng-drive-0.39-cachyos-arm64ec-dd-turnip",
+    "name": "CachyOS Wine ARM64EC + DD-Turnip, DXVK 3.1.1",
+    "type": "Container",
+    "gameId": "beamng-drive",
+    "gameName": "BeamNG.drive",
+    "gameVersion": "0.39",
+    "description": "Experimental, not tested on a device yet. CachyOS Wine 11.0 ARM64EC build for Android (downloaded automatically), DD-Turnip v0.1.1 with 4096 MB reported memory and a GTX 1060 name, DXVK 3.1.1 ARM64EC, Box64 0.4.4, alsa audio, 1280x720. BeamNG 0.39 picks the D3D12 backend by default; this config has no VKD3D, so add -gfx dx11 to the game arguments or install VKD3D-Proton.",
+    "tags": [
+      "Experimental",
+      "CachyOS Wine",
+      "ARM64EC",
+      "DD-Turnip",
+      "DXVK 3.1.1",
+      "Box64"
+    ],
+    "channel": "prerelease",
+    "verName": "0.39",
+    "verCode": 1,
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.39/cachyos-arm64ec-dd-turnip.wcfg"
+  },
+  {
     "id": "container-tomb-raider-2013-Unknown-zink-dxvk-2-3-1",
     "name": "Zink + DXVK 2.3.1, 1024x768",
     "type": "Container",
