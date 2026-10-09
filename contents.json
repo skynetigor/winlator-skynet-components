@@ -97,7 +97,7 @@
     "name": "CachyOS Wine 11.0-20261005 (experimental, Android build)",
     "type": "Proton",
     "verName": "exp-cachyos-11.0-20261005-x86_64",
-    "verCode": 1,
+    "verCode": 2,
     "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/proton-cachyos-11.0-20261005/exp-cachyos-11.0-20261005-x86_64.wcp",
     "channel": "prerelease"
   },
