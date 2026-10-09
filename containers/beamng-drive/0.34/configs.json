@@ -12,5 +12,17 @@
       "Turnip"
     ],
     "channel": "stable"
+  },
+  "cachyos-dd-turnip.wcfg": {
+    "name": "CachyOS Wine + DD-Turnip, DXVK 3.1.1",
+    "description": "Runs well on a Galaxy Z Fold8 Ultra. CachyOS Wine 11.0 rebuilt for Android (downloaded automatically), DD-Turnip v0.1.1 with 4096 MB reported memory and a GTX 1060 name, DXVK 3.1.1, Box64 0.4.4, alsa audio, 1280x720.",
+    "tags": [
+      "CachyOS Wine",
+      "DD-Turnip",
+      "DXVK 3.1.1",
+      "Box64",
+      "Galaxy Z Fold8 Ultra"
+    ],
+    "channel": "stable"
   }
 }
