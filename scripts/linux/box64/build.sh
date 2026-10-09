@@ -22,6 +22,15 @@ git clone https://github.com/ptitSeb/box64.git "$WORK/src"
 git -C "$WORK/src" checkout "$TAG"
 COMMIT=$(git -C "$WORK/src" rev-parse HEAD)
 
+# Our patches (scripts/linux/box64/patches/*.patch), applied in name order.
+PATCHES=()
+for patch in "$(cd "$(dirname "$0")" && pwd)"/patches/*.patch; do
+  [ -e "$patch" ] || continue
+  git -C "$WORK/src" apply "$patch"
+  PATCHES+=("$(basename "$patch")")
+done
+PATCH_JSON=$(printf '"%s",' "${PATCHES[@]}" | sed 's/,$//')
+
 # Generic arm64 (no -march tuning for one CPU), dynarec on, the x86_64 libs Box64 does not wrap bundled in.
 # ANDROID / TERMUX / WINLATOR_GLIBC stay off: this is a plain glibc build.
 cmake -S "$WORK/src" -B "$WORK/build" \
@@ -53,6 +62,7 @@ cat > "$PKG/meta.json" <<JSON
   "libc": "glibc",
   "minGlibc": "$MIN_GLIBC",
   "upstream": {"repo": "https://github.com/ptitSeb/box64", "tag": "$TAG", "commit": "$COMMIT"},
+  "patches": [${PATCH_JSON}],
   "build": {
     "cmake": "-DARM_DYNAREC=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUNDLE_X86_LIBS=ON -DNO_CONF_INSTALL=ON",
     "gcc": "$(gcc -dumpfullversion)",

@@ -1,0 +1,15 @@
+diff --git a/src/core.c b/src/core.c
+index c33c384..33bac56 100644
+--- a/src/core.c
++++ b/src/core.c
+@@ -1258,7 +1258,9 @@ int initialize(int argc, const char **argv, char** env, x64emu_t** emulator, elf
+         FreeCollection(&ld_preload);
+         return -1;
+     }
+-    if(!FileExist(my_context->argv[0], IS_FILE|IS_EXECUTABLE)) {
++    // Winlator skyNET: shared storage on Android has no execute bit, and an x86 program is never run by the kernel here,
++    // so the program only has to be a readable file.
++    if(!FileExist(my_context->argv[0], IS_FILE)) {
+         printf_log(LOG_NONE, "Error: %s is not an executable file.\n", my_context->argv[0]);
+         free_contextargv();
+         FreeBox64Context(&my_context);
