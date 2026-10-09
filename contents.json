@@ -1386,6 +1386,24 @@
     "remoteUrl": "https://github.com/whitebelyash/AdrenoToolsDrivers/releases/download/tu_v32/mainline-turnip-sync-V32.zip"
   },
   {
+    "id": "renderer-driver-droid-deck-dd-turnip-v0.1.1",
+    "name": "DD-Turnip v0.1.1 (Droid-Deck)",
+    "type": "RendererDriver",
+    "source": "Droid-Deck/Drivers-CI",
+    "verName": "DD-Turnip-v0.1.1",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.1/DD-Turnip-v0.1.1.zip"
+  },
+  {
+    "id": "renderer-driver-droid-deck-dd-turnip-v0.1.0",
+    "name": "DD-Turnip v0.1.0 (Droid-Deck)",
+    "type": "RendererDriver",
+    "source": "Droid-Deck/Drivers-CI",
+    "verName": "DD-Turnip-v0.1.0",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.0/DD-Turnip-v0.1.0.zip"
+  },
+  {
     "id": "container-beamng-drive-0.20-snapdragon-8-gen-3",
     "name": "Snapdragon 8 Gen 3",
     "type": "Container",
