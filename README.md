@@ -18,6 +18,7 @@ The binaries are **not** stored in git. Each one is a GitHub Release asset, with
 | `verName` | Version string the app uses internally. For ARM64EC builds it must contain `arm64ec`, the app filters on that. |
 | `verCode` | Integer version, bump it when you republish the same `id`. |
 | `remoteUrl` | Direct download URL of the `.wcp`. |
+| `channel` | Optional: `stable` or `prerelease`; the app shows it as a badge. No badge when absent. |
 
 ## DXVK 3
 
@@ -68,6 +69,7 @@ containers/
 | `gameId`, `gameName` | Game slug (the directory) and display name. |
 | `gameVersion` | Game version (the directory). Newest is listed first in the app. |
 | `description`, `tags` | Shown under the config name. Optional. |
+| `channel` | Optional badge: `stable` or `prerelease`. Also valid on component and driver entries. No badge when absent. |
 | `remoteUrl` | Direct link to the `.wcfg`. |
 
 Don't edit those entries by hand. Add or change files under `containers/` and run:

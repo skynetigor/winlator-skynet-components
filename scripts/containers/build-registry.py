@@ -4,7 +4,7 @@
 Layout:
   containers/<game-slug>/game.json             {"name": "Display name"}
   containers/<game-slug>/<version>/<x>.wcfg     a Winlator container profile
-  containers/<game-slug>/<version>/configs.json optional {"<x>.wcfg": {"name", "description", "tags"}}
+  containers/<game-slug>/<version>/configs.json optional {"<x>.wcfg": {"name", "description", "tags", "channel": "stable"|"prerelease"}}
 
 Other entries in contents.json are left untouched. Run from anywhere:
   python3 scripts/containers/build-registry.py
@@ -55,6 +55,7 @@ def main():
                     'gameVersion': version,
                     'description': info.get('description', ''),
                     'tags': info.get('tags', []),
+                    **({'channel': info['channel']} if info.get('channel') in ('stable', 'prerelease') else {}),
                     'verName': version,
                     'verCode': 1,
                     'remoteUrl': f'{RAW}containers/{game}/{version}/{fname}',

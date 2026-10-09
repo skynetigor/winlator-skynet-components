@@ -10,6 +10,7 @@
       "Proton 9",
       "Box64",
       "1024x768"
-    ]
+    ],
+    "channel": "stable"
   }
 }

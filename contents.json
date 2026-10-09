@@ -13,7 +13,8 @@
     "type": "DXVK",
     "verName": "3.1.1-arm64ec",
     "verCode": 1,
-    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1.1/dxvk-3.1.1-arm64ec.wcp"
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1.1/dxvk-3.1.1-arm64ec.wcp",
+    "channel": "prerelease"
   },
   {
     "id": "dxvk-3.1",
@@ -29,7 +30,8 @@
     "type": "DXVK",
     "verName": "3.1-arm64ec",
     "verCode": 1,
-    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1/dxvk-3.1-arm64ec.wcp"
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1/dxvk-3.1-arm64ec.wcp",
+    "channel": "prerelease"
   },
   {
     "id": "dxvk-3.0.2",
@@ -45,7 +47,8 @@
     "type": "DXVK",
     "verName": "3.0.2-arm64ec",
     "verCode": 1,
-    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.2/dxvk-3.0.2-arm64ec.wcp"
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.2/dxvk-3.0.2-arm64ec.wcp",
+    "channel": "prerelease"
   },
   {
     "id": "dxvk-3.0.1",
@@ -61,7 +64,8 @@
     "type": "DXVK",
     "verName": "3.0.1-arm64ec",
     "verCode": 1,
-    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.1/dxvk-3.0.1-arm64ec.wcp"
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0.1/dxvk-3.0.1-arm64ec.wcp",
+    "channel": "prerelease"
   },
   {
     "id": "dxvk-3.0",
@@ -77,7 +81,8 @@
     "type": "DXVK",
     "verName": "3.0-arm64ec",
     "verCode": 1,
-    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0/dxvk-3.0-arm64ec.wcp"
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.0/dxvk-3.0-arm64ec.wcp",
+    "channel": "prerelease"
   },
   {
     "id": "wine-9.20-x86_64",
@@ -86,6 +91,15 @@
     "verName": "wine-9.20-x86_64",
     "verCode": 1,
     "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/releases/download/1.0/wine-9.20.wcp"
+  },
+  {
+    "id": "proton-exp-cachyos-11.0-20261005-x86_64",
+    "name": "CachyOS Wine 11.0-20261005 (experimental, Android build)",
+    "type": "Proton",
+    "verName": "exp-cachyos-11.0-20261005-x86_64",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/proton-cachyos-11.0-20261005/exp-cachyos-11.0-20261005-x86_64.wcp",
+    "channel": "prerelease"
   },
   {
     "id": "box64-0.3.5",
@@ -405,7 +419,8 @@
     "type": "FEXCore",
     "verName": "2601-aabdded-nightly",
     "verCode": 1,
-    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/FEXCore-2601-aabdded.wcp"
+    "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/FEXCore/FEXCore-2601-aabdded.wcp",
+    "channel": "prerelease"
   },
   {
     "id": "fexcore-2603",
@@ -1374,7 +1389,8 @@
     "source": "whitebelyash/AdrenoToolsDrivers",
     "verName": "mainline-turnip-V32",
     "verCode": 1,
-    "remoteUrl": "https://github.com/whitebelyash/AdrenoToolsDrivers/releases/download/tu_v32/mainline-turnip-V32.zip"
+    "remoteUrl": "https://github.com/whitebelyash/AdrenoToolsDrivers/releases/download/tu_v32/mainline-turnip-V32.zip",
+    "channel": "prerelease"
   },
   {
     "id": "renderer-driver-whitebelyash-tu-v32-mainline-turnip-sync-v32",
@@ -1383,7 +1399,8 @@
     "source": "whitebelyash/AdrenoToolsDrivers",
     "verName": "mainline-turnip-sync-V32",
     "verCode": 1,
-    "remoteUrl": "https://github.com/whitebelyash/AdrenoToolsDrivers/releases/download/tu_v32/mainline-turnip-sync-V32.zip"
+    "remoteUrl": "https://github.com/whitebelyash/AdrenoToolsDrivers/releases/download/tu_v32/mainline-turnip-sync-V32.zip",
+    "channel": "prerelease"
   },
   {
     "id": "renderer-driver-droid-deck-dd-turnip-v0.1.1",
@@ -1392,7 +1409,8 @@
     "source": "Droid-Deck/Drivers-CI",
     "verName": "DD-Turnip-v0.1.1",
     "verCode": 1,
-    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.1/DD-Turnip-v0.1.1.zip"
+    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.1/DD-Turnip-v0.1.1.zip",
+    "channel": "prerelease"
   },
   {
     "id": "renderer-driver-droid-deck-dd-turnip-v0.1.0",
@@ -1401,7 +1419,8 @@
     "source": "Droid-Deck/Drivers-CI",
     "verName": "DD-Turnip-v0.1.0",
     "verCode": 1,
-    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.0/DD-Turnip-v0.1.0.zip"
+    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.0/DD-Turnip-v0.1.0.zip",
+    "channel": "prerelease"
   },
   {
     "id": "container-beamng-drive-0.20-snapdragon-8-gen-3",
@@ -1455,6 +1474,7 @@
       "Box64",
       "Turnip"
     ],
+    "channel": "stable",
     "verName": "0.34",
     "verCode": 1,
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.34/fold8-ultra-stable.wcfg"
@@ -1476,6 +1496,7 @@
       "Box64",
       "1024x768"
     ],
+    "channel": "stable",
     "verName": "Unknown",
     "verCode": 1,
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/tomb-raider-2013/Unknown/zink-dxvk-2-3-1.wcfg"
