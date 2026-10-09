@@ -1,0 +1,28 @@
+name: Linux Box64
+
+# Builds Box64 for the Winlator skyNET Linux runtime (glibc aarch64) and uploads the package as an artifact.
+# Publishing is a separate, explicit step (a release in this repo), so a build never changes what users download.
+on:
+  workflow_dispatch:
+    inputs:
+      box64_tag:
+        description: Upstream Box64 tag
+        default: v0.4.4
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends git cmake make gcc g++ python3 zstd binutils \
+            gcc-x86-64-linux-gnu libc6-dev-amd64-cross
+      - name: Build Box64
+        run: scripts/linux/box64/build.sh "${{ inputs.box64_tag }}" out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: box64-linux-aarch64
+          path: out/*
+          if-no-files-found: error
