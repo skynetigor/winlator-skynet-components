@@ -102,6 +102,15 @@
     "channel": "stable"
   },
   {
+    "id": "proton-exp-cachyos-11.0-20261005-arm64ec",
+    "name": "CachyOS Wine 11.0-20261005 ARM64EC (experimental, Android build)",
+    "type": "Proton",
+    "verName": "exp-cachyos-11.0-20261005-arm64ec",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/proton-cachyos-11.0-20261005/exp-cachyos-11.0-20261005-arm64ec.wcp",
+    "channel": "prerelease"
+  },
+  {
     "id": "box64-0.3.5",
     "name": "Box64 0.3.5",
     "type": "Box64",
