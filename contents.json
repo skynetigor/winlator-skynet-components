@@ -17,6 +17,14 @@
     "channel": "prerelease"
   },
   {
+    "id": "dxvk-3.1.1-gplasync-arm64ec",
+    "name": "DXVK 3.1.1 gplasync (ARM64EC)",
+    "type": "DXVK",
+    "verName": "v3.1.1-gplasync-arm64ec",
+    "verCode": 0,
+    "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-gplasync-3.1.1/dxvk-gplasync-arm64ec-3.1.1-1.wcp"
+  },
+  {
     "id": "dxvk-3.1",
     "name": "DXVK 3.1",
     "type": "DXVK",
