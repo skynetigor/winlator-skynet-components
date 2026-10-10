@@ -9,8 +9,8 @@
       "version": "0.4.4",
       "channel": "prerelease",
       "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4/box64-0.4.4-linux-aarch64.tar.zst",
-      "sha256": "78b25d76a2387c2e80b23b7ba40ea66cfbbd8151f051ef81940ceae2543c365a",
-      "size": 16228824
+      "sha256": "e2a21c070df993b2910a1a89914ccc5eb365b21329c5c8383a8c99c82e87acbd",
+      "size": 16226615
     }
   ],
   "rootfs": []
