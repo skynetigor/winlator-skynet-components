@@ -23,6 +23,16 @@
       "url": "https://github.com/The412Banner/Banners-Turnip/releases/download/v26.3.0-20261011/Turnip-v26.3.0-20261011-710-720-Test-Linux.zip",
       "sha256": "1b47f400f2e50dab31bb7ae9c2a827e7d3f0ecb388036cdaf936e06208e10965",
       "size": 3218619
+    },
+    {
+      "id": "turnip-v26.3.0-20261011-a8xx-linux",
+      "name": "Mesa Turnip v26.3.0-20261011-A8xx-Linux",
+      "version": "26.3.0-20261011",
+      "channel": "prerelease",
+      "source": "The412Banner/Banners-Turnip",
+      "url": "https://github.com/The412Banner/Banners-Turnip/releases/download/v26.3.0-20261011/Turnip-v26.3.0-20261011-A8xx-Linux.zip",
+      "sha256": "6128900326618a13a5905200568717b2e413f93d7ca38f7ff3d0e40e407c0ac6",
+      "size": 3266459
     }
   ],
   "rootfs": []
