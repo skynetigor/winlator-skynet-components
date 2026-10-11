@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Catalog of Linux-container packages for Winlator skyNET: x86 emulators built for the Linux runtime (glibc aarch64). The Wine components stay in contents.json.",
+  "note": "Catalog of Linux-container packages for Winlator skyNET: x86 emulators and Vulkan (Turnip) drivers built for the Linux runtime (glibc aarch64). The Wine components stay in contents.json.",
   "emulators": [
     {
       "id": "box64-0.4.4",
@@ -11,6 +11,18 @@
       "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4/box64-0.4.4-linux-aarch64.tar.zst",
       "sha256": "e2a21c070df993b2910a1a89914ccc5eb365b21329c5c8383a8c99c82e87acbd",
       "size": 16226615
+    }
+  ],
+  "drivers": [
+    {
+      "id": "turnip-v26.3.0-20261011-710-720-test-linux",
+      "name": "Mesa Turnip v26.3.0-20261011-710-720-Test-Linux",
+      "version": "26.3.0-20261011",
+      "channel": "prerelease",
+      "source": "The412Banner/Banners-Turnip",
+      "url": "https://github.com/The412Banner/Banners-Turnip/releases/download/v26.3.0-20261011/Turnip-v26.3.0-20261011-710-720-Test-Linux.zip",
+      "sha256": "1b47f400f2e50dab31bb7ae9c2a827e7d3f0ecb388036cdaf936e06208e10965",
+      "size": 3218619
     }
   ],
   "rootfs": []
