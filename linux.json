@@ -11,6 +11,16 @@
       "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4/box64-0.4.4-linux-aarch64.tar.zst",
       "sha256": "e2a21c070df993b2910a1a89914ccc5eb365b21329c5c8383a8c99c82e87acbd",
       "size": 16226615
+    },
+    {
+      "id": "fex-2610",
+      "name": "FEX",
+      "emulator": "fex",
+      "version": "2610",
+      "channel": "prerelease",
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-fex-2610/fex-2610-linux-aarch64.tar.zst",
+      "sha256": "a5633ead7d57f327176de618d3cdf622e9a68302bd934051760a4f61114c38c4",
+      "size": 2144270
     }
   ],
   "drivers": [
@@ -35,5 +45,16 @@
       "size": 3266459
     }
   ],
-  "rootfs": []
+  "rootfs": [
+    {
+      "id": "rootfs-ubuntu-24-04-2026-08-11",
+      "name": "Ubuntu 24.04 x86-64 root filesystem",
+      "version": "2026-08-11",
+      "channel": "prerelease",
+      "source": "https://rootfs.fex-emu.gg/Ubuntu_24_04/2026-08-11/Ubuntu_24_04.sqsh",
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-rootfs-ubuntu-24-04-2026-08-11/rootfs-ubuntu-24-04-2026-08-11.tar.zst",
+      "sha256": "4853f496688c4fd9885c79cb26628ec278e6a62325cac822061e8835d6aa83b5",
+      "size": 437391543
+    }
+  ]
 }
