@@ -24,5 +24,23 @@
       "Galaxy Z Fold8 Ultra"
     ],
     "channel": "stable"
+  },
+  "linux-box64.wcfg": {
+    "name": "Linux container, Box64 0.4.4, Turnip 26.3",
+    "description": "A Linux container (Arch Linux ARM runtime under proot) that runs the Linux build of BeamNG.drive 0.34 through Box64 0.4.4 with the Performance preset. Native (dma-buf) output, 800x600 with FSR 1 upscaling, 3x frame generation (needs your own Lossless.dll), the Steam client started with the container. Needs the Linux runtime, a Linux Turnip driver and Box64 installed from Components; only the settings are imported.",
+    "tags": [
+      "Linux",
+      "Box64",
+      "Turnip",
+      "Steam",
+      "Experimental"
+    ],
+    "channel": "prerelease",
+    "compatibility": [
+      "Snapdragon 8 Elite Gen 5"
+    ],
+    "testedOn": [
+      "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+    ]
   }
 }

@@ -1517,6 +1517,32 @@
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.34/fold8-ultra-stable.wcfg"
   },
   {
+    "id": "container-beamng-drive-0.34-linux-box64",
+    "name": "Linux container, Box64 0.4.4, Turnip 26.3",
+    "type": "Container",
+    "gameId": "beamng-drive",
+    "gameName": "BeamNG.drive",
+    "gameVersion": "0.34",
+    "description": "A Linux container (Arch Linux ARM runtime under proot) that runs the Linux build of BeamNG.drive 0.34 through Box64 0.4.4 with the Performance preset. Native (dma-buf) output, 800x600 with FSR 1 upscaling, 3x frame generation (needs your own Lossless.dll), the Steam client started with the container. Needs the Linux runtime, a Linux Turnip driver and Box64 installed from Components; only the settings are imported.",
+    "tags": [
+      "Linux",
+      "Box64",
+      "Turnip",
+      "Steam",
+      "Experimental"
+    ],
+    "channel": "prerelease",
+    "compatibility": [
+      "Snapdragon 8 Elite Gen 5"
+    ],
+    "testedOn": [
+      "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+    ],
+    "verName": "0.34",
+    "verCode": 1,
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.34/linux-box64.wcfg"
+  },
+  {
     "id": "container-beamng-drive-0.39-cachyos-arm64ec-dd-turnip",
     "name": "CachyOS Wine ARM64EC + DD-Turnip, DXVK 3.1.1",
     "type": "Container",
