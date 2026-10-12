@@ -17,7 +17,8 @@ import os
 import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-RAW = 'https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/'
+# BRANCH=<name> writes links to that branch (a debug build of the app reads the branch named like its own); main by default.
+RAW = 'https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/' + os.environ.get('BRANCH', 'main') + '/'
 REGISTRY = os.path.join(ROOT, 'contents.json')
 TREE = os.path.join(ROOT, 'containers')
 

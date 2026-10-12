@@ -1454,7 +1454,7 @@
     ],
     "verName": "0.20",
     "verCode": 1,
-    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.20/snapdragon-8-gen-3.wcfg"
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.20/snapdragon-8-gen-3.wcfg"
   },
   {
     "id": "container-beamng-drive-0.28-zink-turnip-26-3",
@@ -1472,7 +1472,7 @@
     ],
     "verName": "0.28",
     "verCode": 1,
-    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.28/zink-turnip-26-3.wcfg"
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.28/zink-turnip-26-3.wcfg"
   },
   {
     "id": "container-beamng-drive-0.34-cachyos-dd-turnip",
@@ -1492,7 +1492,7 @@
     "channel": "stable",
     "verName": "0.34",
     "verCode": 1,
-    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.34/cachyos-dd-turnip.wcfg"
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.34/cachyos-dd-turnip.wcfg"
   },
   {
     "id": "container-beamng-drive-0.34-fold8-ultra-stable",
@@ -1514,7 +1514,7 @@
     "channel": "stable",
     "verName": "0.34",
     "verCode": 1,
-    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.34/fold8-ultra-stable.wcfg"
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.34/fold8-ultra-stable.wcfg"
   },
   {
     "id": "container-beamng-drive-0.39-cachyos-arm64ec-dd-turnip",
@@ -1535,7 +1535,7 @@
     "channel": "prerelease",
     "verName": "0.39",
     "verCode": 1,
-    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.39/cachyos-arm64ec-dd-turnip.wcfg"
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.39/cachyos-arm64ec-dd-turnip.wcfg"
   },
   {
     "id": "container-beamng-drive-0.39-linux-box64",
@@ -1561,7 +1561,7 @@
     ],
     "verName": "0.39",
     "verCode": 1,
-    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.39/linux-box64.wcfg"
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/beamng-drive/0.39/linux-box64.wcfg"
   },
   {
     "id": "container-tomb-raider-2013-Unknown-zink-dxvk-2-3-1",
@@ -1583,6 +1583,6 @@
     "channel": "stable",
     "verName": "Unknown",
     "verCode": 1,
-    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/tomb-raider-2013/Unknown/zink-dxvk-2-3-1.wcfg"
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/2.0.0-linux/containers/tomb-raider-2013/Unknown/zink-dxvk-2-3-1.wcfg"
   }
 ]

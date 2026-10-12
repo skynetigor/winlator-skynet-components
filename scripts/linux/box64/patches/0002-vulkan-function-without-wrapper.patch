@@ -1,0 +1,12 @@
+--- a/src/wrapped/wrappedvulkan.c	2026-10-12 11:18:30
++++ b/src/wrapped/wrappedvulkan.c	2026-10-12 11:18:30
+@@ -59,6 +59,9 @@
+ {
+     // get wrapper
+     symbol1_t *s = getWrappedSymbol(emu, rname, 1);
++    // The driver knows more functions than Box64 has wrappers for (a newer Mesa lists vkCmdDispatchTileQCOM): say
++    // the function does not exist rather than dereference nothing, the program checks the result for NULL.
++    if(!s) return NULL;
+ 
+     khint_t k = kh_get(symbolmap, emu->context->vkwrappers, rname);
+     const char* constname = kh_key(emu->context->vkwrappers, k);
