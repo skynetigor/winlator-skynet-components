@@ -42,5 +42,22 @@
     "testedOn": [
       "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
     ]
+  },
+  "linux-fex.wcfg": {
+    "name": "Linux container, FEX 2610, Turnip 26.3",
+    "tags": [
+      "Linux",
+      "FEX",
+      "Turnip",
+      "Experimental"
+    ],
+    "channel": "prerelease",
+    "compatibility": [
+      "Snapdragon 8 Elite Gen 5"
+    ],
+    "testedOn": [
+      "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+    ],
+    "description": "A Linux container (Arch Linux ARM runtime under proot) that runs the Linux build of BeamNG.drive 0.34 through FEX 2610 in an Ubuntu 24.04 x86-64 root filesystem, with the Vulkan thunk (Turnip 26.3, native output). **Does not work yet**: the game starts and loads, but its menu never appears, because the runtime's proot refuses the game's Chromium helper process (execveat). It is published as a quick way to make a FEX container for programs that start no helper processes; use the Box64 config for BeamNG. Needs the Linux runtime, a Linux Turnip driver, FEX and the root filesystem; they are installed for you after you confirm. FEX runs only from copied files (shared storage is noexec): use the program copy option when adding the program."
   }
 }
