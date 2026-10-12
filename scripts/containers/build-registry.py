@@ -4,7 +4,10 @@
 Layout:
   containers/<game-slug>/game.json             {"name": "Display name"}
   containers/<game-slug>/<version>/<x>.wcfg     a Winlator container profile
-  containers/<game-slug>/<version>/configs.json optional {"<x>.wcfg": {"name", "description", "tags", "channel": "stable"|"prerelease"}}
+  containers/<game-slug>/<version>/configs.json optional {"<x>.wcfg": {"name", "description", "tags", "channel": "stable"|"prerelease",
+                                                  "compatibility": ["full processor name"], "testedOn": ["full device name"]}}
+  compatibility and testedOn are full names (the app shortens the processors: Snapdragon 8 Elite Gen 5 -> s8eg5); a string
+  is the same as a list of one.
 
 Other entries in contents.json are left untouched. Run from anywhere:
   python3 scripts/containers/build-registry.py
@@ -24,6 +27,10 @@ def load(path, default=None):
         return default
     with open(path, encoding='utf-8') as f:
         return json.load(f)
+
+
+def names(value):
+    return [value] if isinstance(value, str) else list(value)
 
 
 def main():
@@ -56,6 +63,8 @@ def main():
                     'description': info.get('description', ''),
                     'tags': info.get('tags', []),
                     **({'channel': info['channel']} if info.get('channel') in ('stable', 'prerelease') else {}),
+                    **({'compatibility': names(info['compatibility'])} if info.get('compatibility') else {}),
+                    **({'testedOn': names(info['testedOn'])} if info.get('testedOn') else {}),
                     'verName': version,
                     'verCode': 1,
                     'remoteUrl': f'{RAW}containers/{game}/{version}/{fname}',

@@ -22,6 +22,12 @@
       "Steam",
       "Experimental"
     ],
-    "channel": "prerelease"
+    "channel": "prerelease",
+    "compatibility": [
+      "Snapdragon 8 Elite Gen 5"
+    ],
+    "testedOn": [
+      "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+    ]
   }
 }

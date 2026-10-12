@@ -1553,6 +1553,12 @@
       "Experimental"
     ],
     "channel": "prerelease",
+    "compatibility": [
+      "Snapdragon 8 Elite Gen 5"
+    ],
+    "testedOn": [
+      "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+    ],
     "verName": "0.39",
     "verCode": 1,
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.39/linux-box64.wcfg"
