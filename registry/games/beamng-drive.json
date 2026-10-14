@@ -13,7 +13,9 @@
  },
  "defaults": {
   "args": [],
-  "extras": {}
+  "extras": {
+   "fileCache": "1"
+  }
  },
  "versions": [
   {
