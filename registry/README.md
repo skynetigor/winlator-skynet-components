@@ -26,6 +26,8 @@ validate.py                checks all of the above: python3 registry/validate.py
 ```
 
 - `windows.executables`: the exe the user picks is this game when its path ends with one of these (any case). The rest of the path is the game's folder.
+- `linux.executables`: the same for a Linux program or script the user picks (`BinLinux/BeamNG.drive.x64`). A game may have `windows`, `linux` or both; the picked file's kind (Wine program, ELF program, shell script) says which list is used. A game file from before this key that names one executable under `defaults.executable` and has no `windows.executables` is taken as a Linux game.
+- `windows.defaults` and `linux.defaults`: settings (`args`, `env`, `resolution`, `extras`) for that platform only, laid over the game's `defaults`; a version can say the same under its own `windows` or `linux` object. The order is: `defaults`, the platform's `defaults`, the version's settings, the version's platform settings.
 - `match`: how a version is recognised from the folder: `versionFile`, `files` (size or sha256) or `steamBuildId`. Exactly one version has `"default": true`; it is used when none matches.
 - `containers`: the configs that work for this version. `preferredContainer`: the one a new shortcut gets. `preferredBySoc`: per processor family, wins over `preferredContainer`.
 - `args` and `extras` (allowed keys only, see `GameProfile.ALLOWED_EXTRAS` in the app) are written into the new shortcut.
@@ -33,7 +35,7 @@ validate.py                checks all of the above: python3 registry/validate.py
 
 ## A config (`containers/index.json`)
 
-`id`, `name`, `file` (`containers/<name>.wcfg`), `description`, `socs` (families it was made for, empty for any), `channel` (`stable` or `prerelease`), `tags`, `testedOn`. A config belongs to no game; several games can list it. Two shortcuts with the same config and the same Wine share one container.
+`id`, `name`, `file` (`containers/<name>.wcfg`), `description`, `socs` (families it was made for, empty for any), `channel` (`stable` or `prerelease`), `tags`, `testedOn`. `platform`: `windows` (the default) or `linux`; a Linux config's `.wcfg` is the profile of a Linux container (type `linux`), a Windows one's a Wine container, and `validate.py` checks they agree. A game on Linux gets only Linux configs offered, a Windows exe only Windows ones. A config belongs to no game; several games can list it. Two shortcuts with the same config and the same Wine share one container.
 
 ## How the app chooses a config
 
@@ -45,3 +47,15 @@ validate.py                checks all of the above: python3 registry/validate.py
 ## Adding a device
 
 Add its model (`Build.SOC_MODEL`, for example `SM8850`) and family to `socs.json`; no app update is needed.
+
+## The Linux desktop (`../linux.json`, `desktops`)
+
+The XFCE desktop a Linux container opens when it is started without a program is not in the runtime. It is a tarball of the files the runtime lacks, listed here:
+
+```json
+"desktops": [{"id":"xfce-4.20.4","name":"XFCE","version":"4.20.4","channel":"prerelease",
+              "url":"https://github.com/.../releases/download/linux-desktop-xfce-4.20.4/xfce-4.20.4.tar.zst",
+              "sha256":"...","size":5601493}]
+```
+
+The app downloads the first entry, checks it, and adds its files to every installed Linux runtime (never replacing one). The tarball is made by `tools/xfce-bundle/build.sh` of the SkyNetEmu repository from pinned Arch Linux ARM packages; the script prints this entry. Publish the file as a release of this repository and add the entry; `validate.py` checks its shape.

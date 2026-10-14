@@ -35,5 +35,16 @@
       "size": 3266459
     }
   ],
+  "desktops": [
+    {
+      "id": "xfce-4.20.4",
+      "name": "XFCE",
+      "version": "4.20.4",
+      "channel": "prerelease",
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-desktop-xfce-4.20.4/xfce-4.20.4.tar.zst",
+      "sha256": "26f695bcf85f83d7bef5c13cd14682f701e14af0ad4f45d7b858fc8d61831101",
+      "size": 5601493
+    }
+  ],
   "rootfs": []
 }
