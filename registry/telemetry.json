@@ -1,0 +1,1 @@
+{"schema":1,"enabled":true,"endpoint":"https://skynetemu-telemetry.skynetapp.dev/v1/events","batchMax":200,"flushMs":2000,"maxAttempts":3,"sampleSec":5,"gameSessionSampleRate":1.0}
