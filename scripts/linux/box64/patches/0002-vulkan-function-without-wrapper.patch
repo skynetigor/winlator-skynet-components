@@ -1,0 +1,14 @@
+diff --git a/src/wrapped/wrappedvulkan.c b/src/wrapped/wrappedvulkan.c
+--- a/src/wrapped/wrappedvulkan.c
++++ b/src/wrapped/wrappedvulkan.c
+@@ -60,6 +60,9 @@ static void* resolveSymbol(x64emu_t* emu, void* symbol, void* fnc, const char* r
+     // get wrapper
+     symbol1_t *s = getWrappedSymbol(emu, rname, 1);
+-
++    // A newer driver can expose functions Box64 cannot wrap, such as vkCmdDispatchTileQCOM.
++    // Report them as unavailable instead of dereferencing the missing wrapper.
++    if(!s) return NULL;
++
+     khint_t k = kh_get(symbolmap, emu->context->vkwrappers, rname);
+     const char* constname = kh_key(emu->context->vkwrappers, k);
+     s->addr = AddCheckBridge2(emu->context->system, s->w, symbol, fnc, 0, constname);

@@ -8,6 +8,9 @@ on:
       box64_tag:
         description: Upstream Box64 tag
         default: v0.4.4
+      package_revision:
+        description: Package revision (leave empty for the upstream version)
+        default: r2
 
 jobs:
   build:
@@ -20,7 +23,10 @@ jobs:
           sudo apt-get install -y --no-install-recommends git cmake make gcc g++ python3 zstd binutils \
             gcc-x86-64-linux-gnu libc6-dev-amd64-cross
       - name: Build Box64
-        run: scripts/linux/box64/build.sh "${{ inputs.box64_tag }}" out
+        env:
+          BOX64_TAG: ${{ inputs.box64_tag }}
+          PACKAGE_REVISION: ${{ inputs.package_revision }}
+        run: scripts/linux/box64/build.sh "$BOX64_TAG" out "$PACKAGE_REVISION"
       - uses: actions/upload-artifact@v4
         with:
           name: box64-linux-aarch64

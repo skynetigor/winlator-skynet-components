@@ -2,7 +2,7 @@
 # Builds Box64 for the Winlator skyNET Linux runtime: a glibc aarch64 build (NOT the Android/bionic one that Wine
 # containers use), packaged as a tar.zst the app installs under files/linux-emulators/<id>/.
 #
-#   build.sh <box64 tag> <output dir>
+#   build.sh <box64 tag> <output dir> [package revision, e.g. r2]
 #
 # Needs an aarch64 Linux machine (GitHub runner ubuntu-24.04-arm) with: git cmake make gcc python3 zstd binutils
 # and, for the smoke test, gcc-x86-64-linux-gnu.
@@ -10,11 +10,16 @@ set -euo pipefail
 
 TAG=${1:?box64 tag, e.g. v0.4.4}
 OUT=${2:?output dir}
+REVISION=${3:-}
+case "$REVISION" in
+  *[!A-Za-z0-9._-]*) echo "Invalid package revision: $REVISION" >&2; exit 1 ;;
+esac
 WORK=$(mktemp -d)
 mkdir -p "$OUT"
 OUT=$(cd "$OUT" && pwd)
 
 VERSION=${TAG#v}
+VERSION=${VERSION}${REVISION:+-$REVISION}
 NAME=box64-${VERSION}-linux-aarch64
 
 # A full clone: shallow clones choke on tags.
@@ -83,6 +88,7 @@ if command -v x86_64-linux-gnu-gcc >/dev/null; then
   BOX64_NOBANNER=1 BOX64_LD_LIBRARY_PATH="$PKG/lib/box64-x86_64-linux-gnu" "$PKG/bin/box64" "$WORK/hello_static" | tee "$WORK/smoke.txt"
   BOX64_NOBANNER=1 BOX64_LD_LIBRARY_PATH="$PKG/lib/box64-x86_64-linux-gnu" "$PKG/bin/box64" "$WORK/hello_dynamic" | tee -a "$WORK/smoke.txt"
   test "$(grep -c 'hello from x86_64' "$WORK/smoke.txt")" = 2
+  bash "$(dirname "$0")/test-vulkan-wrapper.sh" "$PKG/bin/box64"
 else
   echo "x86_64 cross compiler missing: smoke test skipped" >&2
 fi
