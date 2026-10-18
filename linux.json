@@ -3,14 +3,14 @@
   "note": "Catalog of Linux-container packages for Winlator skyNET: x86 emulators and Vulkan (Turnip) drivers built for the Linux runtime (glibc aarch64). The Wine components stay in contents.json.",
   "emulators": [
     {
-      "id": "box64-0.4.4",
+      "id": "box64-0.4.4-r2",
       "name": "Box64",
       "emulator": "box64",
-      "version": "0.4.4",
+      "version": "0.4.4-r2",
       "channel": "prerelease",
-      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4/box64-0.4.4-linux-aarch64.tar.zst",
-      "sha256": "e2a21c070df993b2910a1a89914ccc5eb365b21329c5c8383a8c99c82e87acbd",
-      "size": 16226615
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4-r2/box64-0.4.4-r2-linux-aarch64.tar.zst",
+      "sha256": "dc6929188d85b374383a9623a5972df8eeb3b150d2732f3680f9d4aa16cf53e5",
+      "size": 16228960
     }
   ],
   "drivers": [
@@ -46,5 +46,8 @@
       "size": 5601493
     }
   ],
-  "rootfs": []
+  "rootfs": [],
+  "steam": {
+    "emulator": "box64-0.4.4-r2"
+  }
 }
