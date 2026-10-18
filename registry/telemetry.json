@@ -1,1 +1,11 @@
-{"schema":1,"enabled":true,"endpoint":"https://skynetemu-telemetry.skynetapp.dev/v1/events","batchMax":200,"flushMs":2000,"maxAttempts":3,"sampleSec":5,"gameSessionSampleRate":1.0}
+{
+  "schema": 2,
+  "enabled": true,
+  "host": "https://ihor-serverless-project-f93c0a.es.us-west1.gcp.elastic.cloud",
+  "apiKey": "LXoyYVRxRUJoZFhLdTlVTkhaNHE6ZmR2Z0J2bEUtcDRoUTAxYVBmVm9Jdw==",
+  "batchMax": 200,
+  "flushMs": 2000,
+  "maxAttempts": 3,
+  "sampleSec": 5,
+  "gameSessionSampleRate": 1.0
+}
