@@ -15,6 +15,26 @@
   ],
   "drivers": [
     {
+      "id": "turnip-gen8-v30-linux-aarch64",
+      "name": "Turnip Gen8 V30 Linux (A8xx, experimental)",
+      "version": "26.2.0-devel-r1",
+      "channel": "prerelease",
+      "source": "skynetigor/winlator-skynet-components",
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-turnip-gen8-v30-r1/turnip-gen8-v30-linux-aarch64.zip",
+      "sha256": "15d147ebcd88d48447f396adaf776de53312d21b125d04fe044b073e6d9b4cc9",
+      "size": 3107900
+    },
+    {
+      "id": "turnip-mesa-26.2.2-linux-aarch64",
+      "name": "Mesa Turnip 26.2.2 Linux (A6xx/A7xx, experimental)",
+      "version": "26.2.2-r1",
+      "channel": "prerelease",
+      "source": "skynetigor/winlator-skynet-components",
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-turnip-mesa-26.2.2-r1/turnip-mesa-26.2.2-linux-aarch64.zip",
+      "sha256": "a557a787788e756b9d3d5e24d747fb1cd1b981dca01bf402b277a217a222f738",
+      "size": 3229260
+    },
+    {
       "id": "turnip-v26.3.0-20261011-710-720-test-linux",
       "name": "Mesa Turnip v26.3.0-20261011-710-720-Test-Linux",
       "version": "26.3.0-20261011",
