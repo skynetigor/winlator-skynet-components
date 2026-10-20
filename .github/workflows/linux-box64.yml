@@ -10,7 +10,7 @@ on:
         default: v0.4.4
       package_revision:
         description: Package revision (leave empty for the upstream version)
-        default: r2
+        default: r3
 
 jobs:
   build:

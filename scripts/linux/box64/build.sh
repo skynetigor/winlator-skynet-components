@@ -89,9 +89,13 @@ if command -v x86_64-linux-gnu-gcc >/dev/null; then
   BOX64_NOBANNER=1 BOX64_LD_LIBRARY_PATH="$PKG/lib/box64-x86_64-linux-gnu" "$PKG/bin/box64" "$WORK/hello_dynamic" | tee -a "$WORK/smoke.txt"
   test "$(grep -c 'hello from x86_64' "$WORK/smoke.txt")" = 2
   bash "$(dirname "$0")/test-vulkan-wrapper.sh" "$PKG/bin/box64"
+  BOX64_LD_LIBRARY_PATH="$PKG/lib/box64-x86_64-linux-gnu" bash "$(dirname "$0")/test-thread-cleanup.sh" "$PKG/bin/box64"
 else
   echo "x86_64 cross compiler missing: smoke test skipped" >&2
 fi
+
+python3 "$(dirname "$0")/test-layout-hash.py" "$WORK/src"
+ctest --test-dir "$WORK/build" --output-on-failure --timeout 30
 
 # Package. tar keeps the directory entries the app's extractor relies on.
 tar -C "$WORK/pkg" -cf - "$NAME" | zstd -19 -T0 -o "$OUT/$NAME.tar.zst"

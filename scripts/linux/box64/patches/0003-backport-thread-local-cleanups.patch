@@ -1,0 +1,118 @@
+diff --git a/src/core.c b/src/core.c
+--- a/src/core.c
++++ b/src/core.c
+@@ -726,6 +726,8 @@
+     x64emu_t* emu = thread_get_emu();
+     void startTimedExit();
+     startTimedExit();
++    printf_log(LOG_DEBUG, "Calling thread_local destructors (exiting box64)\n");
++    CallThreadCleanup(emu);
+     // atexit first
+     printf_log(LOG_DEBUG, "Calling atexit registered functions (exiting box64)\n");
+     CallAllCleanup(emu);
+diff --git a/src/emu/x64emu_private.h b/src/emu/x64emu_private.h
+--- a/src/emu/x64emu_private.h
++++ b/src/emu/x64emu_private.h
+@@ -134,6 +134,10 @@
+     base_segment_t  segldt[16];
+     base_segment_t  seggdt[16];  // hacky
+     tlsdatasize_t  *tlsdata;
++    // thread_local destructors, registered by __cxa_thread_atexit_impl
++    cleanup_t      *cleanups;
++    int             clean_sz;
++    int             clean_cap;
+     // other informations
+     int         type;       // EMUTYPE_xxx define
+     uint8_t     sud_enabled;  // syscall_user_dispatch enabled for this thread?
+diff --git a/src/include/cleanup.h b/src/include/cleanup.h
+--- a/src/include/cleanup.h
++++ b/src/include/cleanup.h
+@@ -7,6 +7,8 @@
+ 
+ void AddCleanup(x64emu_t *emu, void *p);
+ void AddCleanup1Arg(x64emu_t *emu, void *p, void* a, elfheader_t* h);
++void AddThreadCleanup(x64emu_t *emu, void *p, void* a);
++void CallThreadCleanup(x64emu_t *emu);
+ void CallCleanup(x64emu_t *emu, elfheader_t* h);
+ void CallAllCleanup(x64emu_t *emu);
+ 
+diff --git a/src/libtools/threads.c b/src/libtools/threads.c
+--- a/src/libtools/threads.c
++++ b/src/libtools/threads.c
+@@ -18,6 +18,7 @@
+ #include "box64cpu.h"
+ #include "box64cpu_util.h"
+ #include "callback.h"
++#include "cleanup.h"
+ #include "custommem.h"
+ #include "khash.h"
+ #include "emu/x64run_private.h"
+@@ -190,6 +191,7 @@
+ 	if(et->is32bits && !et->join && et->fnc)
+ 		to_hash_d(et->self);
+ 	#endif
++	CallThreadCleanup(et->emu);
+ 	FreeX64Emu(&et->emu);
+ 	#ifdef BAD_PKILL
+ 	del_thread((void*)et->self);
+diff --git a/src/tools/cleanup.c b/src/tools/cleanup.c
+--- a/src/tools/cleanup.c
++++ b/src/tools/cleanup.c
+@@ -5,6 +5,7 @@
+ #include "box64context.h"
+ #include "debug.h"
+ #include "callback.h"
++#include "emu/x64emu_private.h"
+ 
+ typedef struct cleanup_s {
+     void*       f;
+@@ -40,6 +41,34 @@
+     h->cleanups[h->clean_sz++].f = p;
+ }
+ 
++void AddThreadCleanup(x64emu_t *emu, void *p, void* a)
++{
++    if(!emu)
++        return;
++    if(emu->clean_sz == emu->clean_cap) {
++        emu->clean_cap += 8;
++        emu->cleanups = (cleanup_t*)box_realloc(emu->cleanups, sizeof(cleanup_t)*emu->clean_cap);
++    }
++    emu->cleanups[emu->clean_sz].arg = 1;
++    emu->cleanups[emu->clean_sz].a = a;
++    emu->cleanups[emu->clean_sz++].f = p;
++}
++
++void CallThreadCleanup(x64emu_t *emu)
++{
++    if(!emu || !emu->cleanups)
++        return;
++    printf_log(LOG_DEBUG, "Calling thread_local destructors registered functions\n");
++    while(emu->clean_sz) {
++        cleanup_t cleanup = emu->cleanups[--emu->clean_sz];
++        printf_log(LOG_DEBUG, "Call thread cleanup #%d (args:%d, arg:%p)\n", emu->clean_sz, cleanup.arg, cleanup.a);
++        RunFunctionWithEmu(emu, 0, (uintptr_t)cleanup.f, cleanup.arg, cleanup.a);
++    }
++    box_free(emu->cleanups);
++    emu->cleanups = NULL;
++    emu->clean_cap = 0;
++}
++
+ void CallCleanup(x64emu_t *emu, elfheader_t* h)
+ {
+     printf_log(LOG_DEBUG, "Calling atexit registered functions for elf: %p/%s\n", h, h?h->name:"(nil)");
+diff --git a/src/wrapped/wrappedlibc.c b/src/wrapped/wrappedlibc.c
+--- a/src/wrapped/wrappedlibc.c
++++ b/src/wrapped/wrappedlibc.c
+@@ -3266,9 +3266,8 @@
+ 
+ EXPORT int32_t my___cxa_thread_atexit_impl(x64emu_t* emu, void* dtor, void* obj, void* dso)
+ {
+-    (void)emu;
+-    //printf_log(LOG_INFO, "Warning, call to __cxa_thread_atexit_impl(%p, %p, %p) ignored\n", dtor, obj, dso);
+-    AddCleanup1Arg(emu, dtor, obj, FindElfAddress(my_context, (uintptr_t)dso));
++    (void)dso;
++    AddThreadCleanup(emu, dtor, obj);
+     return 0;
+ }
+ 

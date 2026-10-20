@@ -1,0 +1,14 @@
+diff --git a/tools/gen_dynacache_hashes.py b/tools/gen_dynacache_hashes.py
+--- a/tools/gen_dynacache_hashes.py
++++ b/tools/gen_dynacache_hashes.py
+@@ -46,6 +46,10 @@
+     for name, rel_base, excluded_dirs in GROUPS:
+         base = root / rel_base
+         files = iter_files(base, excluded_dirs)
++        # Generated blocks embed offsets into these structures. A backport that changes their
++        # layout must invalidate old machine code even when the dynarec sources did not change.
++        if name == "COMMON":
++            files.extend(root / header for header in ("src/emu/x64emu_private.h", "src/include/box64context.h"))
+         if not files:
+             raise RuntimeError(f"no files found for {name.lower()} hash in {base}")
+         values.append((name, hash_files(root, files)))

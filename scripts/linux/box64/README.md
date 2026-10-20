@@ -1,0 +1,9 @@
+# Linux Box64 r3
+
+Package revision r3 keeps upstream v0.4.4 and the shared-storage/Vulkan lookup fixes, and backports [4c231eb0872e580a820bd8d03c4a3e2b0ea23253](https://github.com/ptitSeb/box64/commit/4c231eb0872e580a820bd8d03c4a3e2b0ea23253) (Yang Liu): per-thread cleanup callback registration and execution. The previous shared cleanup list could corrupt the heap during concurrent registration. Emulator layout headers are also included in DynaCache's compatibility hash so translated blocks using old internal offsets are rejected.
+
+Build on ARM64 Ubuntu using `scripts/linux/box64/build.sh v0.4.4 out r3`, or run the Linux Box64 workflow. The build applies the patches in order and checks native x86 program startup, Vulkan lookup behavior, thread cleanup, cache layout hashing, and the upstream CTest suite before packaging. Backport adaptation and regression/build integration were AI-assisted for SkyNetEmu; no upstream contribution is submitted.
+
+The published r3 binary is the exact phone-tested build (SHA-256 `9f7a39abfbc24c261f01bc5b5fea13cdc21d05ecfe37f15b2b72900347d00e7d`), built with the standalone SkyNetEmu recipe included in the release build-tools archive; its unchanged x86 library bundle comes from r2. Build metadata in the package records the compiler and flags. Rebuilding with the CI recipe validates the same patches but is not expected to produce identical binary bytes.
+
+On the test phone, stock Box64 failed to run callbacks at thread exit and aborted in the 24-thread stress probe with `realloc(): invalid old size`. r3 passed 12,288 callbacks with owning-thread/LIFO checks and main-thread reentrant cleanup; all 34 CTest tests passed. BeamNG 0.40 loaded Automation Test Track and remained responsive in the observed run. This targets a reproduced cleanup bug; it does not establish that every game crash is fixed. r2 remains in the catalog for rollback.
