@@ -1,15 +1,29 @@
 {
  "schema": 1,
+ "revision": 2,
  "id": "beamng-drive",
  "name": "BeamNG.drive",
  "steam": {
-  "appId": 284160
+  "appId": 284160,
+  "installDir": "BeamNG.drive"
  },
  "windows": {
   "executables": [
    "BeamNG.drive.exe",
    "Bin64/BeamNG.drive.x64.exe"
   ]
+ },
+ "linux": {
+  "executables": [
+   "BinLinux/BeamNG.drive.x64"
+  ],
+  "defaults": {
+   "executable": "BinLinux/BeamNG.drive.x64",
+   "noSteam": {
+    "default": true,
+    "arg": "-nosteam"
+   }
+  }
  },
  "defaults": {
   "args": [],
@@ -18,6 +32,35 @@
   }
  },
  "versions": [
+  {
+   "id": "0.40",
+   "label": "0.40.x",
+   "status": "works",
+   "default": true,
+   "notes": "Native Linux x86-64: startup and Automation Test Track loading verified with Box64 0.4.4-r3 on Snapdragon 8 Elite Gen 5. Broader device and long-session stability remain unverified. No Wine configuration is recommended for this version.",
+   "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Snapdragon 8 Elite Gen 5",
+   "match": {
+    "versionFile": {
+     "path": "integrity.json",
+     "tail": 256,
+     "regex": "\"version\":\\s*\"([0-9.]+)\"",
+     "from": "0.40",
+     "until": "0.41"
+    }
+   },
+   "containers": [
+    "beamng-040-linux-box64-r3"
+   ],
+   "preferredContainer": "beamng-040-linux-box64-r3",
+   "linux": {
+    "resolution": "native",
+    "extras": {
+     "linuxTouchMode": "touchpad",
+     "simTouchScreen": "0",
+     "lsfgMultiplier": "0"
+    }
+   }
+  },
   {
    "id": "0.39",
    "label": "0.39.x",
@@ -32,10 +75,10 @@
     }
    },
    "containers": [
-    "cachyos-arm64ec-box64-dd-turnip"
+    "cachyos-arm64ec-box64-dd-turnip",
+    "beamng-linux-box64-performance"
    ],
-   "preferredContainer": "cachyos-arm64ec-box64-dd-turnip",
-   "default": true
+   "preferredContainer": "cachyos-arm64ec-box64-dd-turnip"
   },
   {
    "id": "0.34",
@@ -52,7 +95,8 @@
    },
    "containers": [
     "proton11-x64-box64-turnip-stable",
-    "cachyos-x64-box64-dd-turnip"
+    "cachyos-x64-box64-dd-turnip",
+    "beamng-linux-box64-performance"
    ],
    "preferredContainer": "proton11-x64-box64-turnip-stable"
   },
@@ -70,7 +114,8 @@
     }
    },
    "containers": [
-    "proton9-x64-box64-zink-turnip263"
+    "proton9-x64-box64-zink-turnip263",
+    "beamng-linux-box64-performance"
    ],
    "preferredContainer": "proton9-x64-box64-zink-turnip263"
   },
@@ -88,7 +133,8 @@
     }
    },
    "containers": [
-    "proton9-x64-box64-turnip-gen8"
+    "proton9-x64-box64-turnip-gen8",
+    "beamng-linux-box64-performance"
    ],
    "preferredContainer": "proton9-x64-box64-turnip-gen8"
   }

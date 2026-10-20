@@ -107,6 +107,45 @@
       "testedOn": [
         "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
       ]
+    },
+    {
+      "id": "beamng-040-linux-box64-r3",
+      "name": "BeamNG 0.40 \u2014 Linux, Box64 r3",
+      "platform": "linux",
+      "file": "containers/beamng-040-linux-box64-r3.wcfg",
+      "description": "Native Linux BeamNG 0.40 with Box64 0.4.4-r3 cleanup fix and Performance preset, Turnip 26.3 for Adreno 8xx, Zink, native Vulkan output, and a 2048 MB GPU memory budget. Touchpad input; frame generation off. Map loading verified on Snapdragon 8 Elite Gen 5; broader stability is experimental.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Linux",
+        "BeamNG 0.40",
+        "Box64 r3",
+        "Performance",
+        "Turnip",
+        "Zink",
+        "2048 MB GPU"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "beamng-linux-box64-performance",
+      "name": "Linux, Box64 Performance",
+      "platform": "linux",
+      "file": "containers/beamng-linux-box64-performance.wcfg",
+      "description": "The Linux build of BeamNG.drive run through Box64 0.4.4 with the Performance preset, on the Linux runtime with Turnip 26.3 and Zink. The program can stay on shared storage (no copy).",
+      "socs": [],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "Box64",
+        "Performance",
+        "Turnip",
+        "Zink"
+      ]
     }
   ]
 }
