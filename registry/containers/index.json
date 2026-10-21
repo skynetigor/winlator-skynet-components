@@ -146,6 +146,50 @@
         "Turnip",
         "Zink"
       ]
+    },
+    {
+      "id": "beamng-040-windows-arm64-proton9-dd-turnip-device",
+      "name": "BeamNG 0.40 \u2014 Windows ARM64 native (experimental)",
+      "platform": "windows",
+      "file": "containers/beamng-040-windows-arm64-proton9-dd-turnip-device.wcfg",
+      "description": "Experimental Windows ARM64 build with Proton 9 ARM64EC and DD-Turnip v0.1.1, native Vulkan, the current device GPU identity, Wine built-in libraries, ALSA audio and a 1280x720 desktop. Proton 9 previously loaded GridMapv2 on Snapdragon 8 Elite Gen 5. Standard Proton 11 and CachyOS 11 failed during Vulkan device creation on that device; retain Proton 9 for now.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Windows ARM64",
+        "Native",
+        "Vulkan",
+        "Proton 9",
+        "DD-Turnip",
+        "Experimental"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ],
+      "windowsArchitecture": "arm64"
+    },
+    {
+      "id": "beamng-linux-box64-adreno735-performance",
+      "name": "Linux, Adreno 735 / POCO F6",
+      "platform": "linux",
+      "file": "containers/beamng-linux-box64-adreno735-performance.wcfg",
+      "description": "Linux BeamNG with Box64 Performance, Mesa Turnip 26.2.2 for Adreno 735, Zink and native Vulkan output. Android renderer Auto selects Turnip 26.2.0-R8. Source/binary GPU support verified; device gameplay remains unverified.",
+      "socs": [
+        "snapdragon-8s-gen-3"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Linux",
+        "Adreno 735",
+        "POCO F6",
+        "Box64",
+        "Turnip",
+        "Zink"
+      ],
+      "testedOn": []
     }
-  ]
+  ],
+  "revision": 5
 }

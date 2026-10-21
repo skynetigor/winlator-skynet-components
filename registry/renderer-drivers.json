@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "revision": 4,
+  "drivers": [
+    {
+      "id": "Turnip Gen8 V30",
+      "platform": "android",
+      "gpus": [
+        "830"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 100,
+      "dmaBufImport": true,
+      "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/gen_8_v30/Turnip_Gen8_V30.zip",
+      "sha256": "0f57b8400bec62fdd9140e2d6fd3caa603ed56b6e532a0708c871647d85320ca",
+      "testedGpus": [],
+      "notes": "Android Turnip Gen8 V30 package from the AdrenoTools registry. Upstream lists experimental Adreno 830 support; pending device validation on Adreno 830. Native Vulkan startup must still validate driver loading and DMA-BUF capabilities."
+    },
+    {
+      "id": "DD-Turnip v0.1.1",
+      "platform": "android",
+      "gpus": [
+        "840"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 100,
+      "dmaBufImport": true,
+      "url": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.1/DD-Turnip-v0.1.1.zip",
+      "sha256": "576e1c0bf84e7505586cd7c6658438b794bfd7a101c213007176eed8d2ceb8f1",
+      "testedGpus": [
+        "840"
+      ],
+      "notes": "Android half of the bundle. Adreno 840 tested on SM-F976B/Android 17. Native Vulkan startup must still validate driver loading and DMA-BUF capabilities. GPU variants require their own explicit mapping."
+    },
+    {
+      "id": "Turnip v26.2.0-R8",
+      "platform": "android",
+      "gpus": [
+        "735"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 100,
+      "dmaBufImport": true,
+      "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R8/Turnip_v26.2.0-R8.zip",
+      "sha256": "862484520a1cff946c96a7b323058aae6be3088ca8cd98df3723c9162b539c79",
+      "testedGpus": [],
+      "notes": "Standard Android A6xx/A7xx package; binary contains FD735. POCO F6 SM8635 / Android 14 mapping. Hardware rendering and DMA-BUF import still require validation on Adreno 735."
+    }
+  ]
+}

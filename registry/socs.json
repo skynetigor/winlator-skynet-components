@@ -40,6 +40,16 @@
       "gpus": [
         "Adreno (TM) 740"
       ]
+    },
+    {
+      "family": "snapdragon-8s-gen-3",
+      "name": "Snapdragon 8s Gen 3",
+      "models": [
+        "SM8635"
+      ],
+      "gpus": [
+        "Adreno (TM) 735"
+      ]
     }
   ]
 }

@@ -1,142 +1,187 @@
 {
- "schema": 1,
- "revision": 2,
- "id": "beamng-drive",
- "name": "BeamNG.drive",
- "steam": {
-  "appId": 284160,
-  "installDir": "BeamNG.drive"
- },
- "windows": {
-  "executables": [
-   "BeamNG.drive.exe",
-   "Bin64/BeamNG.drive.x64.exe"
-  ]
- },
- "linux": {
-  "executables": [
-   "BinLinux/BeamNG.drive.x64"
-  ],
+  "schema": 1,
+  "revision": 8,
+  "id": "beamng-drive",
+  "name": "BeamNG.drive",
+  "steam": {
+    "appId": 284160,
+    "installDir": "BeamNG.drive"
+  },
+  "windows": {
+    "executables": [
+      "BeamNG.drive.exe",
+      "Bin64/BeamNG.drive.x64.exe",
+      "BinArm64/BeamNG.drive.arm64.exe"
+    ]
+  },
+  "linux": {
+    "executables": [
+      "BinLinux/BeamNG.drive.x64"
+    ],
+    "defaults": {
+      "executable": "BinLinux/BeamNG.drive.x64",
+      "noSteam": {
+        "default": true,
+        "arg": "-nosteam"
+      }
+    }
+  },
   "defaults": {
-   "executable": "BinLinux/BeamNG.drive.x64",
-   "noSteam": {
-    "default": true,
-    "arg": "-nosteam"
-   }
-  }
- },
- "defaults": {
-  "args": [],
-  "extras": {
-   "fileCache": "1"
-  }
- },
- "versions": [
-  {
-   "id": "0.40",
-   "label": "0.40.x",
-   "status": "works",
-   "default": true,
-   "notes": "Native Linux x86-64: startup and Automation Test Track loading verified with Box64 0.4.4-r3 on Snapdragon 8 Elite Gen 5. Broader device and long-session stability remain unverified. No Wine configuration is recommended for this version.",
-   "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Snapdragon 8 Elite Gen 5",
-   "match": {
-    "versionFile": {
-     "path": "integrity.json",
-     "tail": 256,
-     "regex": "\"version\":\\s*\"([0-9.]+)\"",
-     "from": "0.40",
-     "until": "0.41"
-    }
-   },
-   "containers": [
-    "beamng-040-linux-box64-r3"
-   ],
-   "preferredContainer": "beamng-040-linux-box64-r3",
-   "linux": {
-    "resolution": "native",
+    "args": [],
     "extras": {
-     "linuxTouchMode": "touchpad",
-     "simTouchScreen": "0",
-     "lsfgMultiplier": "0"
+      "fileCache": "1"
     }
-   }
   },
-  {
-   "id": "0.39",
-   "label": "0.39.x",
-   "status": "untested",
-   "match": {
-    "versionFile": {
-     "path": "integrity.json",
-     "tail": 256,
-     "regex": "\"version\":\\s*\"([0-9.]+)\"",
-     "from": "0.39",
-     "until": "0.40"
+  "versions": [
+    {
+      "id": "0.40",
+      "label": "0.40.x",
+      "status": "works",
+      "default": true,
+      "notes": "Native Linux x86-64: startup and Automation Test Track loading verified with Box64 0.4.4-r3 on Snapdragon 8 Elite Gen 5. Windows ARM64: retain Proton 9 ARM64EC with DD-Turnip native Vulkan and the current device GPU identity. Proton 9 previously loaded GridMapv2; standard Proton 11 and CachyOS 11 failed during Vulkan device creation on the test device. The ARM64 profile remains experimental.",
+      "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Snapdragon 8 Elite Gen 5",
+      "match": {
+        "versionFile": {
+          "path": "integrity.json",
+          "tail": 256,
+          "regex": "\"version\":\\s*\"([0-9.]+)\"",
+          "from": "0.40",
+          "until": "0.41"
+        }
+      },
+      "containers": [
+        "beamng-linux-box64-adreno735-performance",
+        "beamng-040-linux-box64-r3",
+        "beamng-040-windows-arm64-proton9-dd-turnip-device"
+      ],
+      "preferredContainer": "beamng-040-linux-box64-r3",
+      "linux": {
+        "resolution": "native",
+        "extras": {
+          "linuxTouchMode": "touchpad",
+          "simTouchScreen": "0",
+          "lsfgMultiplier": "0"
+        }
+      },
+      "preferredBySoc": {
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+      }
+    },
+    {
+      "id": "0.39",
+      "label": "0.39.x",
+      "status": "untested",
+      "match": {
+        "versionFile": {
+          "path": "integrity.json",
+          "tail": 256,
+          "regex": "\"version\":\\s*\"([0-9.]+)\"",
+          "from": "0.39",
+          "until": "0.40"
+        }
+      },
+      "containers": [
+        "beamng-linux-box64-adreno735-performance",
+        "cachyos-arm64ec-box64-dd-turnip",
+        "beamng-linux-box64-performance"
+      ],
+      "preferredContainer": "cachyos-arm64ec-box64-dd-turnip",
+      "preferredBySoc": {
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+      }
+    },
+    {
+      "id": "0.34",
+      "label": "0.34.x",
+      "status": "works",
+      "match": {
+        "versionFile": {
+          "path": "integrity.json",
+          "tail": 256,
+          "regex": "\"version\":\\s*\"([0-9.]+)\"",
+          "from": "0.34",
+          "until": "0.35"
+        }
+      },
+      "containers": [
+        "beamng-linux-box64-adreno735-performance",
+        "proton11-x64-box64-turnip-stable",
+        "cachyos-x64-box64-dd-turnip",
+        "beamng-linux-box64-performance"
+      ],
+      "preferredContainer": "proton11-x64-box64-turnip-stable",
+      "preferredBySoc": {
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+      }
+    },
+    {
+      "id": "0.31",
+      "label": "0.31.x",
+      "status": "untested",
+      "match": {
+        "versionFile": {
+          "path": "integrity.json",
+          "tail": 256,
+          "regex": "\"version\":\\s*\"([0-9.]+)\"",
+          "from": "0.31",
+          "until": "0.32"
+        }
+      },
+      "containers": [
+        "beamng-linux-box64-adreno735-performance",
+        "beamng-linux-box64-performance"
+      ],
+      "preferredContainer": "beamng-linux-box64-performance",
+      "preferredBySoc": {
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+      },
+      "notes": "Linux driver selection for Adreno 735 / POCO F6 uses Mesa Turnip 26.2.2 and Android renderer Auto. Driver source/binary support is verified; BeamNG 0.31 gameplay on this device is not yet validated."
+    },
+    {
+      "id": "0.28",
+      "label": "0.28.x",
+      "status": "works",
+      "match": {
+        "versionFile": {
+          "path": "integrity.json",
+          "tail": 256,
+          "regex": "\"version\":\\s*\"([0-9.]+)\"",
+          "from": "0.28",
+          "until": "0.29"
+        }
+      },
+      "containers": [
+        "beamng-linux-box64-adreno735-performance",
+        "proton9-x64-box64-zink-turnip263",
+        "beamng-linux-box64-performance"
+      ],
+      "preferredContainer": "proton9-x64-box64-zink-turnip263",
+      "preferredBySoc": {
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+      }
+    },
+    {
+      "id": "0.20",
+      "label": "0.20.x",
+      "status": "works",
+      "match": {
+        "versionFile": {
+          "path": "integrity.json",
+          "tail": 256,
+          "regex": "\"version\":\\s*\"([0-9.]+)\"",
+          "from": "0.20",
+          "until": "0.21"
+        }
+      },
+      "containers": [
+        "beamng-linux-box64-adreno735-performance",
+        "proton9-x64-box64-turnip-gen8",
+        "beamng-linux-box64-performance"
+      ],
+      "preferredContainer": "proton9-x64-box64-turnip-gen8",
+      "preferredBySoc": {
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+      }
     }
-   },
-   "containers": [
-    "cachyos-arm64ec-box64-dd-turnip",
-    "beamng-linux-box64-performance"
-   ],
-   "preferredContainer": "cachyos-arm64ec-box64-dd-turnip"
-  },
-  {
-   "id": "0.34",
-   "label": "0.34.x",
-   "status": "works",
-   "match": {
-    "versionFile": {
-     "path": "integrity.json",
-     "tail": 256,
-     "regex": "\"version\":\\s*\"([0-9.]+)\"",
-     "from": "0.34",
-     "until": "0.35"
-    }
-   },
-   "containers": [
-    "proton11-x64-box64-turnip-stable",
-    "cachyos-x64-box64-dd-turnip",
-    "beamng-linux-box64-performance"
-   ],
-   "preferredContainer": "proton11-x64-box64-turnip-stable"
-  },
-  {
-   "id": "0.28",
-   "label": "0.28.x",
-   "status": "works",
-   "match": {
-    "versionFile": {
-     "path": "integrity.json",
-     "tail": 256,
-     "regex": "\"version\":\\s*\"([0-9.]+)\"",
-     "from": "0.28",
-     "until": "0.29"
-    }
-   },
-   "containers": [
-    "proton9-x64-box64-zink-turnip263",
-    "beamng-linux-box64-performance"
-   ],
-   "preferredContainer": "proton9-x64-box64-zink-turnip263"
-  },
-  {
-   "id": "0.20",
-   "label": "0.20.x",
-   "status": "works",
-   "match": {
-    "versionFile": {
-     "path": "integrity.json",
-     "tail": 256,
-     "regex": "\"version\":\\s*\"([0-9.]+)\"",
-     "from": "0.20",
-     "until": "0.21"
-    }
-   },
-   "containers": [
-    "proton9-x64-box64-turnip-gen8",
-    "beamng-linux-box64-performance"
-   ],
-   "preferredContainer": "proton9-x64-box64-turnip-gen8"
-  }
- ]
+  ]
 }
