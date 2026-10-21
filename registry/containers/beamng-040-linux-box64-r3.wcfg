@@ -17,7 +17,7 @@
       "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
       "linuxGlDriver": "zink",
       "linuxVulkanPresent": "native",
-      "linuxNoProot": "1",
+      "linuxNoProot": "0",
       "linuxBionic": "0",
       "linuxTuSysmem": "0",
       "linuxGpuMemoryMB": "2048",

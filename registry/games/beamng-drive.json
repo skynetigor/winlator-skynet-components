@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 8,
+  "revision": 9,
   "id": "beamng-drive",
   "name": "BeamNG.drive",
   "steam": {
@@ -23,6 +23,9 @@
       "noSteam": {
         "default": true,
         "arg": "-nosteam"
+      },
+      "extras": {
+        "linuxNoProot": "0"
       }
     }
   },

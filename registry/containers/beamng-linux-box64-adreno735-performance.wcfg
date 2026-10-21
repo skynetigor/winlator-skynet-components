@@ -20,7 +20,8 @@
       "linuxTouchscreen": "1",
       "linuxKeyboardButton": "1",
       "linuxAutoKeyboard": "1",
-      "lsfgMultiplier": "0"
+      "lsfgMultiplier": "0",
+      "linuxNoProot": "0"
     }
   }
 }
