@@ -44,10 +44,11 @@
       "sha256": "a557a787788e756b9d3d5e24d747fb1cd1b981dca01bf402b277a217a222f738",
       "size": 3229260,
       "gpus": [
-        "735"
+        "735",
+        "740"
       ],
       "testedGpus": [],
-      "notes": "Mesa 26.2.2 source and packaged library include FD735; POCO F6 hardware validation pending. Linux/glibc KGSL driver; Android renderer is a separate package."
+      "notes": "Mesa 26.2.2 packaged library includes FD735 and FD740; exact 735/740 defaults, hardware validation pending. Linux/glibc KGSL driver; Android renderer is a separate package."
     },
     {
       "id": "turnip-v26.3.0-20261011-710-720-test-linux",
@@ -85,7 +86,8 @@
   "steam": {
     "emulator": "box64-0.4.4-r3",
     "driverByGpu": {
-      "735": "turnip-mesa-26.2.2-linux-aarch64"
+      "735": "turnip-mesa-26.2.2-linux-aarch64",
+      "740": "turnip-mesa-26.2.2-linux-aarch64"
     }
   }
 }

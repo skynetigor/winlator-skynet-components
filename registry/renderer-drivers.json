@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 4,
+  "revision": 6,
   "drivers": [
     {
       "id": "Turnip Gen8 V30",
@@ -38,7 +38,8 @@
       "id": "Turnip v26.2.0-R8",
       "platform": "android",
       "gpus": [
-        "735"
+        "735",
+        "740"
       ],
       "minApi": 29,
       "maxApi": 37,
@@ -47,7 +48,22 @@
       "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R8/Turnip_v26.2.0-R8.zip",
       "sha256": "862484520a1cff946c96a7b323058aae6be3088ca8cd98df3723c9162b539c79",
       "testedGpus": [],
-      "notes": "Standard Android A6xx/A7xx package; binary contains FD735. POCO F6 SM8635 / Android 14 mapping. Hardware rendering and DMA-BUF import still require validation on Adreno 735."
+      "notes": "Standard Android A6xx/A7xx package; binary contains FD735, FD740 and FD740v3 and advertises DMA-BUF import. Exact 735/740 mappings; other variants require explicit entries. Hardware rendering and DMA-BUF import still require device validation on both models."
+    },
+    {
+      "id": "Turnip v26.3.0-R6",
+      "platform": "android",
+      "gpus": [
+        "730"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 100,
+      "dmaBufImport": true,
+      "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_v26.3.0-R6.zip",
+      "sha256": "5fa2305eb9eff64d9347a670e6ca5ef7c518f60e9e782a4db7ee5588c9852d81",
+      "testedGpus": [],
+      "notes": "AdrenoTools package metadata identifies Turnip for a7xx/a6xx. Candidate for Snapdragon 8 Gen 1 / Adreno 730; device rendering and DMA-BUF import have not been tested."
     }
   ]
 }
