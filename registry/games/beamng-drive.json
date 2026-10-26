@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "beamng-drive",
+ "name": "BeamNG.drive",
+ "steam": {
+  "appId": 284160
+ },
+ "windows": {
+  "executables": [
+   "BeamNG.drive.exe",
+   "Bin64/BeamNG.drive.x64.exe"
+  ]
+ },
+ "defaults": {
+  "args": [],
+  "extras": {
+   "fileCache": "1"
+  }
+ },
+ "versions": [
+  {
+   "id": "0.39",
+   "label": "0.39.x",
+   "status": "untested",
+   "match": {
+    "versionFile": {
+     "path": "integrity.json",
+     "tail": 256,
+     "regex": "\"version\":\\s*\"([0-9.]+)\"",
+     "from": "0.39",
+     "until": "0.40"
+    }
+   },
+   "containers": [
+    "cachyos-arm64ec-box64-dd-turnip"
+   ],
+   "preferredContainer": "cachyos-arm64ec-box64-dd-turnip",
+   "default": true
+  },
+  {
+   "id": "0.34",
+   "label": "0.34.x",
+   "status": "works",
+   "match": {
+    "versionFile": {
+     "path": "integrity.json",
+     "tail": 256,
+     "regex": "\"version\":\\s*\"([0-9.]+)\"",
+     "from": "0.34",
+     "until": "0.35"
+    }
+   },
+   "containers": [
+    "proton11-x64-box64-turnip-stable",
+    "cachyos-x64-box64-dd-turnip"
+   ],
+   "preferredContainer": "proton11-x64-box64-turnip-stable"
+  },
+  {
+   "id": "0.28",
+   "label": "0.28.x",
+   "status": "works",
+   "match": {
+    "versionFile": {
+     "path": "integrity.json",
+     "tail": 256,
+     "regex": "\"version\":\\s*\"([0-9.]+)\"",
+     "from": "0.28",
+     "until": "0.29"
+    }
+   },
+   "containers": [
+    "proton9-x64-box64-zink-turnip263"
+   ],
+   "preferredContainer": "proton9-x64-box64-zink-turnip263"
+  },
+  {
+   "id": "0.20",
+   "label": "0.20.x",
+   "status": "works",
+   "match": {
+    "versionFile": {
+     "path": "integrity.json",
+     "tail": 256,
+     "regex": "\"version\":\\s*\"([0-9.]+)\"",
+     "from": "0.20",
+     "until": "0.21"
+    }
+   },
+   "containers": [
+    "proton9-x64-box64-turnip-gen8"
+   ],
+   "preferredContainer": "proton9-x64-box64-turnip-gen8"
+  }
+ ]
+}

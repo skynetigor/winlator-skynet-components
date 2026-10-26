@@ -1,0 +1,80 @@
+{
+  "format": "winlator-skynet-container",
+  "version": 1,
+  "exportedBy": "Winlator skyNET 1.1",
+  "exportedAt": "2026-10-08T16:23:02Z",
+  "components": [
+    {
+      "type": "Proton",
+      "version": "proton-9.0-x86_64"
+    },
+    {
+      "type": "Box64",
+      "version": "0.4.4"
+    },
+    {
+      "type": "FEXCore",
+      "version": "2601"
+    },
+    {
+      "type": "DXVK",
+      "version": "2.7.1-gplasync"
+    },
+    {
+      "type": "GraphicsDriver",
+      "version": "Turnip Gen8 V36",
+      "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v36/Turnip_Gen8_V36.zip"
+    },
+    {
+      "type": "RendererDriver",
+      "version": "Turnip Gen8 V32",
+      "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v32/Turnip_Gen8_V32.zip"
+    }
+  ],
+  "container": {
+    "name": "BeamNG.drive 0.20 (Snapdragon 8 Gen 3)",
+    "screenSize": "1280x720",
+    "envVars": "WRAPPER_MAX_IMAGE_COUNT=0 ZINK_DESCRIPTORS=lazy ZINK_DEBUG=compact MESA_SHADER_CACHE_DISABLE=false MESA_SHADER_CACHE_MAX_SIZE=512MB mesa_glthread=true WINEESYNC=1 MESA_GL_VERSION_OVERRIDE=3.3",
+    "cpuList": "0,1,2,3,4,5,6,7",
+    "cpuListWoW64": "0,1,2,3,4,5,6,7",
+    "graphicsDriver": "freedreno",
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=Turnip Gen8 V36;blacklistedExtensions=;maxDeviceMemory=16384;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=NVIDIA GeForce RTX 3070",
+    "rendererNative": false,
+    "rendererPresentMode": "mailbox",
+    "rendererDriverId": "Turnip Gen8 V32",
+    "rendererFilterMode": 2,
+    "emulator": "Box64",
+    "dxwrapper": "dxvk+vkd3d",
+    "dxwrapperConfig": "version=2.7.1-gplasync,framerate=0,async=1,asyncCache=1,vkd3dVersion=None,vkd3dLevel=12_1,ddrawrapper=none,csmt=3,gpuName=NVIDIA GeForce GTX 480,videoMemorySize=2048,strict_shader_math=1,OffscreenRenderingMode=fbo,renderer=gl,maxFrameLatency=1",
+    "audioDriver": "alsa",
+    "wincomponents": "direct3d=1,directsound=0,directmusic=0,directshow=0,directplay=0,xaudio=0,vcrun2010=1",
+    "showFPS": false,
+    "fullscreenStretched": false,
+    "startupSelection": 1,
+    "box64Version": "0.4.4",
+    "fexcorePreset": "INTERMEDIATE",
+    "fexcoreVersion": "2601",
+    "box64Preset": "PERFORMANCE",
+    "desktopTheme": "DARK,IMAGE,#0277bd,1791391882880",
+    "extraData": {
+      "hudMode": "0",
+      "mouseWarpOverride": "disable",
+      "useDisplayX": "0",
+      "surfaceFormat": "bgra8",
+      "trueDisplayX": "0",
+      "displayXPerformanceMode": "1",
+      "displayXPresentAtRefreshRate": "1",
+      "displayXBackPressure": "0",
+      "displayXPrecisePresentation": "0",
+      "oboeProfile": "low",
+      "oboeApi": "auto",
+      "oboeAdaptive": "1",
+      "oboeExclusive": "0",
+      "openGlDefaultInitialized": "1",
+      "autoMesaGlVersionOverride": "1",
+      "startupSelection": "1"
+    },
+    "midiSoundFont": "",
+    "wineVersion": "proton-9.0-x86_64"
+  }
+}

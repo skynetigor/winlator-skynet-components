@@ -1,0 +1,17 @@
+{
+ "schema": 1,
+ "games": [
+  {
+   "id": "beamng-drive",
+   "name": "BeamNG.drive",
+   "steamAppId": 284160,
+   "config": "games/beamng-drive.json"
+  },
+  {
+   "id": "tomb-raider-2013",
+   "name": "Tomb Raider (2013)",
+   "steamAppId": 203160,
+   "config": "games/tomb-raider-2013.json"
+  }
+ ]
+}

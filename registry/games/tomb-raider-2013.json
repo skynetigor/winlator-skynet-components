@@ -1,0 +1,30 @@
+{
+ "schema": 1,
+ "id": "tomb-raider-2013",
+ "name": "Tomb Raider (2013)",
+ "steam": {
+  "appId": 203160
+ },
+ "windows": {
+  "executables": [
+   "TombRaider.exe"
+  ]
+ },
+ "defaults": {
+  "args": [],
+  "extras": {}
+ },
+ "versions": [
+  {
+   "id": "default",
+   "label": "Steam",
+   "status": "works",
+   "default": true,
+   "match": {},
+   "containers": [
+    "proton9-x64-box64-zink-dxvk231"
+   ],
+   "preferredContainer": "proton9-x64-box64-zink-dxvk231"
+  }
+ ]
+}

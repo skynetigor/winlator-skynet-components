@@ -56,5 +56,13 @@
       "sha256": "4853f496688c4fd9885c79cb26628ec278e6a62325cac822061e8835d6aa83b5",
       "size": 437391543
     }
-  ]
+  ],
+  "steam": {
+    "runtime": "bannerlator-r9",
+    "emulator": "box64-0.4.4",
+    "emulatorPreset": "PERFORMANCE",
+    "driver": "turnip-v26.3.0-20261011-a8xx-linux",
+    "glDriver": "zink",
+    "vulkanPresent": "native"
+  }
 }

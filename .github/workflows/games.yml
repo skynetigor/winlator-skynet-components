@@ -1,0 +1,18 @@
+name: Games
+
+# Validates games.json, games/*.json and the steam block of linux.json.
+on:
+  pull_request:
+    paths: [games.json, "games/**", linux.json, "scripts/games/**"]
+  push:
+    paths: [games.json, "games/**", linux.json, "scripts/games/**"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate the registry
+        run: python3 -I scripts/games/validate.py
+      - name: Self-test the validator
+        run: python3 -I scripts/games/validate.py --self-test

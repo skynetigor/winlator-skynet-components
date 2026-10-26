@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "socs": [
+    {
+      "family": "snapdragon-8-elite-gen-5",
+      "name": "Snapdragon 8 Elite Gen 5",
+      "models": [
+        "SM8850"
+      ],
+      "gpus": [
+        "Adreno (TM) 840"
+      ]
+    },
+    {
+      "family": "snapdragon-8-elite",
+      "name": "Snapdragon 8 Elite",
+      "models": [
+        "SM8750"
+      ],
+      "gpus": [
+        "Adreno (TM) 830"
+      ]
+    },
+    {
+      "family": "snapdragon-8-gen-3",
+      "name": "Snapdragon 8 Gen 3",
+      "models": [
+        "SM8650"
+      ],
+      "gpus": [
+        "Adreno (TM) 750"
+      ]
+    },
+    {
+      "family": "snapdragon-8-gen-2",
+      "name": "Snapdragon 8 Gen 2",
+      "models": [
+        "SM8550"
+      ],
+      "gpus": [
+        "Adreno (TM) 740"
+      ]
+    }
+  ]
+}

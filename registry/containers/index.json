@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "containers": [
+    {
+      "id": "proton9-x64-box64-turnip-gen8",
+      "name": "Snapdragon 8 Gen 3",
+      "file": "containers/proton9-x64-box64-turnip-gen8.wcfg",
+      "description": "Proton 9.0 x86_64, Box64 0.4.4, DXVK 2.7.1 gplasync, Turnip Gen8 V36.",
+      "socs": [
+        "snapdragon-8-gen-3"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Snapdragon 8 Gen 3",
+        "Turnip",
+        "Box64"
+      ]
+    },
+    {
+      "id": "proton9-x64-box64-zink-turnip263",
+      "name": "Zink + Turnip 26.3, 50 fps cap",
+      "file": "containers/proton9-x64-box64-zink-turnip263.wcfg",
+      "description": "Proton 9.0 x86_64, Box64 0.4.2, DXVK 2.6-2 gplasync, Zink with Turnip 26.3.0-R4 (OneUI). 50 fps cap, FPS counter on.",
+      "socs": [],
+      "channel": "stable",
+      "tags": [
+        "Zink",
+        "Turnip",
+        "Box64",
+        "50 fps"
+      ]
+    },
+    {
+      "id": "proton11-x64-box64-turnip-stable",
+      "name": "Galaxy Z Fold8 Ultra, stable",
+      "file": "containers/proton11-x64-box64-turnip-stable.wcfg",
+      "description": "The most stable setup tried on a Galaxy Z Fold8 Ultra (12 GB / 512 GB): West Coast and Italy load well. Proton 11.0-2 x86_64, Box64 0.4.4, DXVK 2.6-2 gplasync, Turnip Gen8 V36, CPU cores 4-7.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Stable",
+        "Galaxy Z Fold8 Ultra",
+        "Snapdragon 8 Elite Gen 5",
+        "12 GB RAM",
+        "Proton 11",
+        "Box64",
+        "Turnip"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "cachyos-x64-box64-dd-turnip",
+      "name": "CachyOS Wine + DD-Turnip, DXVK 3.1.1",
+      "file": "containers/cachyos-x64-box64-dd-turnip.wcfg",
+      "description": "Runs well on a Galaxy Z Fold8 Ultra. CachyOS Wine 11.0 rebuilt for Android (downloaded automatically), DD-Turnip v0.1.1 with 4096 MB reported memory and a GTX 1060 name, DXVK 3.1.1, Box64 0.4.4, alsa audio, 1280x720.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "stable",
+      "tags": [
+        "CachyOS Wine",
+        "DD-Turnip",
+        "DXVK 3.1.1",
+        "Box64",
+        "Galaxy Z Fold8 Ultra"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "cachyos-arm64ec-box64-dd-turnip",
+      "name": "CachyOS Wine ARM64EC + DD-Turnip, DXVK 3.1.1",
+      "file": "containers/cachyos-arm64ec-box64-dd-turnip.wcfg",
+      "description": "Experimental, not tested on a device yet. CachyOS Wine 11.0 ARM64EC build for Android (downloaded automatically), DD-Turnip v0.1.1 with 2048 MB reported memory and a GTX 1060 name, DXVK 3.1.1 gplasync ARM64EC, Box64 0.4.4, all 8 CPU cores, alsa audio, 1280x720. BeamNG 0.39 picks the D3D12 backend by default; this config has no VKD3D, so add -gfx dx11 to the game arguments or install VKD3D-Proton.",
+      "socs": [],
+      "channel": "prerelease",
+      "tags": [
+        "Experimental",
+        "CachyOS Wine",
+        "ARM64EC",
+        "DD-Turnip",
+        "DXVK 3.1.1",
+        "Box64"
+      ]
+    },
+    {
+      "id": "proton9-x64-box64-zink-dxvk231",
+      "name": "Zink + DXVK 2.3.1, 1024x768",
+      "file": "containers/proton9-x64-box64-zink-dxvk231.wcfg",
+      "description": "Runs at Ultra graphics on a Galaxy Z Fold8 Ultra. Proton 9.0 x86_64, Box64 0.4.4 (PERFORMANCE), DXVK 2.3.1, Zink on the system Vulkan driver, 1024x768. Frame generation is left off: in our logs it crashed the game when the swapchain was created.",
+      "socs": [],
+      "channel": "stable",
+      "tags": [
+        "Ultra settings",
+        "Galaxy Z Fold8 Ultra",
+        "Zink",
+        "DXVK 2.3.1",
+        "Proton 9",
+        "Box64",
+        "1024x768"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    }
+  ]
+}

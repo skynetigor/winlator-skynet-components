@@ -19,8 +19,8 @@
     },
     {
       "type": "DXVK",
-      "version": "3.1.1-arm64ec",
-      "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-3.1.1/dxvk-3.1.1-arm64ec.wcp"
+      "version": "v3.1.1-gplasync-arm64ec",
+      "remoteUrl": "https://github.com/skynetigor/winlator-skynet-components/releases/download/dxvk-gplasync-3.1.1/dxvk-gplasync-arm64ec-3.1.1-1.wcp"
     },
     {
       "type": "GraphicsDriver",
@@ -37,16 +37,16 @@
     "name": "BeamNG.drive 0.39 (CachyOS Wine ARM64EC, DD-Turnip)",
     "screenSize": "1280x720",
     "envVars": "WRAPPER_MAX_IMAGE_COUNT=0 ZINK_DESCRIPTORS=lazy ZINK_DEBUG=compact MESA_SHADER_CACHE_DISABLE=false MESA_SHADER_CACHE_MAX_SIZE=512MB mesa_glthread=true WINEESYNC=1 MESA_GL_VERSION_OVERRIDE=3.3",
-    "cpuList": "4,5,6,7",
-    "cpuListWoW64": "4,5,6,7",
+    "cpuList": "0,1,2,3,4,5,6,7",
+    "cpuListWoW64": "0,1,2,3,4,5,6,7",
     "graphicsDriver": "freedreno",
-    "graphicsDriverConfig": "vulkanVersion=1.3;version=DD-Turnip v0.1.1;blacklistedExtensions=;maxDeviceMemory=4096;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=NVIDIA GeForce GTX 1060",
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=DD-Turnip v0.1.1;blacklistedExtensions=;maxDeviceMemory=2048;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=NVIDIA GeForce GTX 1060",
     "rendererNative": false,
     "rendererPresentMode": "mailbox",
     "rendererDriverId": "DD-Turnip v0.1.1",
     "emulator": "Box64",
     "dxwrapper": "dxvk+vkd3d",
-    "dxwrapperConfig": "version=3.1.1-arm64ec,framerate=0,async=1,asyncCache=1,vkd3dVersion=None,vkd3dLevel=12_1,ddrawrapper=none,csmt=3,gpuName=NVIDIA GeForce GTX 1060,videoMemorySize=2048,strict_shader_math=1,OffscreenRenderingMode=fbo,renderer=gl",
+    "dxwrapperConfig": "version=v3.1.1-gplasync-arm64ec,framerate=0,async=1,asyncCache=1,vkd3dVersion=None,vkd3dLevel=12_1,ddrawrapper=none,csmt=3,gpuName=NVIDIA GeForce GTX 1060,videoMemorySize=2048,strict_shader_math=1,OffscreenRenderingMode=fbo,renderer=gl",
     "audioDriver": "alsa",
     "wincomponents": "direct3d=1,directsound=0,directmusic=0,directshow=0,directplay=0,xaudio=0,vcrun2010=1",
     "showFPS": true,
