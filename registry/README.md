@@ -48,6 +48,14 @@ validate.py                checks all of the above: python3 registry/validate.py
 
 Add its model (`Build.SOC_MODEL`, for example `SM8850`) and family to `socs.json`; no app update is needed.
 
+## Android renderer drivers (`renderer-drivers.json`)
+
+Automatic renderer selection uses exact Adreno model mappings and Android API ranges in this catalog, separately from game/SoC profiles and Linux game drivers. Native Vulkan output requires an entry with `dmaBufImport: true`. Increment `revision` when changing mappings so a newer bundled catalog does not override the update.
+
+Adreno 810 (including Android API 36) maps to **Turnip Gen8 V30**, alongside Adreno 830. [Upstream](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/tag/gen_8_v30) lists experimental support for both models. The package checksum, Android driver layout, and binary support markers were checked; Steam rendering and DMA-BUF import on an Adreno 810 device remain untested. `testedGpus` stays empty until device validation.
+
+This is a remote catalog update, not an APK update. Refresh the app's registry while online and retry with the shortcut's Renderer driver set to Auto.
+
 ## The Linux desktop (`../linux.json`, `desktops`)
 
 The XFCE desktop a Linux container opens when it is started without a program is not in the runtime. It is a tarball of the files the runtime lacks, listed here:

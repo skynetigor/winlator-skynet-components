@@ -1,11 +1,12 @@
 {
   "schema": 1,
-  "revision": 6,
+  "revision": 7,
   "drivers": [
     {
       "id": "Turnip Gen8 V30",
       "platform": "android",
       "gpus": [
+        "810",
         "830"
       ],
       "minApi": 29,
@@ -15,7 +16,7 @@
       "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/gen_8_v30/Turnip_Gen8_V30.zip",
       "sha256": "0f57b8400bec62fdd9140e2d6fd3caa603ed56b6e532a0708c871647d85320ca",
       "testedGpus": [],
-      "notes": "Android Turnip Gen8 V30 package from the AdrenoTools registry. Upstream lists experimental Adreno 830 support; pending device validation on Adreno 830. Native Vulkan startup must still validate driver loading and DMA-BUF capabilities."
+      "notes": "Android Turnip Gen8 V30 package from the AdrenoTools registry. Upstream lists experimental Adreno 810 and 830 support; binary includes Adreno 810 and DMA-BUF import support. Pending device validation on both models, including Steam on Adreno 810 / Android API 36. Native Vulkan startup must still validate driver loading and DMA-BUF capabilities."
     },
     {
       "id": "DD-Turnip v0.1.1",
