@@ -69,6 +69,20 @@
       "url": "https://github.com/The412Banner/Banners-Turnip/releases/download/v26.3.0-20261011/Turnip-v26.3.0-20261011-A8xx-Linux.zip",
       "sha256": "6128900326618a13a5905200568717b2e413f93d7ca38f7ff3d0e40e407c0ac6",
       "size": 3266459
+    },
+    {
+      "id": "turnip-v27.0.0-20261025-r5-a8xx-linux",
+      "name": "Mesa Turnip v27.0.0-20261025-r5-A8xx-Linux",
+      "version": "27.0.0-20261025-r5",
+      "channel": "prerelease",
+      "source": "The412Banner/Banners-Turnip",
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-turnip-v27.0.0-20261025-r5-a8xx/Turnip-v27.0.0-20261025-r5-A8xx-Linux.zip",
+      "sha256": "5a08baa24642c6cfe13c882851e448b21ba82eca06e235b4237e1a29207fb735",
+      "size": 3273244,
+      "testedGpus": [
+        "840"
+      ],
+      "notes": "Linux/glibc KGSL A8xx build (Adreno 810-840) from Mesa main ab1502f with the gen8 and WinNative A8xx patches. Adreno 840: BeamNG 0.40 runs (GPU faults recover, no lock screen) but slower than 26.3.0."
     }
   ],
   "desktops": [
