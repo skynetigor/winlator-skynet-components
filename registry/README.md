@@ -33,6 +33,15 @@ validate.py                checks all of the above: python3 registry/validate.py
 - `args` and `extras` (allowed keys only, see `GameProfile.ALLOWED_EXTRAS` in the app) are written into the new shortcut.
 - `status`: `works`, `untested` or `broken`.
 
+### BeamNG.drive display defaults
+
+All listed BeamNG.drive versions (0.20, 0.28, 0.31, 0.34, 0.39 and 0.40), on Linux and Windows including ARM64,
+inherit a **955x560** resolution, **scale game window to fit the screen** (`fullscreenStretched: "2"`),
+and **FSR upscaling** (`graphicsFilterMode: "3"`) from the shared game defaults (profile revision 10).
+The 0.40 Linux profile no longer overrides the resolution with `native`.
+Explicit shortcut display settings still take precedence; this catalog update does not overwrite user overrides.
+FSR requires the app's Vulkan renderer; this update does not change renderer or driver selection.
+
 ## A config (`containers/index.json`)
 
 `id`, `name`, `file` (`containers/<name>.wcfg`), `description`, `socs` (families it was made for, empty for any), `channel` (`stable` or `prerelease`), `tags`, `testedOn`. `platform`: `windows` (the default) or `linux`; a Linux config's `.wcfg` is the profile of a Linux container (type `linux`), a Windows one's a Wine container, and `validate.py` checks they agree. A game on Linux gets only Linux configs offered, a Windows exe only Windows ones. A config belongs to no game; several games can list it. Two shortcuts with the same config and the same Wine share one container.

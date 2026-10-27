@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 9,
+  "revision": 10,
   "id": "beamng-drive",
   "name": "BeamNG.drive",
   "steam": {
@@ -31,8 +31,11 @@
   },
   "defaults": {
     "args": [],
+    "resolution": "955x560",
     "extras": {
-      "fileCache": "1"
+      "fileCache": "1",
+      "fullscreenStretched": "2",
+      "graphicsFilterMode": "3"
     }
   },
   "versions": [
@@ -59,7 +62,6 @@
       ],
       "preferredContainer": "beamng-040-linux-box64-r3",
       "linux": {
-        "resolution": "native",
         "extras": {
           "linuxTouchMode": "touchpad",
           "simTouchScreen": "0",
