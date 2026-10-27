@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 7,
+  "revision": 8,
   "drivers": [
     {
       "id": "Turnip Gen8 V30",
@@ -39,6 +39,7 @@
       "id": "Turnip v26.2.0-R8",
       "platform": "android",
       "gpus": [
+        "732",
         "735",
         "740"
       ],
@@ -49,13 +50,16 @@
       "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v26.2.0-R8/Turnip_v26.2.0-R8.zip",
       "sha256": "862484520a1cff946c96a7b323058aae6be3088ca8cd98df3723c9162b539c79",
       "testedGpus": [],
-      "notes": "Standard Android A6xx/A7xx package; binary contains FD735, FD740 and FD740v3 and advertises DMA-BUF import. Exact 735/740 mappings; other variants require explicit entries. Hardware rendering and DMA-BUF import still require device validation on both models."
+      "notes": "Standard Android A6xx/A7xx package; binary contains FD735, FD740 and FD740v3 and advertises DMA-BUF import. Adreno 732 on SM7675 uses chip ID 0x43030b00, labeled FD735 in Mesa (https://github.com/MCC45TR/senemos-uke-kernel-mainline/pull/29). Exact 732/735/740 mappings; other variants require explicit entries. Hardware rendering and DMA-BUF import still require device validation."
     },
     {
       "id": "Turnip v26.3.0-R6",
       "platform": "android",
       "gpus": [
-        "730"
+        "610",
+        "722",
+        "730",
+        "750"
       ],
       "minApi": 29,
       "maxApi": 37,
@@ -64,7 +68,23 @@
       "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_v26.3.0-R6.zip",
       "sha256": "5fa2305eb9eff64d9347a670e6ca5ef7c518f60e9e782a4db7ee5588c9852d81",
       "testedGpus": [],
-      "notes": "AdrenoTools package metadata identifies Turnip for a7xx/a6xx. Candidate for Snapdragon 8 Gen 1 / Adreno 730; device rendering and DMA-BUF import have not been tested."
+      "notes": "Android A6xx/A7xx package. Binary includes FD610, Adreno (TM) 722, FD730 and FD750 plus external-memory FD/DMA-BUF import exports. Upstream v37 release explicitly lists A722 support. Exact GPU candidates only; device rendering and DMA-BUF import have not been tested."
+    },
+    {
+      "id": "Turnip Gen8 V37",
+      "platform": "android",
+      "gpus": [
+        "825",
+        "829"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 100,
+      "dmaBufImport": true,
+      "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_Gen8_V37.zip",
+      "sha256": "d0335542ec996fe33e83dfbec0d86aed301da95d22b671a88b40a4722d115b48",
+      "testedGpus": [],
+      "notes": "Upstream v37 release explicitly supports A825/A829; binary includes Adreno (TM) 825/829 and external-memory FD/DMA-BUF import exports. Source chip IDs are 0x44030000 and 0x44030a20. Standard unpatched Android package; native rendering and DMA-BUF import still require validation on both GPUs."
     }
   ]
 }
