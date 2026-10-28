@@ -72,6 +72,11 @@
         "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
         "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
         "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
+      },
+      "linux": {
+        "env": {
+          "tu_emulate_second_queue": "true"
+        }
       }
     },
     {
