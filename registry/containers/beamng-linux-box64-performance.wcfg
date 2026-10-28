@@ -1,6 +1,7 @@
 {
   "format": "winlator-skynet-container",
   "version": 1,
+  "revision": 1,
   "exportedBy": "Winlator skyNET 1.1",
   "exportedAt": "2026-10-15T12:00:00Z",
   "components": [],
@@ -8,11 +9,12 @@
     "type": "linux",
     "name": "BeamNG.drive, Linux (Box64 Performance)",
     "screenSize": "1280x720",
+    "rendererDriverId": "auto",
     "linuxRuntime": "bannerlator-r9",
     "envVars": "",
     "extraData": {
       "linuxEmulator": "box64",
-      "linuxEmulatorId": "box64-0.4.4-r2",
+      "linuxEmulatorId": "box64-0.4.4-r4",
       "linuxEmulatorPreset": "PERFORMANCE",
       "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
       "linuxGlDriver": "zink",

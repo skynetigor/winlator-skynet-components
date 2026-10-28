@@ -1,0 +1,32 @@
+{
+  "format": "winlator-skynet-container",
+  "version": 1,
+  "exportedBy": "SkyNetEmu 2.0.0",
+  "components": [],
+  "container": {
+    "type": "linux",
+    "name": "Shadow of the Tomb Raider, Linux (FEX Performance)",
+    "screenSize": "1280x800",
+    "fullscreenStretched": false,
+    "rendererDriverId": "auto",
+    "linuxRuntime": "bannerlator-r9",
+    "envVars": "",
+    "extraData": {
+      "linuxEmulator": "fex",
+      "linuxEmulatorId": "fex-2610",
+      "linuxFexPreset": "PERFORMANCE",
+      "linuxRootfsId": "rootfs-ubuntu-24-04-2026-08-11",
+      "linuxFexThunks": "1",
+      "linuxFexGl32": "1",
+      "linuxGlVendor": "nvidia",
+      "linuxTuSysmem": "0",
+      "linuxBionic": "0",
+      "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
+      "linuxGlDriver": "zink",
+      "linuxVulkanPresent": "native",
+      "linuxTouchscreen": "1",
+      "linuxKeyboardButton": "1",
+      "linuxAutoKeyboard": "1"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 {
   "format": "winlator-skynet-container",
   "version": 1,
+  "revision": 1,
   "exportedBy": "SkyNetEmu 2.0.1",
   "components": [
     {
@@ -41,7 +42,7 @@
     "type": "wine",
     "name": "BeamNG.drive 0.40, Windows ARM64 native",
     "wineVersion": "proton-9.0-arm64ec",
-    "envVars": "WINEESYNC=0 WINEFSYNC=0 WINEDLLOVERRIDES=browseui= WRAPPER_EXTENSION_BLACKLIST=VK_EXT_debug_utils,VK_EXT_debug_report MESA_GL_VERSION_OVERRIDE=3.3",
+    "envVars": "WINEESYNC=0 WINEFSYNC=0 WINEDLLOVERRIDES=browseui=;windows.ui=d WRAPPER_EXTENSION_BLACKLIST=VK_EXT_debug_utils,VK_EXT_debug_report MESA_GL_VERSION_OVERRIDE=3.3",
     "dxwrapper": "wined3d",
     "dxwrapperConfig": "",
     "wincomponents": "direct3d=0,directsound=0,directmusic=0,directshow=0,directplay=0,xaudio=0,vcrun2010=0",

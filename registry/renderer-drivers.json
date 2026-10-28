@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 8,
+  "revision": 9,
   "drivers": [
     {
       "id": "Turnip Gen8 V30",
@@ -57,6 +57,7 @@
       "platform": "android",
       "gpus": [
         "610",
+        "650",
         "722",
         "730",
         "750"
@@ -68,7 +69,7 @@
       "url": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v37/Turnip_v26.3.0-R6.zip",
       "sha256": "5fa2305eb9eff64d9347a670e6ca5ef7c518f60e9e782a4db7ee5588c9852d81",
       "testedGpus": [],
-      "notes": "Android A6xx/A7xx package. Binary includes FD610, Adreno (TM) 722, FD730 and FD750 plus external-memory FD/DMA-BUF import exports. Upstream v37 release explicitly lists A722 support. Exact GPU candidates only; device rendering and DMA-BUF import have not been tested."
+      "notes": "Android A6xx/A7xx package. Binary includes FD610, FD650, Adreno (TM) 722, FD730 and FD750 plus external-memory FD/DMA-BUF import exports. Upstream v37 release explicitly lists A722 support. Exact GPU candidates only; device rendering and DMA-BUF import have not been tested."
     },
     {
       "id": "Turnip Gen8 V37",

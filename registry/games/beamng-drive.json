@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 10,
+  "revision": 14,
   "id": "beamng-drive",
   "name": "BeamNG.drive",
   "steam": {
@@ -31,11 +31,8 @@
   },
   "defaults": {
     "args": [],
-    "resolution": "955x560",
     "extras": {
-      "fileCache": "1",
-      "fullscreenStretched": "2",
-      "graphicsFilterMode": "3"
+      "fileCache": "1"
     }
   },
   "versions": [
@@ -44,7 +41,7 @@
       "label": "0.40.x",
       "status": "works",
       "default": true,
-      "notes": "Native Linux x86-64: startup and Automation Test Track loading verified with Box64 0.4.4-r3 on Snapdragon 8 Elite Gen 5. Windows ARM64: retain Proton 9 ARM64EC with DD-Turnip native Vulkan and the current device GPU identity. Proton 9 previously loaded GridMapv2; standard Proton 11 and CachyOS 11 failed during Vulkan device creation on the test device. The ARM64 profile remains experimental.",
+      "notes": "Native Linux 0.40.1 x86-64: startup, CEF UI and Smallgrid rendering verified with published Box64 0.4.4-r4 on Snapdragon 8 Elite Gen 5. Main plus seven CEF helpers shared one read-only libcef code-cache inode; r4 is required for ELF caching, and existing shortcuts must select it explicitly. The preset keeps its legacy r3 identifier for compatibility but selects r4. BOX64_DYNAREC_STRONGMEM=1 retains limited x86 memory ordering: three consecutive cached menu launches passed with this setting after an intermittent CEF renderer crash under PERFORMANCE/STRONGMEM=0; this is a tested mitigation, not proof of the crash's root cause or long-run stability. Existing shortcuts must also apply this environment setting explicitly. Earlier Automation Test Track loading was verified on r3. Long-run performance is not established; uncapped testing reached Android thermal limits. Windows ARM64: retain Proton 9 ARM64EC with DD-Turnip native Vulkan and the current device GPU identity. Disable windows.ui in the ARM64 preset DLL overrides to avoid UISettings text-scaling recursion and a startup stack overflow; the 0.40.1 first-run UI was verified with this workaround. Proton 9 previously loaded GridMapv2; standard Proton 11 and CachyOS 11 failed during Vulkan device creation on the test device. The ARM64 profile remains experimental.",
       "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Snapdragon 8 Elite Gen 5",
       "match": {
         "versionFile": {
@@ -57,11 +54,14 @@
       },
       "containers": [
         "beamng-linux-box64-adreno735-performance",
+        "beamng-linux-box64-adreno730-performance",
+        "beamng-linux-box64-adreno740-performance",
         "beamng-040-linux-box64-r3",
         "beamng-040-windows-arm64-proton9-dd-turnip-device"
       ],
       "preferredContainer": "beamng-040-linux-box64-r3",
       "linux": {
+        "resolution": "native",
         "extras": {
           "linuxTouchMode": "touchpad",
           "simTouchScreen": "0",
@@ -69,7 +69,9 @@
         }
       },
       "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
+        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
+        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     },
     {
@@ -87,12 +89,16 @@
       },
       "containers": [
         "beamng-linux-box64-adreno735-performance",
+        "beamng-linux-box64-adreno730-performance",
+        "beamng-linux-box64-adreno740-performance",
         "cachyos-arm64ec-box64-dd-turnip",
         "beamng-linux-box64-performance"
       ],
       "preferredContainer": "cachyos-arm64ec-box64-dd-turnip",
       "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
+        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
+        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     },
     {
@@ -110,13 +116,17 @@
       },
       "containers": [
         "beamng-linux-box64-adreno735-performance",
+        "beamng-linux-box64-adreno730-performance",
+        "beamng-linux-box64-adreno740-performance",
         "proton11-x64-box64-turnip-stable",
         "cachyos-x64-box64-dd-turnip",
         "beamng-linux-box64-performance"
       ],
       "preferredContainer": "proton11-x64-box64-turnip-stable",
       "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
+        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
+        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     },
     {
@@ -134,11 +144,15 @@
       },
       "containers": [
         "beamng-linux-box64-adreno735-performance",
+        "beamng-linux-box64-adreno730-performance",
+        "beamng-linux-box64-adreno740-performance",
         "beamng-linux-box64-performance"
       ],
       "preferredContainer": "beamng-linux-box64-performance",
       "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
+        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
+        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       },
       "notes": "Linux driver selection for Adreno 735 / POCO F6 uses Mesa Turnip 26.2.2 and Android renderer Auto. Driver source/binary support is verified; BeamNG 0.31 gameplay on this device is not yet validated."
     },
@@ -157,12 +171,16 @@
       },
       "containers": [
         "beamng-linux-box64-adreno735-performance",
+        "beamng-linux-box64-adreno730-performance",
+        "beamng-linux-box64-adreno740-performance",
         "proton9-x64-box64-zink-turnip263",
         "beamng-linux-box64-performance"
       ],
       "preferredContainer": "proton9-x64-box64-zink-turnip263",
       "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
+        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
+        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     },
     {
@@ -180,12 +198,16 @@
       },
       "containers": [
         "beamng-linux-box64-adreno735-performance",
+        "beamng-linux-box64-adreno730-performance",
+        "beamng-linux-box64-adreno740-performance",
         "proton9-x64-box64-turnip-gen8",
         "beamng-linux-box64-performance"
       ],
       "preferredContainer": "proton9-x64-box64-turnip-gen8",
       "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance"
+        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
+        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
+        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     }
   ]

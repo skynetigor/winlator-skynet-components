@@ -1,0 +1,28 @@
+{
+  "format": "winlator-skynet-container",
+  "version": 1,
+  "revision": 1,
+  "exportedBy": "SkyNetEmu 2.0.1",
+  "components": [],
+  "container": {
+    "type": "linux",
+    "name": "BeamNG.drive, Linux Adreno 730 (Box64 Performance)",
+    "screenSize": "1280x720",
+    "rendererDriverId": "auto",
+    "linuxRuntime": "bannerlator-r9",
+    "envVars": "",
+    "extraData": {
+      "linuxEmulator": "box64",
+      "linuxEmulatorId": "box64-0.4.4-r4",
+      "linuxEmulatorPreset": "PERFORMANCE",
+      "linuxVulkanDriver": "turnip-v27.0.0-20261024-r6-linux",
+      "linuxGlDriver": "zink",
+      "linuxVulkanPresent": "native",
+      "linuxTouchscreen": "1",
+      "linuxKeyboardButton": "1",
+      "linuxAutoKeyboard": "1",
+      "lsfgMultiplier": "0",
+      "linuxNoProot": "0"
+    }
+  }
+}

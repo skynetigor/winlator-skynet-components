@@ -1,30 +1,46 @@
 {
  "schema": 1,
+ "revision": 1,
  "id": "tomb-raider-2013",
  "name": "Tomb Raider (2013)",
  "steam": {
-  "appId": 203160
+  "appId": 203160,
+  "installDir": "Tomb Raider"
  },
- "windows": {
+ "linux": {
   "executables": [
-   "TombRaider.exe"
-  ]
- },
- "defaults": {
-  "args": [],
-  "extras": {}
+   "TombRaider.sh",
+   "bin/TombRaider"
+  ],
+  "defaults": {
+   "executable": "TombRaider.sh",
+   "args": [
+    "-nolauncher"
+   ],
+   "env": {
+    "FEX_TSOENABLED": "1"
+   },
+   "resolution": "native"
+  }
  },
  "versions": [
   {
    "id": "default",
-   "label": "Steam",
+   "label": "Steam Linux (build 9573671)",
    "status": "works",
+   "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Adreno 840, Android 17",
+   "notes": "Native 32-bit Linux port, launched through Steam with FEX 2610 and Ubuntu 24.04. Keep FEX_TSOENABLED=1 even with the Performance preset: disabling TSO caused a black screen / SIGSEGV. Requires the 32-bit OpenGL thunk, Zink and the NVIDIA GL vendor override. -nolauncher bypasses Feral's options dialog; if it still appears, set GameOptionsDialogShouldShow=0 in the game's preferences. Startup and an in-game scene were checked on build 9573671; long-session stability and other builds are untested. The game must be stored inside the container, not on shared storage (FEX needs executable mappings).",
    "default": true,
-   "match": {},
+   "match": {
+    "steamBuildId": {
+     "from": 9573671,
+     "until": 9573672
+    }
+   },
    "containers": [
-    "proton9-x64-box64-zink-dxvk231"
+    "tomb-raider-2013-linux-fex-performance"
    ],
-   "preferredContainer": "proton9-x64-box64-zink-dxvk231"
+   "preferredContainer": "tomb-raider-2013-linux-fex-performance"
   }
  ]
 }
