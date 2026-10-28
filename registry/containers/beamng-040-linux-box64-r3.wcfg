@@ -1,18 +1,20 @@
 {
   "format": "winlator-skynet-container",
   "version": 1,
+  "revision": 1,
   "exportedBy": "SkyNetEmu 2.0.0",
   "exportedAt": "2026-10-20T15:06:06Z",
   "components": [],
   "container": {
     "type": "linux",
-    "name": "BeamNG.drive 0.40, Linux (Box64 r3)",
+    "name": "BeamNG.drive 0.40, Linux (Box64)",
     "screenSize": "native",
     "linuxRuntime": "bannerlator-r9",
-    "envVars": "",
+    "envVars": "BOX64_DYNAREC_STRONGMEM=1",
+    "rendererDriverId": "auto",
     "extraData": {
       "linuxEmulator": "box64",
-      "linuxEmulatorId": "box64-0.4.4-r3",
+      "linuxEmulatorId": "box64-0.4.4-r4",
       "linuxEmulatorPreset": "PERFORMANCE",
       "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
       "linuxGlDriver": "zink",

@@ -1,6 +1,7 @@
 {
   "format": "winlator-skynet-container",
   "version": 1,
+  "revision": 1,
   "exportedBy": "SkyNetEmu 2.0.1",
   "components": [],
   "container": {
@@ -12,7 +13,7 @@
     "envVars": "",
     "extraData": {
       "linuxEmulator": "box64",
-      "linuxEmulatorId": "box64-0.4.4-r2",
+      "linuxEmulatorId": "box64-0.4.4-r4",
       "linuxEmulatorPreset": "PERFORMANCE",
       "linuxVulkanDriver": "turnip-mesa-26.2.2-linux-aarch64",
       "linuxGlDriver": "zink",

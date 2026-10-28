@@ -89,43 +89,43 @@
       ]
     },
     {
-      "id": "proton9-x64-box64-zink-dxvk231",
-      "name": "Zink + DXVK 2.3.1, 1024x768",
-      "file": "containers/proton9-x64-box64-zink-dxvk231.wcfg",
-      "description": "Runs at Ultra graphics on a Galaxy Z Fold8 Ultra. Proton 9.0 x86_64, Box64 0.4.4 (PERFORMANCE), DXVK 2.3.1, Zink on the system Vulkan driver, 1024x768. Frame generation is left off: in our logs it crashed the game when the swapchain was created.",
-      "socs": [],
+      "id": "tomb-raider-2013-linux-fex-performance",
+      "name": "Linux, FEX Performance + TSO",
+      "platform": "linux",
+      "file": "containers/tomb-raider-2013-linux-fex-performance.wcfg",
+      "description": "Tomb Raider (2013), native 32-bit Steam build 9573671. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 32-bit OpenGL thunk, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx. Startup and an in-game scene checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
       "channel": "stable",
       "tags": [
-        "Ultra settings",
-        "Galaxy Z Fold8 Ultra",
+        "Linux",
+        "FEX",
+        "32-bit",
+        "TSO",
         "Zink",
-        "DXVK 2.3.1",
-        "Proton 9",
-        "Box64",
-        "1024x768"
+        "Turnip"
       ],
       "testedOn": [
         "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
       ]
     },
     {
-      "id": "beamng-040-linux-box64-r3",
-      "name": "BeamNG 0.40 \u2014 Linux, Box64 r3",
+      "id": "shadow-of-the-tomb-raider-linux-fex-performance",
+      "name": "Linux, FEX Performance",
       "platform": "linux",
-      "file": "containers/beamng-040-linux-box64-r3.wcfg",
-      "description": "Native Linux BeamNG 0.40 with Box64 0.4.4-r3 cleanup fix and Performance preset, Turnip 26.3 for Adreno 8xx, Zink, native Vulkan output, and a 2048 MB GPU memory budget. Touchpad input; frame generation off. Map loading verified on Snapdragon 8 Elite Gen 5; broader stability is experimental.",
+      "file": "containers/shadow-of-the-tomb-raider-linux-fex-performance.wcfg",
+      "description": "Shadow of the Tomb Raider, native x86-64 Steam build 11668867. FEX 2610 Performance, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx, native Vulkan output, 1280x800. Gameplay, gamepad and memory fixes checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
       "socs": [
         "snapdragon-8-elite-gen-5"
       ],
-      "channel": "prerelease",
+      "channel": "stable",
       "tags": [
         "Linux",
-        "BeamNG 0.40",
-        "Box64 r3",
-        "Performance",
-        "Turnip",
-        "Zink",
-        "2048 MB GPU"
+        "FEX",
+        "64-bit",
+        "Vulkan",
+        "Turnip"
       ],
       "testedOn": [
         "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
@@ -136,8 +136,11 @@
       "name": "Linux, Box64 Performance",
       "platform": "linux",
       "file": "containers/beamng-linux-box64-performance.wcfg",
-      "description": "The Linux build of BeamNG.drive run through Box64 0.4.4 with the Performance preset, on the Linux runtime with Turnip 26.3 and Zink. The program can stay on shared storage (no copy).",
-      "socs": [],
+      "description": "The Linux build of BeamNG.drive run through Box64 0.4.4 with the Performance preset, on the Linux runtime with Turnip 26.3 for Adreno 8xx and Zink. The program can stay on shared storage (no copy).",
+      "socs": [
+        "snapdragon-8-elite",
+        "snapdragon-8-elite-gen-5"
+      ],
       "channel": "stable",
       "tags": [
         "Linux",
@@ -145,6 +148,29 @@
         "Performance",
         "Turnip",
         "Zink"
+      ]
+    },
+    {
+      "id": "beamng-040-linux-box64-r3",
+      "name": "BeamNG 0.40 \u2014 Linux, Box64",
+      "platform": "linux",
+      "file": "containers/beamng-040-linux-box64-r3.wcfg",
+      "description": "Native Linux BeamNG 0.40 with Box64 0.4.4-r4 (shared read-only ELF segments, thread cleanup fix) and Performance preset, Turnip 26.3 for Adreno 8xx, Zink, native Vulkan output, and a 2048 MB GPU memory budget. Touchpad input; frame generation off. Map loading verified on Snapdragon 8 Elite Gen 5; broader stability is experimental.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Linux",
+        "BeamNG 0.40",
+        "Box64",
+        "Performance",
+        "Turnip",
+        "Zink",
+        "2048 MB GPU"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
       ]
     },
     {
@@ -189,7 +215,47 @@
         "Zink"
       ],
       "testedOn": []
+    },
+    {
+      "id": "beamng-linux-box64-adreno730-performance",
+      "name": "Linux, Adreno 730 / Snapdragon 8 Gen 1",
+      "platform": "linux",
+      "file": "containers/beamng-linux-box64-adreno730-performance.wcfg",
+      "description": "BeamNG Linux profile with Box64 Performance, the A6xx/A7xx Mesa Turnip v27.0.0-20261024-r6 Linux driver and Android Turnip v26.3.0-R6 selected through Renderer Auto. GPU support is present in the driver package; testing on an Adreno 730 device is pending.",
+      "socs": [
+        "snapdragon-8-gen-1"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Linux",
+        "Adreno 730",
+        "Snapdragon 8 Gen 1",
+        "Box64",
+        "Turnip",
+        "Zink"
+      ],
+      "testedOn": []
+    },
+    {
+      "id": "beamng-linux-box64-adreno740-performance",
+      "name": "Linux, Adreno 740 / Snapdragon 8 Gen 2",
+      "platform": "linux",
+      "file": "containers/beamng-linux-box64-adreno740-performance.wcfg",
+      "description": "BeamNG Linux profile with Box64 Performance, Mesa Turnip 26.2.2 for Adreno 740 (the Linux driver mapped to this GPU), Zink and native Vulkan output. Android renderer Auto selects Turnip 26.2.0-R8. Both packages contain FD740; testing on an Adreno 740 device is pending.",
+      "socs": [
+        "snapdragon-8-gen-2"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Linux",
+        "Adreno 740",
+        "Snapdragon 8 Gen 2",
+        "Box64",
+        "Turnip",
+        "Zink"
+      ],
+      "testedOn": []
     }
   ],
-  "revision": 5
+  "revision": 8
 }

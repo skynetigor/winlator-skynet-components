@@ -12,6 +12,12 @@
    "name": "Tomb Raider (2013)",
    "steamAppId": 203160,
    "config": "games/tomb-raider-2013.json"
+  },
+  {
+   "id": "shadow-of-the-tomb-raider",
+   "name": "Shadow of the Tomb Raider",
+   "steamAppId": 750920,
+   "config": "games/shadow-of-the-tomb-raider.json"
   }
  ]
 }
