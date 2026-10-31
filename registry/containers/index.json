@@ -275,7 +275,19 @@
         "Zink"
       ],
       "testedOn": []
+    },
+    {
+      "id": "beamng-039-linux-fex-bionic",
+      "name": "BeamNG 0.39 - Linux, FEX + bionic (experimental)",
+      "platform": "linux",
+      "file": "containers/beamng-039-linux-fex-bionic.wcfg",
+      "description": "Optional native Linux 0.39.4 preset for Adreno 840: FEX 2610 Intermediate, bionic/direct execution, Vulkan thunks, sysmem, native Vulkan, 1280x720, TSO off and full x87 precision. Renderer Auto selects DD-Turnip v0.1.1. Gridmap and West Coast driving verified; FPS varies and freezes remain. Requires the updated app with BeamNG FEX+bionic fixes and executable-only staging (~437 MiB internally for the tested build, resources stay shared). Other phones and long-session stability are unverified; TSO off trades memory-ordering guarantees for performance.",
+      "socs": ["snapdragon-8-elite-gen-5"],
+      "gpus": ["Adreno 840"],
+      "channel": "prerelease",
+      "tags": ["Linux", "BeamNG 0.39", "FEX", "bionic", "Experimental"],
+      "testedOn": ["Samsung Galaxy Z Fold8 Ultra (SM-F976B), BeamNG 0.39.4"]
     }
   ],
-  "revision": 9
+  "revision": 10
 }

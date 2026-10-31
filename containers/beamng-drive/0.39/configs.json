@@ -1,4 +1,10 @@
 {
+  "linux-fex-bionic.wcfg": {
+    "name": "BeamNG 0.39 - Linux, FEX + bionic (experimental)",
+    "description": "Native Linux 0.39.4; tested on SM-F976B / Adreno 840 only. FEX 2610 Intermediate, bionic direct mode, Vulkan thunks, sysmem, 1280x720, TSO off, full x87 precision. Requires updated BeamNG FEX+bionic app fixes; shared storage stages only ELF files internally. FPS varies and freezes remain. TSO off relaxes memory ordering; long-session stability and other devices are unverified.",
+    "tags": ["Linux", "BeamNG 0.39", "FEX", "bionic", "Adreno 840", "Experimental"],
+    "channel": "prerelease"
+  },
   "cachyos-arm64ec-dd-turnip.wcfg": {
     "name": "CachyOS Wine ARM64EC + DD-Turnip, DXVK 3.1.1",
     "description": "Experimental, not tested on a device yet. CachyOS Wine 11.0 ARM64EC build for Android (downloaded automatically), DD-Turnip v0.1.1 with 4096 MB reported memory and a GTX 1060 name, DXVK 3.1.1 ARM64EC, Box64 0.4.4, alsa audio, 1280x720. BeamNG 0.39 picks the D3D12 backend by default; this config has no VKD3D, so add -gfx dx11 to the game arguments or install VKD3D-Proton.",

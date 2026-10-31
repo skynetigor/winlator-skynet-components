@@ -1538,6 +1538,27 @@
     "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.39/cachyos-arm64ec-dd-turnip.wcfg"
   },
   {
+    "id": "container-beamng-drive-0.39-linux-fex-bionic",
+    "name": "BeamNG 0.39 - Linux, FEX + bionic (experimental)",
+    "type": "Container",
+    "gameId": "beamng-drive",
+    "gameName": "BeamNG.drive",
+    "gameVersion": "0.39",
+    "description": "Native Linux 0.39.4; tested on SM-F976B / Adreno 840 only. FEX 2610 Intermediate, bionic direct mode, Vulkan thunks, sysmem, 1280x720, TSO off, full x87 precision. Requires updated BeamNG FEX+bionic app fixes; shared storage stages only ELF files internally. FPS varies and freezes remain. TSO off relaxes memory ordering; long-session stability and other devices are unverified.",
+    "tags": [
+      "Linux",
+      "BeamNG 0.39",
+      "FEX",
+      "bionic",
+      "Adreno 840",
+      "Experimental"
+    ],
+    "channel": "prerelease",
+    "verName": "0.39",
+    "verCode": 1,
+    "remoteUrl": "https://raw.githubusercontent.com/skynetigor/winlator-skynet-components/main/containers/beamng-drive/0.39/linux-fex-bionic.wcfg"
+  },
+  {
     "id": "container-tomb-raider-2013-Unknown-zink-dxvk-2-3-1",
     "name": "Zink + DXVK 2.3.1, 1024x768",
     "type": "Container",

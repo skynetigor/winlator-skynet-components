@@ -1,0 +1,42 @@
+{
+  "container": {
+    "fullscreenStretched": false,
+    "screenSize": "1280x720",
+    "rendererDriverId": "auto",
+    "extraData": {
+      "linuxGlDriver": "zink",
+      "linuxRootfsId": "rootfs-ubuntu-24-04-2026-08-11",
+      "linuxEmulator": "fex",
+      "linuxBionic": "1",
+      "linuxKeyboardButton": "1",
+      "linuxVulkanPresent": "native",
+      "linuxAutoKeyboard": "1",
+      "lsfgLayer": "0",
+      "linuxEmulatorId": "fex-2610",
+      "linuxFexThunks": "1",
+      "linuxFexPreset": "INTERMEDIATE",
+      "hudMode": "2",
+      "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
+      "linuxTouchscreen": "0",
+      "fileCache": "1",
+      "linuxNoProot": "1",
+      "linuxTuSysmem": "1",
+      "linuxGpuMemoryMB": "0",
+      "linuxTouchMode": "mouse",
+      "lsfgMultiplier": "0"
+    },
+    "name": "BeamNG 0.39, Linux FEX + bionic (experimental)",
+    "envVars": "FEX_TSOENABLED=0 FEX_X87REDUCEDPRECISION=0",
+    "cpuList": "0,1,2,3,4,5,6,7",
+    "type": "linux",
+    "linuxRuntime": "bannerlator-r9"
+  },
+  "components": [{
+    "type": "RendererDriver",
+    "version": "auto"
+  }],
+  "exportedBy": "Winlator skyNET 2.0.1-pre.3",
+  "format": "winlator-skynet-container",
+  "exportedAt": "2026-10-31T19:51:28Z",
+  "version": 1
+}
