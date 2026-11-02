@@ -1,0 +1,188 @@
+diff --git a/AndroidCompat.h b/AndroidCompat.h
+new file mode 100644
+index 0000000..9bd6056
+--- /dev/null
++++ b/AndroidCompat.h
+@@ -0,0 +1,65 @@
++// SPDX-License-Identifier: MIT
++// What Android's libc (bionic) does not have, for the Android build of FEX. Force-included into every file by CMake.
++#pragma once
++#ifdef __ANDROID__
++#include <fcntl.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <sys/syscall.h>
++#include <sys/types.h>
++#include <unistd.h>
++
++#ifndef MFD_CLOEXEC
++#define MFD_CLOEXEC 0x0001U
++#endif
++#ifndef ELF32_ST_VISIBILITY
++#define ELF32_ST_VISIBILITY(o) ((o) & 0x3)
++#endif
++
++#ifdef __cplusplus
++extern "C++" {
++#endif
++
++// No wrappers in bionic at this API level; the syscalls are the kernel's own.
++static inline int fex_android_memfd_create(const char* name, unsigned int flags) {
++  return (int)syscall(SYS_memfd_create, name, flags);
++}
++static inline ssize_t fex_android_getdents64(int fd, void* buffer, size_t count) {
++  return syscall(SYS_getdents64, fd, buffer, count);
++}
++
++// Android has no POSIX shared memory (no /dev/shm): an object becomes a file in FEX_SHM_DIR (TMPDIR when it is not set),
++// which the app points at a folder of its own. FEX only shares these between itself and FEXServer.
++static inline void fex_android_shm_path(const char* name, char* out, size_t size) {
++  const char* dir = getenv("FEX_SHM_DIR");
++  if (!dir || !*dir) {
++    dir = getenv("TMPDIR");
++  }
++  if (!dir || !*dir) {
++    dir = "/data/local/tmp";
++  }
++  while (*name == '/') {
++    ++name;
++  }
++  snprintf(out, size, "%s/fex-shm-%s", dir, name);
++}
++static inline int fex_android_shm_open(const char* name, int oflag, mode_t mode) {
++  char path[512];
++  fex_android_shm_path(name, path, sizeof path);
++  return open(path, oflag, mode);
++}
++static inline int fex_android_shm_unlink(const char* name) {
++  char path[512];
++  fex_android_shm_path(name, path, sizeof path);
++  return unlink(path);
++}
++
++#ifdef __cplusplus
++}
++#endif
++
++#define memfd_create fex_android_memfd_create
++#define getdents64 fex_android_getdents64
++#define shm_open fex_android_shm_open
++#define shm_unlink fex_android_shm_unlink
++#endif
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 71d8a73..ea68759 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -61,12 +61,17 @@ if (NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+   message(FATAL_ERROR "Unsupported pointer size ${CMAKE_SIZEOF_VOID_P}."
+     " FEX only supports 64-bit (8-byte pointer) systems."
+     " If you believe this is in error, file an issue.")
+-elseif (NOT (WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Linux"))
++elseif (NOT (WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Android"))
+   message(FATAL_ERROR "Unsupported system type ${CMAKE_SYSTEM_NAME}."
+     " FEX only supports Linux and Windows."
+     " If you believe this is in error, file an issue.")
+ endif()
+ 
++if (CMAKE_SYSTEM_NAME STREQUAL "Android")
++  # What bionic does not have (shm_open, memfd_create, getdents64 ...), in one header given to every file.
++  add_compile_options(-include ${CMAKE_CURRENT_SOURCE_DIR}/AndroidCompat.h)
++endif()
++
+ ## Compiler Checks ##
+ # GCC and MSVC are unsupported
+ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+@@ -246,6 +251,10 @@ check_cxx_source_compiles(
+   return program_invocation_name == nullptr;
+   }"
+   HAS_PROGRAM_INVOCATION_NAME)
++if (NOT HAS_PROGRAM_INVOCATION_NAME)
++  # bionic has no program_invocation_name: the check leaves the variable empty, which is not a value the #if can read.
++  set(HAS_PROGRAM_INVOCATION_NAME 0)
++endif()
+ add_compile_definitions("HAS_PROGRAM_INVOCATION_NAME=${HAS_PROGRAM_INVOCATION_NAME}")
+ 
+ if (ENABLE_VIXL_SIMULATOR)
+@@ -278,7 +287,12 @@ if (ENABLE_COMPILE_TIME_TRACE)
+   link_libraries(-ftime-trace)
+ endif()
+ 
+-set(PTHREAD_LIB pthread)
++if (CMAKE_SYSTEM_NAME STREQUAL "Android")
++  # bionic has the threads in libc, there is no libpthread to link
++  set(PTHREAD_LIB)
++else()
++  set(PTHREAD_LIB pthread)
++endif()
+ 
+ if (USE_LINKER)
+   message(STATUS "Overriding linker to: ${USE_LINKER}")
+diff --git a/FEXCore/Source/Utils/AllocatorHooks.cpp b/FEXCore/Source/Utils/AllocatorHooks.cpp
+index e85f09a..0961fef 100644
+--- a/FEXCore/Source/Utils/AllocatorHooks.cpp
++++ b/FEXCore/Source/Utils/AllocatorHooks.cpp
+@@ -214,7 +214,12 @@ void* memalign(size_t align, size_t s) {
+   return ::memalign(align, s);
+ }
+ void* valloc(size_t size) {
++#ifdef __ANDROID__
++  // Android's libc has no valloc: a page-aligned allocation of the same kind.
++  return ::aligned_alloc(4096, (size + 4095) & ~4095ULL);
++#else
+   return ::valloc(size);
++#endif
+ }
+ int posix_memalign(void** r, size_t a, size_t s) {
+   return ::posix_memalign(r, a, s);
+diff --git a/FEXCore/include/FEXCore/fextl/functional.h b/FEXCore/include/FEXCore/fextl/functional.h
+index 8e8ed65..7e58e2a 100644
+--- a/FEXCore/include/FEXCore/fextl/functional.h
++++ b/FEXCore/include/FEXCore/fextl/functional.h
+@@ -52,9 +52,17 @@ public:
+ 
+       // Third, assign the result to std::function, ensuring it's indeed
+       // allocation-free by checking for nothrow-constructibility
++#ifdef __ANDROID__
++      // LLVM's libc++ (Android's standard library) does not mark the assignment noexcept, so the check below cannot be made.
++      // What it is there for is that std::function does not allocate: a lambda of one pointer fits the small-object buffer
++      // of libc++ (three pointers), so it does not.
++      static_assert(sizeof(wrapped_lambda) <= sizeof(void*), "The wrapped lambda must hold one pointer, so that "
++                                                             "std::function keeps it in its own storage");
++#else
+       static_assert(noexcept(internal = std::move(wrapped_lambda)), "This implementation of std::function "
+                                                                     "does not support implementing "
+                                                                     "fextl::move_only_function");
++#endif
+       internal = std::move(wrapped_lambda);
+ 
+       // Finally, if a destructor must be called, generate a pointer to its destructor
+diff --git a/Source/Tools/FEXInterpreter/ELFCodeLoader.h b/Source/Tools/FEXInterpreter/ELFCodeLoader.h
+index 5850c83..5a2027d 100644
+--- a/Source/Tools/FEXInterpreter/ELFCodeLoader.h
++++ b/Source/Tools/FEXInterpreter/ELFCodeLoader.h
+@@ -65,8 +65,8 @@ class ELFCodeLoader final : public FEX::CodeLoader {
+       }
+ 
+       had_pt_load = true;
+-      min_map_address = std::min(min_map_address, PAGE_START(it.p_vaddr));
+-      max_map_address = std::max(max_map_address, it.p_vaddr + it.p_memsz);
++      min_map_address = std::min<uint64_t>(min_map_address, PAGE_START(it.p_vaddr));
++      max_map_address = std::max<uint64_t>(max_map_address, it.p_vaddr + it.p_memsz);
+     }
+ 
+     if (!had_pt_load) {
+diff --git a/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp b/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
+index 94bdd37..2e01e5a 100644
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
+@@ -678,8 +678,8 @@ SyscallHandler::TrackMmap(FEXCore::Core::InternalThreadState* Thread, uint64_t a
+                 MinAddress = ProgramHeader.p_vaddr;
+                 MaxAddress = ProgramHeader.p_vaddr + ProgramHeader.p_memsz;
+               }
+-              MinAddress = std::min(MinAddress, ProgramHeader.p_vaddr);
+-              MaxAddress = std::max(MaxAddress, ProgramHeader.p_vaddr + ProgramHeader.p_memsz);
++              MinAddress = std::min<uint64_t>(MinAddress, ProgramHeader.p_vaddr);
++              MaxAddress = std::max<uint64_t>(MaxAddress, ProgramHeader.p_vaddr + ProgramHeader.p_memsz);
+             }
+           }
+           if (MaxAddress > MinAddress) {

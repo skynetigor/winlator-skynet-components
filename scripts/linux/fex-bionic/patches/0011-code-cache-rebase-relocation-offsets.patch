@@ -1,0 +1,19 @@
+diff --git a/FEXCore/Source/Interface/Core/JIT/JIT.cpp b/FEXCore/Source/Interface/Core/JIT/JIT.cpp
+index ef7e332..1aa1bf8 100644
+--- a/FEXCore/Source/Interface/Core/JIT/JIT.cpp
++++ b/FEXCore/Source/Interface/Core/JIT/JIT.cpp
+@@ -1159,6 +1159,14 @@ CPUBackend::CompiledCode Arm64JITCore::CompileCode(uint64_t Entry, uint64_t Size
+     CodeBegin += Delta;
+     CodeData.HostCodeOffset = CodeData.BlockBegin - CurrentCodeBuffer->GetBufferBase();
+ 
++    // The relocations recorded for this compile unit are relative to its temporary buffer. The code cache stores and applies
++    // them against the whole shared code buffer, so move them to buffer-relative offsets now that the unit has a final home.
++    if (CTX->GetCodeCache().IsGeneratingCache) {
++      for (size_t i = PrevNumAllocations; i < Relocations.size(); ++i) {
++        Relocations[i].Header.Offset += CodeData.HostCodeOffset;
++      }
++    }
++
+     // Copy over CodeBuffer contents
+     memcpy(AllocatedInfo.BufferAllocationOffset, TempCodeBuffer, CodeData.Size);
+   }

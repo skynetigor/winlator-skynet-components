@@ -1,0 +1,12 @@
+diff --git a/ThunkLibs/Generator/gen.cpp b/ThunkLibs/Generator/gen.cpp
+--- a/ThunkLibs/Generator/gen.cpp
++++ b/ThunkLibs/Generator/gen.cpp
+@@ -840,6 +840,8 @@
+ 
+   const bool Success = Compiler.ExecuteAction(Action);
+ 
++#if LLVM_VERSION_MAJOR < 23
+   Files->clearStatCache();
++#endif
+   return Success;
+ }

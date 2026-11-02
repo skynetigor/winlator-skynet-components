@@ -1,0 +1,39 @@
+diff --git a/Source/Common/Config.cpp b/Source/Common/Config.cpp
+--- a/Source/Common/Config.cpp
++++ b/Source/Common/Config.cpp
+@@ -71,6 +71,16 @@
+     for (auto ConfigBlock : ConfigBlocks) {
+       for (const json_t* ConfigItem = json_getChild(ConfigBlock); ConfigItem != nullptr; ConfigItem = json_getSibling(ConfigItem)) {
+         const char* ConfigName = json_getName(ConfigItem);
++        if (json_getType(ConfigItem) == JSON_ARRAY) {
++          for (const json_t* Entry = json_getChild(ConfigItem); Entry != nullptr; Entry = json_getSibling(Entry)) {
++            const char* Value = json_getValue(Entry);
++            if (json_getType(Entry) != JSON_TEXT || !Value) {
++              ERROR_AND_DIE_FMT("JSON file '{}': Expected string array for config item '{}'", Config, ConfigName);
++            }
++            Func(ConfigName, Value);
++          }
++          continue;
++        }
+         const char* ConfigString = json_getValue(ConfigItem);
+ 
+         if (!ConfigString) {
+diff --git a/Source/Tools/FEXInterpreter/ELFCodeLoader.h b/Source/Tools/FEXInterpreter/ELFCodeLoader.h
+--- a/Source/Tools/FEXInterpreter/ELFCodeLoader.h
++++ b/Source/Tools/FEXInterpreter/ELFCodeLoader.h
+@@ -336,7 +336,14 @@
+ 
+     if (AdditionalEnvp) {
+       const auto& EnvpList = AdditionalEnvp->All();
+-      EnvironmentVariables.insert(EnvironmentVariables.end(), EnvpList.begin(), EnvpList.end());
++      for (const auto& Entry : EnvpList) {
++        const auto Separator = Entry.find('=');
++        if (Separator != fextl::string::npos) {
++          const auto Key = std::string_view {Entry.data(), Separator + 1};
++          std::erase_if(EnvironmentVariables, [&](const auto& Existing) { return Existing.starts_with(Key); });
++        }
++        EnvironmentVariables.emplace_back(Entry);
++      }
+     }
+ 
+     if (InjectLibSegFault()) {

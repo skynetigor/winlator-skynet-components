@@ -1,0 +1,17 @@
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/Syscalls/Passthrough.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/Syscalls/Passthrough.cpp
+@@ -350,7 +350,14 @@
+   REGISTER_SYSCALL_IMPL(mlock2, SyscallPassthrough3<SYSCALL_DEF(mlock2)>);
+   REGISTER_SYSCALL_IMPL(copy_file_range, SyscallPassthrough6<SYSCALL_DEF(copy_file_range)>);
+   REGISTER_SYSCALL_IMPL(pkey_mprotect, SyscallPassthrough4<SYSCALL_DEF(pkey_mprotect)>);
++#ifdef __ANDROID__
++  REGISTER_SYSCALL_IMPL(pkey_alloc, [](FEXCore::Core::CpuStateFrame*, uint64_t flags, uint64_t access) -> uint64_t {
++    LogMan::Msg::EFmt("Android FEX: guest protection keys are unavailable");
++    return flags != 0 || (access & ~uint64_t {3}) != 0 ? -EINVAL : -ENOSPC;
++  });
++#else
+   REGISTER_SYSCALL_IMPL(pkey_alloc, SyscallPassthrough2<SYSCALL_DEF(pkey_alloc)>);
++#endif
+   REGISTER_SYSCALL_IMPL(pkey_free, SyscallPassthrough1<SYSCALL_DEF(pkey_free)>);
+   // io_uring can't be emulated as it can pass `epoll_event` objects around.
+   // These are 12-byte packed structs on x86/x86-64, but on other architectures are 16-byte.

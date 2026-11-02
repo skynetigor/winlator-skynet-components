@@ -1,0 +1,16 @@
+diff --git a/ThunkLibs/libvulkan/Host.cpp b/ThunkLibs/libvulkan/Host.cpp
+index 592248e..e350221 100644
+--- a/ThunkLibs/libvulkan/Host.cpp
++++ b/ThunkLibs/libvulkan/Host.cpp
+@@ -355,4 +355,10 @@ static PFN_vkVoidFunction LookupCustomVulkanFunction(const char* a_1) {
+-  if (a_1 == "vkCreateShaderModule"sv) {
++  if (a_1 == "vkCreateDebugUtilsMessengerEXT"sv) {
++    return (PFN_vkVoidFunction)fexfn_impl_libvulkan_vkCreateDebugUtilsMessengerEXT;
++  } else if (a_1 == "vkCreateDebugReportCallbackEXT"sv) {
++    return (PFN_vkVoidFunction)fexfn_impl_libvulkan_vkCreateDebugReportCallbackEXT;
++  } else if (a_1 == "vkDestroyDebugReportCallbackEXT"sv) {
++    return (PFN_vkVoidFunction)fexfn_impl_libvulkan_vkDestroyDebugReportCallbackEXT;
++  } else if (a_1 == "vkCreateShaderModule"sv) {
+     return (PFN_vkVoidFunction)fexfn_impl_libvulkan_vkCreateShaderModule;
+   } else if (a_1 == "vkCreateInstance"sv) {
+     return (PFN_vkVoidFunction)fexfn_impl_libvulkan_vkCreateInstance;

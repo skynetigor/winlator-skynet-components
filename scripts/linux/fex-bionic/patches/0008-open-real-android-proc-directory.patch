@@ -1,0 +1,12 @@
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/FileManagement.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/FileManagement.cpp
+@@ -510,4 +510,9 @@
+   auto thunkOverlay = ThunkOverlays.find(pathname);
++#ifdef __ANDROID__
++  if (strcmp(pathname, "/proc") == 0 || strcmp(pathname, "/proc/") == 0) {
++    return EmulatedFDPathResult {AT_FDCWD, pathname};
++  }
++#endif
+   if (thunkOverlay != ThunkOverlays.end()) {
+     return EmulatedFDPathResult {AT_FDCWD, thunkOverlay->second.c_str()};
+   }

@@ -1,0 +1,50 @@
+diff --git a/Source/Tools/LinuxEmulation/LinuxSyscalls/Syscalls.cpp b/Source/Tools/LinuxEmulation/LinuxSyscalls/Syscalls.cpp
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/Syscalls.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/Syscalls.cpp
+@@ -334,13 +334,32 @@
+-  const bool NeedsEnvpCopy = (IsFDExec && !(IsBinfmtCompatible || IsOtherELF)) || HasSeccomp || NeedsFDCopy || NeedsLoaderFD;
+-
+   // We are trying to execute a shebang handled by a different architecture interpreter (e.g. /usr/bin/python from the host FS).
+   // In this case we just defer to the kernel.
+   const bool IsForeignShebang = (IsShebang && InterpreterType == ELFLoader::ELFContainer::ELFType::TYPE_OTHER_ELF);
++  bool NeedsEnvpCopy = (IsFDExec && !(IsBinfmtCompatible || IsOtherELF)) || HasSeccomp || NeedsFDCopy || NeedsLoaderFD;
+ 
++#ifdef __ANDROID__
++  fextl::vector<fextl::string> NativeLoaderEnvironment;
++  if (!(IsBinfmtCompatible || IsOtherELF || IsForeignShebang)) {
++    NeedsEnvpCopy = true;
++    for (const char* Key : {"LD_LIBRARY_PATH", "LD_PRELOAD", "HOME", "XDG_CONFIG_HOME", "XDG_DATA_HOME", "XDG_CACHE_HOME"}) {
++      if (const char* Value = getenv(Key)) {
++        NativeLoaderEnvironment.emplace_back(fextl::fmt::format("{}={}", Key, Value));
++      }
++    }
++  }
++#endif
+   if (NeedsEnvpCopy) {
+     if (envp) {
+       auto OldEnvp = envp;
+       while (*OldEnvp) {
++#ifdef __ANDROID__
++        const std::string_view Entry {*OldEnvp};
++        if (!(IsBinfmtCompatible || IsOtherELF || IsForeignShebang) &&
++            (Entry.starts_with("LD_LIBRARY_PATH=") || Entry.starts_with("LD_PRELOAD=") || Entry.starts_with("HOME=") ||
++             Entry.starts_with("XDG_CONFIG_HOME=") || Entry.starts_with("XDG_DATA_HOME=") || Entry.starts_with("XDG_CACHE_HOME="))) {
++          ++OldEnvp;
++          continue;
++        }
++#endif
+         ///< Copy the pointers to our own vector of environment variables.
+         EnvpArgs.emplace_back(*OldEnvp);
+         ++OldEnvp;
+@@ -349,6 +368,11 @@
+       }
+     }
+ 
++#ifdef __ANDROID__
++    for (auto& Entry : NativeLoaderEnvironment) {
++      EnvpArgs.emplace_back(Entry.data());
++    }
++#endif
+     if (!IsBinfmtCompatible || NeedsFDCopy) {
+       if (NeedsFDCopy) {
+         // FEX needs the FD to live past execve when binfmt_misc isn't used,

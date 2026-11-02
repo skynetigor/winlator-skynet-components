@@ -1,0 +1,15 @@
+diff --git a/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp b/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
+index 2e01e5a..c139834 100644
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
+@@ -423,6 +423,10 @@ void SyscallHandler::TriggerGuestLibWrapperCodeCacheLoad(FEXCore::Core::Internal
+ 
+   auto lk = FEXCore::GuardSignalDeferringSection<std::shared_lock>(VMATracking.Mutex, &Thread);
+   auto VMAEntry = VMATracking.FindVMAEntry(reinterpret_cast<uint64_t>(AnyAddr));
++  if (VMAEntry == VMATracking.VMAs.end() || !VMAEntry->second.Resource || !VMAEntry->second.Resource->MappedFile) {
++    // Not backed by a file (the VDSO thunk mapping on Android): nothing to load a cache for.
++    return;
++  }
+ 
+   for (auto* VMA = VMAEntry->second.Resource->FirstVMA; VMA; VMA = VMA->ResourceNextVMA) {
+     if (!VMA->Prot.Executable) {
