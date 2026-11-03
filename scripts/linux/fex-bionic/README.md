@@ -21,6 +21,7 @@ FEX-2610 built as an Android program (no glibc runtime, no PRoot) so a Linux x86
 | 0010 | Code cache: skip guest libs that have no backing file (the VDSO thunk mapping); without this FEX crashes at startup with `FEX_ENABLECODECACHINGWIP=1` |
 | 0011 | Code cache: make relocation offsets buffer-relative when generating a cache (see below) |
 | 0012 | `openat2` / `faccessat2`: emulate them where the Android 16 app seccomp filter refuses them |
+| 0013 | A 64-bit guest `MAP_32BIT` request over 1 GiB fails with ENOMEM at once, as in the kernel (Counter-Strike 2 probes for 2 GiB) |
 
 ## Code cache status (`FEX_ENABLECODECACHINGWIP=1`, experimental)
 
