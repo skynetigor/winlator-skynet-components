@@ -1,0 +1,235 @@
+diff --git a/Source/Tools/LinuxEmulation/LinuxSyscalls/FileManagement.cpp b/Source/Tools/LinuxEmulation/LinuxSyscalls/FileManagement.cpp
+index 53efcf7..b2752f6 100644
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/FileManagement.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/FileManagement.cpp
+@@ -36,6 +36,7 @@ $end_info$
+ #include <stdio.h>
+ #include <sys/stat.h>
+ #include <sys/statfs.h>
++#include <sys/wait.h>
+ #include <sys/xattr.h>
+ #include <syscall.h>
+ #include <system_error>
+@@ -45,6 +46,160 @@ $end_info$
+ #include <tiny-json.h>
+ 
+ namespace FEX::HLE {
++namespace {
++// Android's app seccomp filter refuses openat2 before Android 17 (SIGSYS, or ENOSYS/EPERM): FEX opens every file of the guest root
++// filesystem with it. Probe once in a child process, and where the call is not allowed do it with openat plus a user-space
++// RESOLVE_IN_ROOT (symlinks followed inside the root, an absolute target restarts at the root, ".." never leaves it).
++bool HostOpenat2Allowed() {
++  static const bool Allowed = []() {
++    if (getenv("FEX_OPENAT2_EMULATE")) {
++      return false;
++    }
++    pid_t Child = fork();
++    if (Child == 0) {
++      long Result = ::syscall(SYSCALL_DEF(openat2), -1, nullptr, nullptr, 0);
++      _exit(Result == -1 && (errno == ENOSYS || errno == EPERM || errno == EACCES) ? 1 : 0);
++    }
++    if (Child < 0) {
++      return true;
++    }
++    int Status = 0;
++    pid_t Done;
++    do {
++      Done = waitpid(Child, &Status, 0);
++    } while (Done < 0 && errno == EINTR);
++    return !(Done == Child && (WIFSIGNALED(Status) || (WIFEXITED(Status) && WEXITSTATUS(Status) == 1)));
++  }();
++  return Allowed;
++}
++
++bool FDRealPath(int fd, char* Out, size_t Size) {
++  char Link[64];
++  snprintf(Link, sizeof(Link), "/proc/self/fd/%d", fd);
++  ssize_t N = readlink(Link, Out, Size - 1);
++  if (N <= 0) {
++    return false;
++  }
++  Out[N] = 0;
++  return true;
++}
++
++constexpr size_t PathBufferSize = 4096;
++
++int OpenInRootWithoutOpenat2(int RootFD, const char* Path, int Flags, mode_t Mode, uint64_t Resolve) {
++  if (!(Resolve & RESOLVE_IN_ROOT) || Path == nullptr) {
++    return ::syscall(SYSCALL_DEF(openat), RootFD, Path, Flags, Mode);
++  }
++
++  // A plain openat that stays inside the root is the answer (the symlinks on the way were relative).
++  char Root[PathBufferSize], Opened[PathBufferSize];
++  const bool HaveRoot = FDRealPath(RootFD, Root, sizeof(Root));
++  const size_t RootLen = HaveRoot ? strlen(Root) : 0;
++  if (HaveRoot && Path[0] != '/') {
++    int FD = ::syscall(SYSCALL_DEF(openat), RootFD, Path, Flags, Mode);
++    if (FD >= 0) {
++      if (FDRealPath(FD, Opened, sizeof(Opened)) && strncmp(Opened, Root, RootLen) == 0 && (Opened[RootLen] == '/' || Opened[RootLen] == 0)) {
++        return FD;
++      }
++      close(FD);
++    }
++  }
++
++  char Todo[PathBufferSize], Cur[PathBufferSize];
++  if (snprintf(Todo, sizeof(Todo), "%s", Path) >= (int)sizeof(Todo)) {
++    errno = ENAMETOOLONG;
++    return -1;
++  }
++  Cur[0] = 0;
++  int Hops = 0;
++  for (;;) {
++    char* Rest = Todo;
++    while (*Rest == '/') {
++      ++Rest;
++    }
++    if (!*Rest) {
++      break;
++    }
++    char* Slash = strchr(Rest, '/');
++    char Component[256];
++    const size_t Len = Slash ? (size_t)(Slash - Rest) : strlen(Rest);
++    if (Len >= sizeof(Component)) {
++      errno = ENAMETOOLONG;
++      return -1;
++    }
++    memcpy(Component, Rest, Len);
++    Component[Len] = 0;
++    char Tail[PathBufferSize];
++    snprintf(Tail, sizeof(Tail), "%s", Slash ? Slash + 1 : "");
++    const bool IsLast = Tail[strspn(Tail, "/")] == 0;
++
++    if (!strcmp(Component, ".")) {
++    } else if (!strcmp(Component, "..")) {
++      char* Last = strrchr(Cur, '/');
++      if (Last) {
++        *Last = 0;
++      } else {
++        Cur[0] = 0;
++      }
++    } else {
++      char Candidate[PathBufferSize];
++      if (snprintf(Candidate, sizeof(Candidate), "%s%s%s", Cur, Cur[0] ? "/" : "", Component) >= (int)sizeof(Candidate)) {
++        errno = ENAMETOOLONG;
++        return -1;
++      }
++      char Target[PathBufferSize];
++      const ssize_t N = (IsLast && (Flags & O_NOFOLLOW)) ? -1 : readlinkat(RootFD, Candidate, Target, sizeof(Target) - 1);
++      if (N > 0) {
++        if (++Hops > 40) {
++          errno = ELOOP;
++          return -1;
++        }
++        Target[N] = 0;
++        if (Target[0] == '/') {
++          Cur[0] = 0;
++        }
++        snprintf(Todo, sizeof(Todo), "%s/%s", Target, Tail);
++        continue;
++      }
++      snprintf(Cur, sizeof(Cur), "%s", Candidate);
++    }
++    snprintf(Todo, sizeof(Todo), "%s", Tail);
++  }
++  return ::syscall(SYSCALL_DEF(openat), RootFD, Cur[0] ? Cur : ".", Flags, Mode);
++}
++
++long HostOpenat2(int DirFD, const char* Path, const void* How, size_t Size) {
++  if (HostOpenat2Allowed() || How == nullptr || Size < sizeof(FEX::HLE::open_how)) {
++    return ::syscall(SYSCALL_DEF(openat2), DirFD, Path, How, Size);
++  }
++  const auto* Open = reinterpret_cast<const FEX::HLE::open_how*>(How);
++  return OpenInRootWithoutOpenat2(DirFD, Path, (int)Open->flags, (mode_t)Open->mode, Open->resolve);
++}
++
++// faccessat2 (flags) is refused by the same filter, and bionic's faccessat() does not take flags: an app's effective ids equal its
++// real ids, so AT_EACCESS changes nothing, and a symlink asked with AT_SYMLINK_NOFOLLOW only has to exist.
++int HostFaccessat(int DirFD, const char* Path, int Mode, int Flags) {
++  if (Flags & AT_EACCESS && getuid() == geteuid() && getgid() == getegid()) {
++    Flags &= ~AT_EACCESS;
++  }
++  if (Flags & AT_SYMLINK_NOFOLLOW) {
++    struct stat St;
++    if (fstatat(DirFD, Path, &St, AT_SYMLINK_NOFOLLOW) != 0) {
++      return -1;
++    }
++    if (S_ISLNK(St.st_mode)) {
++      return 0;
++    }
++    Flags &= ~AT_SYMLINK_NOFOLLOW;
++  }
++  if (Flags & AT_EMPTY_PATH && Path && Path[0] == 0) {
++    struct stat St;
++    return fstat(DirFD, &St);
++  }
++  return ::faccessat(DirFD, Path, Mode, 0);
++}
++} // namespace
++
+ bool FileManager::RootFSPathExists(const char* Filepath) const {
+   LOGMAN_THROW_A_FMT(Filepath && Filepath[0] == '/', "Filepath needs to be absolute");
+   return FHU::Filesystem::ExistsAt(RootFSFD, Filepath + 1);
+@@ -677,7 +832,7 @@ uint64_t FileManager::Open(const char* pathname, int flags, uint32_t mode) {
+         .mode = (flags & (O_CREAT | O_TMPFILE)) ? mode & 07777 : 0, // openat2() is stricter about this
+         .resolve = (Path.FD == AT_FDCWD) ? 0u : RESOLVE_IN_ROOT,    // AT_FDCWD means it's a thunk and not via RootFS
+       };
+-      fd = ::syscall(SYSCALL_DEF(openat2), Path.FD, Path.Path, &how, sizeof(how));
++      fd = HostOpenat2(Path.FD, Path.Path, &how, sizeof(how));
+ 
+       if (fd == -1 && errno == EXDEV) {
+         // This means a magic symlink (/proc/foo) was involved. In this case we
+@@ -796,13 +951,13 @@ uint64_t FileManager::FAccessat2(int dirfd, const char* pathname, int mode, int
+   FDPathTmpData TmpFilename;
+   auto Path = GetEmulatedFDPath(dirfd, SelfPath, (flags & AT_SYMLINK_NOFOLLOW) == 0, TmpFilename);
+   if (Path.FD != -1) {
+-    uint64_t Result = ::syscall(SYSCALL_DEF(faccessat2), Path.FD, Path.Path, mode, flags);
++    uint64_t Result = HostFaccessat(Path.FD, Path.Path, mode, flags);
+     if (Result != -1) {
+       return Result;
+     }
+   }
+ 
+-  return ::syscall(SYSCALL_DEF(faccessat2), dirfd, SelfPath, mode, flags);
++  return HostFaccessat(dirfd, SelfPath, mode, flags);
+ }
+ 
+ uint64_t FileManager::Readlink(const char* pathname, char* buf, size_t bufsiz) {
+@@ -931,7 +1086,7 @@ uint64_t FileManager::Openat([[maybe_unused]] int dirfs, const char* pathname, i
+         .mode = (flags & (O_CREAT | O_TMPFILE)) ? mode & 07777 : 0, // openat2() is stricter about this,
+         .resolve = (Path.FD == AT_FDCWD) ? 0u : RESOLVE_IN_ROOT,    // AT_FDCWD means it's a thunk and not via RootFS
+       };
+-      fd = ::syscall(SYSCALL_DEF(openat2), Path.FD, Path.Path, &how, sizeof(how));
++      fd = HostOpenat2(Path.FD, Path.Path, &how, sizeof(how));
+       if (fd == -1 && errno == EXDEV) {
+         // This means a magic symlink (/proc/foo) was involved. In this case we
+         // just punt and do the access without RESOLVE_IN_ROOT.
+@@ -966,23 +1121,23 @@ uint64_t FileManager::Openat2(int dirfs, const char* pathname, FEX::HLE::open_ho
+       if (Path.FD != AT_FDCWD) {
+         how->resolve |= RESOLVE_IN_ROOT;
+       }
+-      fd = ::syscall(SYSCALL_DEF(openat2), Path.FD, Path.Path, how, usize);
++      fd = HostOpenat2(Path.FD, Path.Path, how, usize);
+       how->resolve &= ~RESOLVE_IN_ROOT;
+       if (fd == -1 && errno == EXDEV) {
+         // This means a magic symlink (/proc/foo) was involved. In this case we
+         // just punt and do the access without RESOLVE_IN_ROOT.
+-        fd = ::syscall(SYSCALL_DEF(openat2), Path.FD, Path.Path, how, usize);
++        fd = HostOpenat2(Path.FD, Path.Path, how, usize);
+       }
+     }
+ 
+     // Open through RootFS failed (probably nonexistent), so open directly.
+     if (fd == -1) {
+-      fd = ::syscall(SYSCALL_DEF(openat2), dirfs, SelfPath, how, usize);
++      fd = HostOpenat2(dirfs, SelfPath, how, usize);
+     }
+ 
+     ReplaceEmuFd(fd, how->flags, how->mode);
+   } else {
+-    fd = ::syscall(SYSCALL_DEF(openat2), dirfs, SelfPath, how, usize);
++    fd = HostOpenat2(dirfs, SelfPath, how, usize);
+   }
+ 
+   return fd;
