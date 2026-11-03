@@ -31,4 +31,16 @@ for g in load('games.json')['games']:
             if i not in configs: errors.append(f"{g['id']} {v['id']}: unknown config {i}")
         for s in v.get('preferredBySoc', {}):
             if s not in socs: errors.append(f"{g['id']} {v['id']}: unknown soc {s}")
+# A version may name where Steam serves it from ("steam": {"branch": ..., "manifests": {"<depot>": "<manifest>"}}, also under "windows"/"linux").
+import re
+def check_steam(where, node):
+    if node is None: return
+    if not isinstance(node, dict): errors.append(f"{where}: steam must be an object"); return
+    if node.get('branch', '') and not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._ -]{0,63}', node['branch']): errors.append(f"{where}: bad steam branch {node['branch']!r}")
+    for depot, manifest in node.get('manifests', {}).items():
+        if not re.fullmatch(r'[0-9]{1,10}', str(depot)) or not re.fullmatch(r'[0-9]{1,20}', str(manifest)): errors.append(f"{where}: bad steam manifest {depot}={manifest}")
+for g in load('games.json')['games']:
+    for v in load(g['config'])['versions']:
+        for key in (None, 'windows', 'linux'):
+            check_steam(f"{g['id']} {v['id']}" + (f" {key}" if key else ''), (v if key is None else v.get(key, {}) or {}).get('steam'))
 print('\n'.join(errors) or 'ok'); sys.exit(1 if errors else 0)
