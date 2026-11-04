@@ -40,6 +40,9 @@
   {
    "id": "0.34",
    "label": "0.34.x",
+   "steam": {
+     "branch": "0.34.2_win7_no_updates"
+   },
    "status": "works",
    "match": {
     "versionFile": {
