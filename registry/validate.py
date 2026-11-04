@@ -41,6 +41,7 @@ def check_steam(where, node):
         if not re.fullmatch(r'[0-9]{1,10}', str(depot)) or not re.fullmatch(r'[0-9]{1,20}', str(manifest)): errors.append(f"{where}: bad steam manifest {depot}={manifest}")
 for g in load('games.json')['games']:
     for v in load(g['config'])['versions']:
+        if v.get('preferredPlatform') not in (None, 'linux', 'windows'): errors.append(f"{g['id']} {v['id']}: bad preferredPlatform {v.get('preferredPlatform')!r}")
         for key in (None, 'windows', 'linux'):
             check_steam(f"{g['id']} {v['id']}" + (f" {key}" if key else ''), (v if key is None else v.get(key, {}) or {}).get('steam'))
 print('\n'.join(errors) or 'ok'); sys.exit(1 if errors else 0)
