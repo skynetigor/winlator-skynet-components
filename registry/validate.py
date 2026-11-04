@@ -37,6 +37,8 @@ def check_steam(where, node):
     if node is None: return
     if not isinstance(node, dict): errors.append(f"{where}: steam must be an object"); return
     if node.get('branch', '') and not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._ -]{0,63}', node['branch']): errors.append(f"{where}: bad steam branch {node['branch']!r}")
+    if 'size' in node and not isinstance(node['size'], int): errors.append(f"{where}: steam size must be a whole number")
+    if 'label' in node and not isinstance(node['label'], str): errors.append(f"{where}: steam label must be text")
     for depot, manifest in node.get('manifests', {}).items():
         if not re.fullmatch(r'[0-9]{1,10}', str(depot)) or not re.fullmatch(r'[0-9]{1,20}', str(manifest)): errors.append(f"{where}: bad steam manifest {depot}={manifest}")
 for g in load('games.json')['games']:
