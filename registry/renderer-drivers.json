@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 9,
+  "revision": 11,
   "drivers": [
     {
       "id": "Turnip Gen8 V30",
@@ -86,6 +86,53 @@
       "sha256": "d0335542ec996fe33e83dfbec0d86aed301da95d22b671a88b40a4722d115b48",
       "testedGpus": [],
       "notes": "Upstream v37 release explicitly supports A825/A829; binary includes Adreno (TM) 825/829 and external-memory FD/DMA-BUF import exports. Source chip IDs are 0x44030000 and 0x44030a20. Standard unpatched Android package; native rendering and DMA-BUF import still require validation on both GPUs."
+    },
+    {
+      "id": "Mesa Turnip v27.0.0-20261104-r3-A8xx",
+      "platform": "android",
+      "gpus": [
+        "840"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 90,
+      "dmaBufImport": true,
+      "url": "https://github.com/The412Banner/Banners-Turnip/releases/download/v27.0.0-20261104-r3/Turnip-v27.0.0-20261104-r3-A8xx.zip",
+      "sha256": "158a05d2b15a22bb28380758ba721cc0a9f9cd7cb3d5f7f3b291406b990587e0",
+      "testedGpus": [
+        "840"
+      ],
+      "notes": "Experimental A8xx Turnip (Mesa 27.0.0-devel, Vulkan 1.4.367, whitebelyash turnip/gen8 stack, KGSL) by The412Banner, release v27.0.0-20261104-r3; the zip and its library are byte-identical to the build measured here. Lower priority than DD-Turnip v0.1.1 so automatic selection on Adreno 840 is unchanged; selected explicitly by the BeamNG FEX + bionic presets. BeamNG 0.39.4 West Coast, Normal graphics, 1280x720 in-game, parked scene, Redmagic Astra 2 (Adreno 840): 41.4 fps against 40.3 for DD-Turnip (three alternating launch pairs, ahead in each; a 2-3% edge, not a large one). The builder's own release notes say its CI builds are not tested on a device."
+    },
+    {
+      "id": "DD-Turnip v0.3.4",
+      "platform": "android",
+      "gpus": [
+        "840"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 80,
+      "dmaBufImport": true,
+      "url": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.3.4/DD-Turnip-v0.3.4.zip",
+      "sha256": "81db74cff1bf6568581cfd79203bec22f48856006aeac09e9e0a3eb3f9416fc1",
+      "testedGpus": [],
+      "notes": "Android half of the Droid-Deck bundle (Mesa 27.0.0-devel (e2ab6687d5)), same zip layout as DD-Turnip v0.1.1. Not yet measured in SkyNetEmu. Lower priority than DD-Turnip v0.1.1 so automatic selection on Adreno 840 is unchanged; select it explicitly in a shortcut or container. Native Vulkan startup must still validate driver loading and DMA-BUF capabilities."
+    },
+    {
+      "id": "DD-Turnip v0.5.0",
+      "platform": "android",
+      "gpus": [
+        "840"
+      ],
+      "minApi": 29,
+      "maxApi": 37,
+      "priority": 85,
+      "dmaBufImport": true,
+      "url": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.5.0/DD-Turnip-v0.5.0.zip",
+      "sha256": "031969ab730b6fef2ebc180c3687e778bb06aa11d8d4f191e18d6a7df425581f",
+      "testedGpus": [],
+      "notes": "Android half of the Droid-Deck bundle (Mesa 27.0.0-devel (56541164ee)), same zip layout as DD-Turnip v0.1.1. Not yet measured in SkyNetEmu. Lower priority than DD-Turnip v0.1.1 so automatic selection on Adreno 840 is unchanged; select it explicitly in a shortcut or container. Native Vulkan startup must still validate driver loading and DMA-BUF capabilities."
     }
   ]
 }

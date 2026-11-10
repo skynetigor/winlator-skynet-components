@@ -1420,6 +1420,26 @@
     "channel": "prerelease"
   },
   {
+    "id": "renderer-driver-droid-deck-dd-turnip-v0.5.0",
+    "name": "DD-Turnip v0.5.0 (Droid-Deck)",
+    "type": "RendererDriver",
+    "source": "Droid-Deck/Drivers-CI",
+    "verName": "DD-Turnip-v0.5.0",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.5.0/DD-Turnip-v0.5.0.zip",
+    "channel": "prerelease"
+  },
+  {
+    "id": "renderer-driver-droid-deck-dd-turnip-v0.3.4",
+    "name": "DD-Turnip v0.3.4 (Droid-Deck)",
+    "type": "RendererDriver",
+    "source": "Droid-Deck/Drivers-CI",
+    "verName": "DD-Turnip-v0.3.4",
+    "verCode": 1,
+    "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.3.4/DD-Turnip-v0.3.4.zip",
+    "channel": "prerelease"
+  },
+  {
     "id": "renderer-driver-droid-deck-dd-turnip-v0.1.1",
     "name": "DD-Turnip v0.1.1 (Droid-Deck)",
     "type": "RendererDriver",
