@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "revision": 8,
+ "id": "rise-of-the-tomb-raider",
+ "name": "Rise of the Tomb Raider",
+ "steam": {
+  "appId": 391220,
+  "installDir": "Rise of the Tomb Raider"
+ },
+ "linux": {
+  "executables": [
+   "RiseOfTheTombRaider.sh",
+   "bin/RiseOfTheTombRaider"
+  ],
+  "defaults": {
+   "executable": "RiseOfTheTombRaider.sh",
+   "args": [],
+   "env": {
+    "FEX_TSOENABLED": "1",
+    "FEX_X87REDUCEDPRECISION": "0"
+   },
+   "resolution": "1280x720"
+  }
+ },
+ "versions": [
+  {
+   "id": "steam-9575745",
+   "label": "Steam Linux (build 9575745)",
+   "status": "broken",
+   "testedOn": "SM-F976B, Adreno 840, Android 17",
+   "notes": "Native x86-64 Feral Vulkan port. Launches, but gameplay has known faults: FEX Performance with scalar TSO and full x87 precision still faults in game worker threads and waits on a stuck crash reporter. A control without the guest fault logger reproduced the reporter wait. Black rendering artifacts also remain unresolved. Compatibility reached the opening mountain level with FEX 2610, Ubuntu 24.04, Bannerlator r9, Turnip 26.3 for Adreno 8xx and native Vulkan at 1280x720, but sustained Compatibility stability is unverified. The defaults FEX_TSOENABLED=1 and FEX_X87REDUCEDPRECISION=0 help Performance startup, not gameplay stability. Scalar TSO alone faulted; full precision alone with scalar TSO disabled froze during startup. Vector, memcpy and half-barrier TSO follow the chosen preset. No stable Performance fix is confirmed; diagnostic frame caps, preloads and shader-warmer changes are not profile defaults. Select SkyNetEmu Linux rather than Valve's pressure-vessel tool; the app selects it only when no per-game tool was chosen. The launcher supplies only GConf and dbus-glib from installed Steam Linux Runtime (scout). Native resolution previously hit low memory. Box64 r4 failed in libcef.so. Later levels and clean shutdown are untested. Keep the game on executable internal storage. Checked again on 2026-11-02 with the rebuilt FEX on the direct FEX+bionic route: start from the shortcut, Continue, The Prophet's Tomb gameplay and forward movement, about 22-37 FPS at thermal status 3-4; status unchanged because sustained stability is still unverified. The preferred config runs the game on Android FEX without PRoot (bionic, DD-Turnip v0.1.1) with the game's Steam IPC left off; on a RedMagic Astra 2 it reaches the main menu (2 of 3 launches), gameplay is not checked there, and the PRoot config stays listed as the fallback.",
+   "match": {
+    "steamBuildId": {
+     "from": 9575745,
+     "until": 9575746
+    }
+   },
+   "containers": [
+    "rise-of-the-tomb-raider-linux-fex-bionic",
+    "rise-of-the-tomb-raider-linux-fex-performance"
+   ],
+   "preferredContainer": "rise-of-the-tomb-raider-linux-fex-bionic"
+  },
+  {
+   "id": "default",
+   "label": "Other Linux builds",
+   "status": "untested",
+   "notes": "Only Steam Linux build 9575745 has a short opening-level check. These defaults are not verification of other builds or emulators.",
+   "default": true,
+   "containers": [
+    "rise-of-the-tomb-raider-linux-fex-performance"
+   ],
+   "preferredContainer": "rise-of-the-tomb-raider-linux-fex-performance"
+  }
+ ]
+}

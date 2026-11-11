@@ -5,7 +5,8 @@
       "family": "snapdragon-8-elite-gen-5",
       "name": "Snapdragon 8 Elite Gen 5",
       "models": [
-        "SM8850"
+        "SM8850",
+        "SM8850P"
       ],
       "gpus": [
         "Adreno (TM) 840"
@@ -42,16 +43,6 @@
       ]
     },
     {
-      "family": "snapdragon-8s-gen-3",
-      "name": "Snapdragon 8s Gen 3",
-      "models": [
-        "SM8635"
-      ],
-      "gpus": [
-        "Adreno (TM) 735"
-      ]
-    },
-    {
       "family": "snapdragon-8-gen-1",
       "name": "Snapdragon 8 Gen 1",
       "models": [
@@ -59,6 +50,16 @@
       ],
       "gpus": [
         "Adreno (TM) 730"
+      ]
+    },
+    {
+      "family": "snapdragon-8s-gen-3",
+      "name": "Snapdragon 8s Gen 3",
+      "models": [
+        "SM8635"
+      ],
+      "gpus": [
+        "Adreno (TM) 735"
       ]
     }
   ]

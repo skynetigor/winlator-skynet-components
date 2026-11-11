@@ -14,10 +14,34 @@
    "config": "games/tomb-raider-2013.json"
   },
   {
+   "id": "rise-of-the-tomb-raider",
+   "name": "Rise of the Tomb Raider",
+   "steamAppId": 391220,
+   "config": "games/rise-of-the-tomb-raider.json"
+  },
+  {
    "id": "shadow-of-the-tomb-raider",
    "name": "Shadow of the Tomb Raider",
    "steamAppId": 750920,
    "config": "games/shadow-of-the-tomb-raider.json"
+  },
+  {
+   "id": "alien-isolation",
+   "name": "Alien: Isolation",
+   "steamAppId": 214490,
+   "config": "games/alien-isolation.json"
+  },
+  {
+   "id": "dead-island-definitive-edition",
+   "name": "Dead Island Definitive Edition",
+   "steamAppId": 383150,
+   "config": "games/dead-island-definitive-edition.json"
+  },
+  {
+   "id": "counter-strike-2",
+   "name": "Counter-Strike 2",
+   "steamAppId": 730,
+   "config": "games/counter-strike-2.json"
   }
  ]
 }

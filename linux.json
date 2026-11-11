@@ -3,6 +3,16 @@
   "note": "Catalog of Linux-container packages for Winlator skyNET: x86 emulators and Vulkan (Turnip) drivers built for the Linux runtime (glibc aarch64). The Wine components stay in contents.json.",
   "emulators": [
     {
+      "id": "box64-0.4.4-r4",
+      "name": "Box64",
+      "emulator": "box64",
+      "version": "0.4.4-r4",
+      "channel": "prerelease",
+      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4-r4/box64-0.4.4-r4-linux-aarch64.tar.zst",
+      "sha256": "1214364a7c640c2213d778fb560e359ba55f9ca228d2a7205040d34ea07c000f",
+      "size": 16243258
+    },
+    {
       "id": "box64-0.4.4-r3",
       "name": "Box64",
       "emulator": "box64",
@@ -21,16 +31,6 @@
       "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4-r2/box64-0.4.4-r2-linux-aarch64.tar.zst",
       "sha256": "dc6929188d85b374383a9623a5972df8eeb3b150d2732f3680f9d4aa16cf53e5",
       "size": 16228960
-    },
-    {
-      "id": "box64-0.4.4-r4",
-      "name": "Box64",
-      "emulator": "box64",
-      "version": "0.4.4-r4",
-      "channel": "prerelease",
-      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-box64-0.4.4-r4/box64-0.4.4-r4-linux-aarch64.tar.zst",
-      "sha256": "1214364a7c640c2213d778fb560e359ba55f9ca228d2a7205040d34ea07c000f",
-      "size": 16243258
     },
     {
       "id": "fex-2610",
@@ -71,6 +71,21 @@
       "notes": "Mesa 26.2.2 packaged library includes FD735 and FD740; exact 735/740 defaults, hardware validation pending. Linux/glibc KGSL driver; Android renderer is a separate package."
     },
     {
+      "id": "turnip-v27.0.0-20261024-r6-linux",
+      "name": "Mesa Turnip v27.0.0-20261024-r6 Linux (A6xx/A7xx)",
+      "version": "27.0.0-20261024-r6",
+      "channel": "prerelease",
+      "source": "The412Banner/Banners-Turnip",
+      "url": "https://github.com/The412Banner/Banners-Turnip/releases/download/v27.0.0-20261024-r6/Turnip-v27.0.0-20261024-r6-Linux.zip",
+      "sha256": "596d9f131943addfd383267f9da13ebc7d420f2a2371bd0764b1fe1f3ae9f55b",
+      "size": 3222924,
+      "gpus": [
+        "730"
+      ],
+      "testedGpus": [],
+      "notes": "Linux/glibc KGSL build; upstream metadata targets A6xx/A7xx and the library contains FD730. Candidate for Snapdragon 8 Gen 1 / Adreno 730; device rendering is untested."
+    },
+    {
       "id": "turnip-v26.3.0-20261011-710-720-test-linux",
       "name": "Mesa Turnip v26.3.0-20261011-710-720-Test-Linux",
       "version": "26.3.0-20261011",
@@ -103,32 +118,6 @@
         "840"
       ],
       "notes": "Linux/glibc KGSL A8xx build (Adreno 810-840) from Mesa main ab1502f with the gen8 and WinNative A8xx patches. Adreno 840: BeamNG 0.40 runs (GPU faults recover, no lock screen) but slower than 26.3.0."
-    },
-    {
-      "id": "turnip-v27.0.0-20261024-r6-linux",
-      "name": "Mesa Turnip v27.0.0-20261024-r6 Linux (A6xx/A7xx)",
-      "version": "27.0.0-20261024-r6",
-      "channel": "prerelease",
-      "source": "The412Banner/Banners-Turnip",
-      "url": "https://github.com/The412Banner/Banners-Turnip/releases/download/v27.0.0-20261024-r6/Turnip-v27.0.0-20261024-r6-Linux.zip",
-      "sha256": "596d9f131943addfd383267f9da13ebc7d420f2a2371bd0764b1fe1f3ae9f55b",
-      "size": 3222924,
-      "gpus": [
-        "730"
-      ],
-      "testedGpus": [],
-      "notes": "Linux/glibc KGSL build; upstream metadata targets A6xx/A7xx and the library contains FD730. Candidate for Snapdragon 8 Gen 1 / Adreno 730; device rendering is untested."
-    }
-  ],
-  "desktops": [
-    {
-      "id": "xfce-4.20.4",
-      "name": "XFCE",
-      "version": "4.20.4",
-      "channel": "prerelease",
-      "url": "https://github.com/skynetigor/winlator-skynet-components/releases/download/linux-desktop-xfce-4.20.4/xfce-4.20.4.tar.zst",
-      "sha256": "26f695bcf85f83d7bef5c13cd14682f701e14af0ad4f45d7b858fc8d61831101",
-      "size": 5601493
     }
   ],
   "rootfs": [
@@ -144,7 +133,12 @@
     }
   ],
   "steam": {
-    "emulator": "box64-0.4.4-r3",
+    "runtime": "bannerlator-r9",
+    "emulator": "box64-0.4.4-r4",
+    "emulatorPreset": "PERFORMANCE",
+    "driver": "turnip-v26.3.0-20261011-a8xx-linux",
+    "glDriver": "zink",
+    "vulkanPresent": "native",
     "driverByGpu": {
       "735": "turnip-mesa-26.2.2-linux-aarch64",
       "740": "turnip-mesa-26.2.2-linux-aarch64",

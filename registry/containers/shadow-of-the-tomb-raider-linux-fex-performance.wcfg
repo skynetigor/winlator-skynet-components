@@ -26,7 +26,8 @@
       "linuxVulkanPresent": "native",
       "linuxTouchscreen": "1",
       "linuxKeyboardButton": "1",
-      "linuxAutoKeyboard": "1"
+      "linuxAutoKeyboard": "1",
+      "linuxGpuMemoryMB": "2048"
     }
   }
 }

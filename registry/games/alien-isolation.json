@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "revision": 4,
+  "id": "alien-isolation",
+  "name": "Alien: Isolation",
+  "steam": {
+    "appId": 214490,
+    "installDir": "Alien Isolation"
+  },
+  "linux": {
+    "executables": [
+      "AlienIsolation.sh",
+      "bin/AlienIsolation"
+    ],
+    "defaults": {
+      "executable": "AlienIsolation.sh",
+      "args": [],
+      "env": {
+        "FEX_TSOENABLED": "1"
+      },
+      "resolution": "1280x720"
+    }
+  },
+  "defaults": {
+    "args": []
+  },
+  "versions": [
+    {
+      "id": "steam-4940658",
+      "label": "Steam Linux (build 4940658)",
+      "steam": {
+        "branch": "public"
+      },
+      "status": "works",
+      "testedOn": "SM-F976B, Adreno 840, Android 17 (2026-11-02)",
+      "notes": "Native x86-64 Feral port, started through Steam with FEX 2610 (glibc/PRoot route), Ubuntu 24.04, Bannerlator r9, Zink and Turnip 26.3 for Adreno 8xx at 1280x720. Keep FEX_TSOENABLED=1: a Performance/TSO-off trial left the game waiting on a forked process. Select SkyNetEmu Linux rather than Valve's pressure-vessel tool (bwrap cannot read /proc/sys/kernel/overflowuid). The launcher links the game's legacy libraries (libpcre, SDL2_image/ttf, krb5/heimdal, ldap, nettle, ...) from the installed Steam Linux Runtime (scout) into ~/.skynet/lib64/214490; without them Feral's message window cannot start. Feral shows an \"unsupported graphics card or driver\" advisory on every start: choose Continue Anyway. Checked 2026-11-02: start from the shortcut, advisory, intro, main menu, Continue Game from an existing campaign save (Emergency save terminal in first person) and forward movement with W, about 80-120 FPS. Not checked: long sessions, performance benchmarks, a clean exit (a standard window-close request previously ended in 'pure virtual method called' and a stuck fork; close the app instead) and other builds. Never choose Start Game with an existing campaign: it overwrites the save. FEX + bionic (the direct FEX bridge, no PRoot; its container is preferred now): the game starts from a Steam library on shared storage and renders its opening scene on a RedMagic Astra 2 (2026-11-11); gameplay and frame rate were not checked there.",
+      "match": {
+        "steamBuildId": {
+          "from": 4940658,
+          "until": 4940659
+        }
+      },
+      "containers": [
+        "alien-isolation-linux-fex-bionic",
+        "alien-isolation-linux-fex-performance"
+      ],
+      "preferredContainer": "alien-isolation-linux-fex-bionic"
+    },
+    {
+      "id": "default",
+      "label": "Other Linux builds",
+      "status": "untested",
+      "notes": "Only Steam Linux build 4940658 was checked. These defaults are not verification of other builds or emulators.",
+      "default": true,
+      "containers": [
+        "alien-isolation-linux-fex-bionic",
+        "alien-isolation-linux-fex-performance"
+      ],
+      "preferredContainer": "alien-isolation-linux-fex-bionic"
+    }
+  ]
+}

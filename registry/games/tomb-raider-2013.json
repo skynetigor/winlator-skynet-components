@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "revision": 1,
+ "revision": 2,
  "id": "tomb-raider-2013",
  "name": "Tomb Raider (2013)",
  "steam": {
@@ -28,8 +28,8 @@
    "id": "default",
    "label": "Steam Linux (build 9573671)",
    "status": "works",
-   "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Adreno 840, Android 17",
-   "notes": "Native 32-bit Linux port, launched through Steam with FEX 2610 and Ubuntu 24.04. Keep FEX_TSOENABLED=1 even with the Performance preset: disabling TSO caused a black screen / SIGSEGV. Requires the 32-bit OpenGL thunk, Zink and the NVIDIA GL vendor override. -nolauncher bypasses Feral's options dialog; if it still appears, set GameOptionsDialogShouldShow=0 in the game's preferences. Startup and an in-game scene were checked on build 9573671; long-session stability and other builds are untested. The game must be stored inside the container, not on shared storage (FEX needs executable mappings).",
+   "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Adreno 840, Android 17; Redmagic Astra 2 (SM8850P), Adreno 840, Android 16 (main menu)",
+   "notes": "Native 32-bit Linux port, launched through Steam with FEX 2610 and Ubuntu 24.04. Keep FEX_TSOENABLED=1 even with the Performance preset: disabling TSO caused a black screen / SIGSEGV. Requires the 32-bit OpenGL thunk, Zink and the NVIDIA GL vendor override. -nolauncher bypasses Feral's options dialog; if it still appears, set GameOptionsDialogShouldShow=0 in the game's preferences. Startup and an in-game scene were checked on build 9573671; long-session stability and other builds are untested. The game must be stored inside the container, not on shared storage (FEX needs executable mappings). On a phone whose /sys/bus/pci/devices lists a PCIe chip (the Redmagic Astra 2) the game used to exit with code 139 after 25-50 s: libpci quit the process when it could not read the device's resource file; the app now hides that folder from the guest (fixed in the app, needs no setting). Feral's options window still appears with -nolauncher and ignores native touch: set the shortcut's touch mode to mouse and press PLAY. PRoot only: the direct bionic path cannot run this 32-bit game.",
    "default": true,
    "match": {
     "steamBuildId": {

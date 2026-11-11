@@ -28,7 +28,7 @@
       "linuxKeyboardButton": "1",
       "linuxAutoKeyboard": "1",
       "lsfgMultiplier": "0",
-      "graphicsFilterMode": "0",
+      "graphicsFilterMode": "3",
       "graphicsFpsPreset": "0"
     }
   }

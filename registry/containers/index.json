@@ -89,23 +89,92 @@
       ]
     },
     {
-      "id": "proton9-x64-box64-zink-dxvk231",
-      "name": "Zink + DXVK 2.3.1, 1024x768",
-      "file": "containers/proton9-x64-box64-zink-dxvk231.wcfg",
-      "description": "Runs at Ultra graphics on a Galaxy Z Fold8 Ultra. Proton 9.0 x86_64, Box64 0.4.4 (PERFORMANCE), DXVK 2.3.1, Zink on the system Vulkan driver, 1024x768. Frame generation is left off: in our logs it crashed the game when the swapchain was created.",
-      "socs": [],
+      "id": "tomb-raider-2013-linux-fex-performance",
+      "name": "Linux, FEX Performance + TSO",
+      "platform": "linux",
+      "file": "containers/tomb-raider-2013-linux-fex-performance.wcfg",
+      "description": "Tomb Raider (2013), native 32-bit Steam build 9573671. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 32-bit OpenGL thunk, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx. Startup and an in-game scene checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
       "channel": "stable",
       "tags": [
-        "Ultra settings",
-        "Galaxy Z Fold8 Ultra",
+        "Linux",
+        "FEX",
+        "32-bit",
+        "TSO",
         "Zink",
-        "DXVK 2.3.1",
-        "Proton 9",
-        "Box64",
-        "1024x768"
+        "Turnip"
       ],
       "testedOn": [
         "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "shadow-of-the-tomb-raider-linux-fex-bionic",
+      "name": "Linux, FEX + bionic, no PRoot (experimental)",
+      "platform": "linux",
+      "file": "containers/shadow-of-the-tomb-raider-linux-fex-bionic.wcfg",
+      "description": "Shadow of the Tomb Raider, native x86-64 Steam build 11668867, run by Android FEX 2610 (Performance preset) directly, with no PRoot around the game and the Steam client kept on the glibc runtime. Android Vulkan thunks, the DD-Turnip v0.1.1 driver, native Vulkan output, 2 GB reported GPU budget, 1280x800. The game reaches its menus and gameplay on a RedMagic Astra 2 (Android 16, Adreno 840) and matches the PRoot preset there: 72-75 FPS against 73-75 in the main menu at 1280x720 on the lowest preset, cold start. Turnip builds from DD-Turnip v0.1.1 to Gen8 V38 behave alike; the stock Qualcomm driver crashes the game. The first run after changing the graphics settings compiles shaders and is slow. Needs the app build with the direct FEX bridge for Shadow and its /tmp and /dev/shm path mapping. Long sessions and Steam cloud/overlay behaviour are untested; the PRoot preset is the fallback.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "bionic",
+        "no PRoot",
+        "64-bit",
+        "Vulkan",
+        "Turnip",
+        "Experimental"
+      ],
+      "testedOn": [
+        "RedMagic Astra 2 Gaming Tablet (SM8850P), Android 16"
+      ]
+    },
+    {
+      "id": "shadow-of-the-tomb-raider-linux-fex-performance",
+      "name": "Linux, FEX Performance",
+      "platform": "linux",
+      "file": "containers/shadow-of-the-tomb-raider-linux-fex-performance.wcfg",
+      "description": "Reports a 2 GB GPU memory budget so the game picks its Medium preset on a first run: about 3.3 GB of GPU memory and 35 FPS in the Peruvian Jungle, against 5.8 GB, 94% RAM and 10-17 FPS on the Highest preset. Shadow of the Tomb Raider, native x86-64 Steam build 11668867. FEX 2610 Performance, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx, native Vulkan output, 1280x800. Gameplay, gamepad and memory fixes checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "64-bit",
+        "Vulkan",
+        "Turnip"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "beamng-linux-box64-performance",
+      "name": "Linux, Box64 Performance",
+      "platform": "linux",
+      "file": "containers/beamng-linux-box64-performance.wcfg",
+      "description": "The Linux build of BeamNG.drive run through Box64 0.4.4 with the Performance preset, on the Linux runtime with Turnip 26.3 for Adreno 8xx and Zink. The program can stay on shared storage (no copy).",
+      "socs": [
+        "snapdragon-8-elite",
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "Box64",
+        "Performance",
+        "Turnip",
+        "Zink"
       ]
     },
     {
@@ -129,25 +198,6 @@
       ],
       "testedOn": [
         "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
-      ]
-    },
-    {
-      "id": "beamng-linux-box64-performance",
-      "name": "Linux, Box64 Performance",
-      "platform": "linux",
-      "file": "containers/beamng-linux-box64-performance.wcfg",
-      "description": "The Linux build of BeamNG.drive run through Box64 0.4.4 with the Performance preset, on the Linux runtime with Turnip 26.3 for Adreno 8xx and Zink. The program can stay on shared storage (no copy).",
-      "socs": [
-        "snapdragon-8-elite",
-        "snapdragon-8-elite-gen-5"
-      ],
-      "channel": "stable",
-      "tags": [
-        "Linux",
-        "Box64",
-        "Performance",
-        "Turnip",
-        "Zink"
       ]
     },
     {
@@ -194,49 +244,6 @@
       "testedOn": []
     },
     {
-      "id": "tomb-raider-2013-linux-fex-performance",
-      "name": "Linux, FEX Performance + TSO",
-      "platform": "linux",
-      "file": "containers/tomb-raider-2013-linux-fex-performance.wcfg",
-      "description": "Tomb Raider (2013), native 32-bit Steam build 9573671. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 32-bit OpenGL thunk, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx. Startup and an in-game scene checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "channel": "stable",
-      "tags": [
-        "Linux",
-        "FEX",
-        "32-bit",
-        "TSO",
-        "Zink",
-        "Turnip"
-      ],
-      "testedOn": [
-        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
-      ]
-    },
-    {
-      "id": "shadow-of-the-tomb-raider-linux-fex-performance",
-      "name": "Linux, FEX Performance",
-      "platform": "linux",
-      "file": "containers/shadow-of-the-tomb-raider-linux-fex-performance.wcfg",
-      "description": "Shadow of the Tomb Raider, native x86-64 Steam build 11668867. FEX 2610 Performance, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx, native Vulkan output, 1280x800. Gameplay, gamepad and memory fixes checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "channel": "stable",
-      "tags": [
-        "Linux",
-        "FEX",
-        "64-bit",
-        "Vulkan",
-        "Turnip"
-      ],
-      "testedOn": [
-        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
-      ]
-    },
-    {
       "id": "beamng-linux-box64-adreno730-performance",
       "name": "Linux, Adreno 730 / Snapdragon 8 Gen 1",
       "platform": "linux",
@@ -277,17 +284,253 @@
       "testedOn": []
     },
     {
-      "id": "beamng-039-linux-fex-bionic",
-      "name": "BeamNG 0.39 - Linux, FEX + bionic (experimental)",
+      "id": "beamng-040-linux-fex-bionic-960x544",
+      "name": "BeamNG 0.40 - Linux, FEX + bionic, no PRoot, 960x544",
       "platform": "linux",
-      "file": "containers/beamng-039-linux-fex-bionic.wcfg",
-      "description": "Optional native Linux 0.39.4 preset for Adreno 840: FEX 2610 Intermediate, bionic/direct execution, Vulkan thunks, sysmem, native Vulkan, 1280x720, TSO off and full x87 precision. Renderer Auto selects DD-Turnip v0.1.1. Gridmap and West Coast driving verified; FPS varies and freezes remain. Requires the updated app with BeamNG FEX+bionic fixes and executable-only staging (~437 MiB internally for the tested build, resources stay shared). Other phones and long-session stability are unverified; TSO off trades memory-ordering guarantees for performance.",
-      "socs": ["snapdragon-8-elite-gen-5"],
-      "gpus": ["Adreno 840"],
+      "file": "containers/beamng-040-linux-fex-bionic-960x544.wcfg",
+      "description": "BeamNG 0.40.x native Linux build, the configuration measured on West Coast (0.40.4.0): FEX 2610 Performance (TSO off), bionic and direct execution with no PRoot, Vulkan thunks, DD-Turnip v0.1.1 (renderer and game driver), native Vulkan output, 960x544 with the app upscaler, post effects and frame generation off, sysmem off, GPU memory 8192 MB. Set BeamNG's own graphics to the Lowest preset with a 960 544 resolution and a settings file whose lastVersion matches the game (about 73 FPS average, 45 for the 1% low, on a Redmagic Astra 2; the same drive on 0.39.4 gave about 101). On the same tablet Box64 0.4.4-r3 (Performance) gave 27 FPS in its only valid run and failed in most launches (CEF UI crash, a pickup that never moves, corrupt floating point in the game's Lua with STRONGMEM=3); Box64 r4, which the Box64 preset selects, was not tested there. Some launches die at startup (1 of 4 on FEX). After a game version change BeamNG's folder cleanup removes the app's LuaJIT-off extension, so the first launch is slow (several minutes of loading). A GPU device loss that crashed SystemUI was seen during tests. TSO off relaxes x86 memory ordering. Long sessions and other phones are untested.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
       "channel": "prerelease",
-      "tags": ["Linux", "BeamNG 0.39", "FEX", "bionic", "Experimental"],
-      "testedOn": ["Samsung Galaxy Z Fold8 Ultra (SM-F976B), BeamNG 0.39.4"]
+      "tags": [
+        "Linux",
+        "BeamNG 0.40",
+        "FEX",
+        "bionic",
+        "no PRoot",
+        "Experimental"
+      ],
+      "testedOn": [
+        "Redmagic Astra 2 (SM8850P, Android 16), BeamNG 0.40.4"
+      ]
+    },
+    {
+      "id": "beamng-039-linux-fex-bionic-960x544",
+      "name": "BeamNG 0.39 - Linux, FEX + bionic, no PRoot, 960x544",
+      "platform": "linux",
+      "file": "containers/beamng-039-linux-fex-bionic-960x544.wcfg",
+      "description": "BeamNG 0.39.4 native Linux build, the configuration measured on West Coast: FEX 2610 Performance (TSO off), bionic and direct execution with no PRoot, Vulkan thunks, DD-Turnip v0.1.1 (renderer and game driver), native Vulkan output, 960x544 with the app upscaler, post effects and frame generation off, sysmem off, GPU memory 8192 MB. Set BeamNG's own graphics to the Lowest preset with a 960 544 resolution (about 100-110 FPS average on a Redmagic Astra 2 and a Z Fold8 Ultra, 1% lows 50-66) or to the Steam Deck preset (about 50 FPS on both). With 3 traffic cars about 80-90 FPS with 1% lows near 12. The game starts from shared storage; the app stages the executable. Some launches die at startup (exit 133, a CEF startup race: 3 of about 10 on the Fold, 1 of about 10 on the tablet) and one Fold run froze after a Vulkan transfer-queue error; TSO off relaxes x86 memory ordering. Long sessions are untested.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Linux",
+        "BeamNG 0.39",
+        "FEX",
+        "bionic",
+        "no PRoot",
+        "Experimental"
+      ],
+      "testedOn": [
+        "Redmagic Astra 2 (SM8850P, Android 16), BeamNG 0.39.4",
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B, Android 17), BeamNG 0.39.4"
+      ]
+    },
+    {
+      "id": "beamng-039-linux-box64-bionic-960x544",
+      "name": "BeamNG 0.39 - Linux, Box64 + bionic, no PRoot, 960x544",
+      "platform": "linux",
+      "file": "containers/beamng-039-linux-box64-bionic-960x544.wcfg",
+      "description": "BeamNG 0.39.4 native Linux build with the Box64 built for Android: Box64 0.4.4 Performance preset, bionic and no PRoot (the game starts straight from the app), Vulkan through the wrapper on DD-Turnip v0.1.1, native Vulkan output, 960x544 with the app upscaler, post effects and frame generation off, CPU cores 2-7, GPU memory 8192 MB. Set BeamNG's own graphics to the Lowest preset with a 960 544 resolution. Measured on a Redmagic Astra 2 (West Coast, 60 s driving, Lowest, CPU at 44-45 C at the start): without traffic about the same as FEX (about 100-110 FPS); with 3 driving and 3 parked cars about 42 FPS against 56 FPS for FEX + bionic, and Box64 loses more than FEX when the chip is warm. Launches reach the main menu and the map reliably (21 of 22 in the last tests; the launch crash was a Box64 allocator race, fixed in the app's Box64). Requires an app build with these Box64 fixes (a registry refresh alone cannot add them). FEX + bionic remains the faster choice with traffic.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
+      "channel": "prerelease",
+      "tags": [
+        "Linux",
+        "BeamNG 0.39",
+        "Box64",
+        "bionic",
+        "no PRoot",
+        "Experimental"
+      ],
+      "testedOn": [
+        "Redmagic Astra 2 (SM8850P, Android 16), BeamNG 0.39.4"
+      ]
+    },
+    {
+      "id": "alien-isolation-linux-fex-performance",
+      "name": "Linux, FEX Performance + TSO",
+      "platform": "linux",
+      "file": "containers/alien-isolation-linux-fex-performance.wcfg",
+      "description": "Alien: Isolation, native x86-64 Steam build 4940658. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx, 1280x720. Menu and first-person gameplay checked on SM-F976B (2026-11-02); long-session stability is untested. Keep the game in the container's internal storage.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "64-bit",
+        "TSO",
+        "Vulkan",
+        "Turnip"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "alien-isolation-linux-fex-bionic",
+      "name": "Linux, FEX + bionic, no PRoot (experimental)",
+      "platform": "linux",
+      "file": "containers/alien-isolation-linux-fex-bionic.wcfg",
+      "description": "Alien: Isolation, native x86-64 Steam build 4940658, run by Android FEX 2610 directly, with no PRoot around the game; the Steam client stays on the glibc runtime. TSO on (FEX_TSOENABLED=1), as the Performance preset with TSO off left the game waiting on a forked process. The game may sit in a Steam library on shared storage: the Android FEX maps its files without PROT_EXEC, which that noexec storage otherwise refuses. The direct bridge takes the game's legacy libraries (libpcre 3, SDL2_image, libidn, librtmp, libldap and the Heimdal Kerberos libraries) from the Steam Linux Runtime (scout). Turnip sysmem on, Zink over the Android Vulkan thunk, the DD-Turnip v0.1.1 driver, native Vulkan output, 1280x720. Checked on a RedMagic Astra 2 (Android 16, Adreno 840) on 2026-11-11: the game starts from a Steam library on shared storage and renders its opening scene; gameplay, frame rate and long-session stability are untested. Needs the app build with the Alien: Isolation entry of the direct FEX bridge. The PRoot preset is the fallback.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "bionic",
+        "no PRoot",
+        "64-bit",
+        "Zink",
+        "Turnip",
+        "Experimental"
+      ],
+      "testedOn": [
+        "RedMagic Astra 2 Gaming Tablet (SM8850P), Android 16"
+      ]
+    },
+    {
+      "id": "dead-island-definitive-edition-linux-fex-bionic",
+      "name": "Linux, FEX + bionic, no PRoot (experimental)",
+      "platform": "linux",
+      "file": "containers/dead-island-definitive-edition-linux-fex-bionic.wcfg",
+      "description": "Dead Island Definitive Edition, native x86-64 Steam build 1837542, run by Android FEX 2610 directly, with no PRoot around the game; the Steam client stays on the glibc runtime. TSO on (FEX_TSOENABLED=1, full x87 precision): with the Performance preset's TSO off the game freezes in its intro cutscene on a RedMagic Astra 2. Turnip sysmem on (needed to avoid rendering artifacts, found by testing on the tablet), Zink over the Android Vulkan thunk, the DD-Turnip v0.1.1 driver, native Vulkan output, 1280x720 with the fit mode. The game runs without a working Steam API (its Steam IPC is left off). Intro, loading and gameplay checked on a RedMagic Astra 2 (Android 16, Adreno 840): 76 FPS in the first outdoor scene; long-session stability is untested. Needs the app build with the direct FEX bridge for Dead Island and its /tmp path mapping. The PRoot preset is the fallback.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "bionic",
+        "no PRoot",
+        "64-bit",
+        "Zink",
+        "Turnip",
+        "Experimental"
+      ],
+      "testedOn": [
+        "RedMagic Astra 2 Gaming Tablet (SM8850P), Android 16"
+      ]
+    },
+    {
+      "id": "dead-island-definitive-edition-linux-fex-performance",
+      "name": "Linux, FEX Performance",
+      "platform": "linux",
+      "file": "containers/dead-island-definitive-edition-linux-fex-performance.wcfg",
+      "description": "Dead Island Definitive Edition, native x86-64 Steam build 1837542. FEX 2610 Performance, Ubuntu 24.04 rootfs, Zink and Turnip 26.3 for Adreno 8xx, 1280x720 with the fit mode. Menu and gameplay checked on SM-F976B (2026-11-02); long-session stability is untested. Keep the game in the container's internal storage.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "64-bit",
+        "Zink",
+        "Turnip"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "rise-of-the-tomb-raider-linux-fex-bionic",
+      "name": "Linux, FEX + bionic, no PRoot (experimental)",
+      "platform": "linux",
+      "file": "containers/rise-of-the-tomb-raider-linux-fex-bionic.wcfg",
+      "description": "Rise of the Tomb Raider, native x86-64 Steam build 9575745, run by Android FEX 2610 (Performance preset, TSO on, full x87 precision) directly, with no PRoot around the game; the Steam client stays on the glibc runtime. Android Vulkan thunks, the DD-Turnip v0.1.1 driver, Turnip sysmem, native Vulkan output, 1280x720. The game does not get a working Steam API in this mode (its Steam IPC is left off: with it the game exits on a broken pipe to the client). Reaches the main menu on a RedMagic Astra 2 (Android 16, Adreno 840): 2 of 3 launches stayed up, the third exited 139 early. Gameplay, FPS and the black rendering artifacts known from the PRoot config are not checked in this mode. Needs the app build with the direct FEX bridge and its /tmp path mapping. The PRoot preset is the fallback.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "bionic",
+        "no PRoot",
+        "64-bit",
+        "Vulkan",
+        "Turnip",
+        "Experimental"
+      ],
+      "testedOn": [
+        "RedMagic Astra 2 Gaming Tablet (SM8850P), Android 16"
+      ]
+    },
+    {
+      "id": "rise-of-the-tomb-raider-linux-fex-performance",
+      "name": "Linux, FEX",
+      "platform": "linux",
+      "file": "containers/rise-of-the-tomb-raider-linux-fex-performance.wcfg",
+      "description": "Rise of the Tomb Raider, native x86-64 Steam build 9575745. FEX 2610 under PRoot with the Performance preset, TSO on, full x87 precision, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, Turnip 26.3 for Adreno 8xx with sysmem, native Vulkan output, 1280x720. Checked through to gameplay on a fresh install (SM-F976B, 2026-11-02). The Android-bionic direct path has its own preset, which is the preferred config.",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "bionic",
+        "64-bit",
+        "Vulkan",
+        "Turnip"
+      ],
+      "testedOn": [
+        "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
+      ]
+    },
+    {
+      "id": "counter-strike-2-linux-fex-bionic",
+      "name": "Linux, FEX + bionic, no PRoot, 8 cores (experimental)",
+      "platform": "linux",
+      "file": "containers/counter-strike-2-linux-fex-bionic.wcfg",
+      "description": "Counter-Strike 2, native x86-64 Steam Linux build 26445667, run by Android FEX 2610 directly with no PRoot; the Steam client stays on the glibc runtime. Direct FEX bridge with TSO emulation, Turnip Gen8 V37 on Adreno 8xx, native Vulkan output, native screen size with the window zoomed to the game (fullscreenStretched=2), all 8 cores. The game's pinning of main/render threads to the prime cores (perfPrimeCores) comes from the game profile. About 124 fps in de_dust2 without bots at 640x480 lowest graphics on a RedMagic Astra 2; a busy online match is slower. Starts only on about every second try (exit 139).",
+      "socs": [
+        "snapdragon-8-elite-gen-5"
+      ],
+      "gpus": [
+        "Adreno 840"
+      ],
+      "channel": "stable",
+      "tags": [
+        "Linux",
+        "FEX",
+        "bionic",
+        "no PRoot",
+        "64-bit",
+        "Turnip",
+        "Experimental"
+      ],
+      "testedOn": [
+        "RedMagic Astra 2 Gaming Tablet (SM8850P), Android 16"
+      ]
     }
   ],
-  "revision": 10
+  "revision": 25
 }

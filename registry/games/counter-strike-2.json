@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "id": "counter-strike-2",
+  "name": "Counter-Strike 2",
+  "steam": {
+    "appId": 730,
+    "installDir": "Counter-Strike Global Offensive"
+  },
+  "linux": {
+    "executables": [
+      "game/bin/linuxsteamrt64/cs2"
+    ],
+    "defaults": {
+      "executable": "game/bin/linuxsteamrt64/cs2",
+      "args": [],
+      "extras": {
+        "fullscreenStretched": "2",
+        "perfPrimeCores": "1",
+        "perfPriority": "1"
+      }
+    }
+  },
+  "defaults": {
+    "args": []
+  },
+  "versions": [
+    {
+      "id": "steam-26445667",
+      "label": "Steam Linux (build 26445667)",
+      "status": "works",
+      "testedOn": "Redmagic Astra 2 (SM8850P), Adreno 840, Android 16 (2026-11-06)",
+      "notes": "Native x86-64 Steam Linux build, run by Android FEX 2610 directly (no PRoot) through the app's direct FEX bridge, with the Turnip Gen8 V37 driver on Adreno 8xx. The bridge's Counter-Strike 2 entry carries the rest: FEX TSO emulation (without it the game dies at start), the Vulkan subgroup repair preload, a host-side pool allocator (keeps Turnip's ~30,000 retained 32 KiB slabs under vm.max_map_count), the browser-socket fallback and /root mapped to the Linux home. The profile turns on the thread pinning that gave the most: all 8 cores, the game's main and render threads on the prime cores, the other threads on the rest (perfPrimeCores), plus thread priority. Measured on a Redmagic Astra 2 (SM8850P, Adreno 840, Android 16, AC power, 79-92% battery), de_dust2 casual without bots, 640x480, lowest graphics, 180 s of scripted play: about 99-109 fps with all cores and no pinning, 124 fps (30 s windows 118-125) pinned, with no frame over 17 ms. In a busy online Deathmatch (about 14 players) one screenshot showed 72 fps, so that case is not tuned. Turnip sysmem/gmem, a lower resolution and the high-refresh preference did not change the ~124 fps ceiling beyond run-to-run noise (the baseline alone swung 117-124). Known problems: the game exits at start with code 139 ('Failed writing minidump') on about every second launch; launch again. Needs the app build with the physical-mouse fixes for a mouse to turn the camera. A low battery slows the tablet sharply: keep it charged.",
+      "match": {
+        "steamBuildId": {
+          "from": 26445667,
+          "until": 26445668
+        }
+      },
+      "containers": [
+        "counter-strike-2-linux-fex-bionic"
+      ],
+      "preferredContainer": "counter-strike-2-linux-fex-bionic"
+    },
+    {
+      "id": "default",
+      "label": "Other Linux builds",
+      "status": "untested",
+      "notes": "Only Steam build 26445667 was tested. Valve updates the game often and the bridge's patches (library names, startup path) may need changes for a newer build; these defaults are not verification of other builds.",
+      "default": true,
+      "containers": [
+        "counter-strike-2-linux-fex-bionic"
+      ],
+      "preferredContainer": "counter-strike-2-linux-fex-bionic"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "revision": 3,
+  "id": "dead-island-definitive-edition",
+  "name": "Dead Island Definitive Edition",
+  "steam": {
+    "appId": 383150,
+    "installDir": "DIDE"
+  },
+  "linux": {
+    "executables": [
+      "DeadIslandGame"
+    ],
+    "defaults": {
+      "executable": "DeadIslandGame",
+      "args": [],
+      "resolution": "1280x720",
+      "extras": {
+        "fullscreenStretched": "1"
+      }
+    }
+  },
+  "defaults": {
+    "args": []
+  },
+  "versions": [
+    {
+      "id": "steam-1837542",
+      "label": "Steam Linux (build 1837542)",
+      "status": "works",
+      "testedOn": "SM-F976B, Adreno 840, Android 17 (2026-11-02)",
+      "notes": "Native x86-64 port, started through Steam with FEX 2610 (glibc/PRoot route, Performance preset), Ubuntu 24.04, Bannerlator r9, Zink and Turnip 26.3 for Adreno 8xx. Select SkyNetEmu Linux rather than Valve's pressure-vessel tool. The launcher links libpng12.so.0 and libGLEW.so.1.10 from the installed Steam Linux Runtime (scout) into ~/.skynet/lib64/383150; without libpng12 the game exits 127, without libGLEW the renderer fails to load. Use 1280x720 with the fit mode on (fullscreenStretched=1) and set the game's own resolution to 1280x720 (DI/out/Settings/Video.scr); a native-resolution window clipped the first-run UI. Checked 2026-11-02: start from the shortcut, intro, main menu, PLAY with an existing save and movement from the hotel room to the balcony, about 110-250 FPS. In the menus a quick key press does not register: use a long press of Enter. Not checked: long sessions, co-op, performance benchmarks and other builds. The preferred config runs the game on Android FEX without PRoot (bionic, DD-Turnip v0.1.1) with TSO on and Turnip sysmem; on a RedMagic Astra 2 the PRoot config's Performance preset (TSO off) freezes in the intro cutscene with one guest thread spinning, so TSO must stay on there. The PRoot config stays listed as the fallback.",
+      "match": {
+        "steamBuildId": {
+          "from": 1837542,
+          "until": 1837543
+        }
+      },
+      "containers": [
+        "dead-island-definitive-edition-linux-fex-bionic",
+        "dead-island-definitive-edition-linux-fex-performance"
+      ],
+      "preferredContainer": "dead-island-definitive-edition-linux-fex-bionic"
+    },
+    {
+      "id": "default",
+      "label": "Other Linux builds",
+      "status": "untested",
+      "notes": "Only Steam Linux build 1837542 was checked. These defaults are not verification of other builds or emulators.",
+      "default": true,
+      "containers": [
+        "dead-island-definitive-edition-linux-fex-bionic",
+        "dead-island-definitive-edition-linux-fex-performance"
+      ],
+      "preferredContainer": "dead-island-definitive-edition-linux-fex-bionic"
+    }
+  ]
+}

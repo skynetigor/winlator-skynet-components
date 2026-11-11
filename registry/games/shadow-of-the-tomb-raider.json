@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "revision": 1,
+ "revision": 3,
  "id": "shadow-of-the-tomb-raider",
  "name": "Shadow of the Tomb Raider",
  "steam": {
@@ -25,7 +25,7 @@
    "label": "Steam Linux (build 11668867)",
    "status": "works",
    "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Adreno 840, Android 17",
-   "notes": "Native x86-64 Feral Vulkan port, launched through Steam with FEX 2610 Performance, Ubuntu 24.04, Turnip 26.3 for Adreno 8xx and native Vulkan output. Needs this app's Linux shim (anti-debug ptrace answer, robust_list, gamepad files, and the ignored self-raised SIGFPE that otherwise deadlocks Feral's crash reporter and runs the phone out of memory). Gameplay in the opening cave levels, the gamepad (Bluetooth and on-screen), Steam toasts and the HUD were checked on build 11668867; about 45-57 FPS at 1024x768-1280x800, GPU-bound (35-50 at 1920x1200). If the 'Tomb Raider servers are currently unavailable' dialog ignores touch, press Enter on a keyboard. Long sessions, later levels and clean shutdown are untested. Keep the game in the container's internal storage (FEX needs executable mappings).",
+   "notes": "Native x86-64 Feral Vulkan port, launched through Steam with FEX 2610 Performance, Ubuntu 24.04, Turnip 26.3 for Adreno 8xx and native Vulkan output. Needs this app's Linux shim (anti-debug ptrace answer, robust_list, gamepad files, and the ignored self-raised SIGFPE that otherwise deadlocks Feral's crash reporter and runs the phone out of memory). Gameplay in the opening cave levels, the gamepad (Bluetooth and on-screen), Steam toasts and the HUD were checked on build 11668867; about 45-57 FPS at 1024x768-1280x800, GPU-bound (35-50 at 1920x1200). If the 'Tomb Raider servers are currently unavailable' dialog ignores touch, press Enter on a keyboard. Long sessions, later levels and clean shutdown are untested. Keep the game in the container's internal storage (FEX needs executable mappings). The preferred config runs the game on Android FEX without PRoot (bionic, DD-Turnip v0.1.1); on a RedMagic Astra 2 it matches the PRoot config (72-75 against 73-75 FPS in the main menu at 1280x720, lowest preset), which stays listed as the fallback.",
    "default": true,
    "match": {
     "steamBuildId": {
@@ -34,9 +34,10 @@
     }
    },
    "containers": [
+    "shadow-of-the-tomb-raider-linux-fex-bionic",
     "shadow-of-the-tomb-raider-linux-fex-performance"
    ],
-   "preferredContainer": "shadow-of-the-tomb-raider-linux-fex-performance"
+   "preferredContainer": "shadow-of-the-tomb-raider-linux-fex-bionic"
   }
  ]
 }
