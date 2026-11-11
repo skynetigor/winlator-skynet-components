@@ -1,0 +1,126 @@
+diff --git a/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp b/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp
+index 60b0ef1..406e4ed 100644
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp
+@@ -8,7 +8,11 @@
+ #include <FEXCore/fextl/map.h>
+ #include <FEXCore/fextl/memory.h>
+ 
++#include <algorithm>
+ #include <bitset>
++#include <cstdlib>
++#include <cstring>
++#include <fcntl.h>
+ #include <linux/mman.h>
+ #include <unistd.h>
+ #include <sys/user.h>
+@@ -82,6 +86,7 @@ private:
+   std::mutex AllocMutex {};
+   uint64_t FindPageRange(uint64_t Start, size_t Pages) const;
+   uint64_t FindPageRange_TopDown(uint64_t Start, size_t Pages) const;
++  bool AdoptHostMappings(uint64_t FirstPage, uint64_t EndPage);
+   using FindHandler = uint64_t (MemAllocator32Bit::*)(uint64_t Start, size_t Pages) const;
+   FindHandler FindPageRangePtr {};
+ };
+@@ -132,6 +137,71 @@ uint64_t MemAllocator32Bit::FindPageRange_TopDown(uint64_t Start, size_t Pages)
+   return 0;
+ }
+ 
++// The host maps things the bitmap does not know about (libraries, stacks, the thunk areas). When a fixed mapping in a range the bitmap
++// calls free fails with EEXIST, record every host mapping that overlaps [FirstPage, EndPage) as used so the scan skips it in one step;
++// stepping one page at a time costs a system call per page. Returns whether any page was newly marked.
++bool MemAllocator32Bit::AdoptHostMappings(uint64_t FirstPage, uint64_t EndPage) {
++  const int MapsFD = ::open("/proc/self/maps", O_RDONLY | O_CLOEXEC);
++  if (MapsFD == -1) {
++    return false;
++  }
++
++  bool Marked = false;
++  char Buffer[4096];
++  size_t Filled = 0;
++  bool Eof = false;
++  while (!Eof) {
++    const ssize_t Read = ::read(MapsFD, Buffer + Filled, sizeof(Buffer) - 1 - Filled);
++    if (Read < 0 && errno == EINTR) {
++      continue;
++    }
++    if (Read <= 0) {
++      Eof = true;
++    } else {
++      Filled += Read;
++    }
++    Buffer[Filled] = 0;
++
++    // Handle the complete lines; a partial one stays for the next read.
++    char* Line = Buffer;
++    for (;;) {
++      char* Newline = strchr(Line, '\n');
++      if (!Newline && !Eof) {
++        break;
++      }
++      if (Newline) {
++        *Newline = 0;
++      }
++      char* Cursor {};
++      const uint64_t Begin = strtoull(Line, &Cursor, 16);
++      if (Cursor != Line && *Cursor == '-') {
++        const uint64_t End = strtoull(Cursor + 1, &Cursor, 16);
++        const uint64_t First = std::max<uint64_t>(Begin >> FEXCore::Utils::FEX_PAGE_SHIFT, FirstPage);
++        const uint64_t Last = std::min<uint64_t>(FEXCore::AlignUp(End, FEXCore::Utils::FEX_PAGE_SIZE) >> FEXCore::Utils::FEX_PAGE_SHIFT, EndPage);
++        for (uint64_t Page = First; Page < Last; ++Page) {
++          if (!MappedPages.test(Page)) {
++            MappedPages.set(Page);
++            Marked = true;
++          }
++        }
++      }
++      if (!Newline) {
++        Line += strlen(Line);
++        break;
++      }
++      Line = Newline + 1;
++    }
++    Filled = strlen(Line);
++    memmove(Buffer, Line, Filled);
++    if (Filled == sizeof(Buffer) - 1) {
++      // A line longer than the buffer is not a maps line.
++      Filled = 0;
++    }
++  }
++  ::close(MapsFD);
++  return Marked;
++}
++
+ void* MemAllocator32Bit::Mmap(void* addr, size_t length, int prot, int flags, int fd, off_t offset) {
+   std::scoped_lock<std::mutex> lk {AllocMutex};
+   size_t PagesLength = FEXCore::AlignUp(length, FEXCore::Utils::FEX_PAGE_SIZE) >> FEXCore::Utils::FEX_PAGE_SHIFT;
+@@ -197,19 +267,23 @@ restart: {
+     if (MappedPtr == MAP_FAILED && errno != EEXIST) {
+       return reinterpret_cast<void*>(-errno);
+     } else if (MappedPtr == MAP_FAILED) {
++      // The range is free in the bitmap but the host has something there: learn what, so the next scan does not offer it again.
++      const bool Learned = AdoptHostMappings(LowerPage, UpperPage);
+       if (UpperPage == TOP_KEY) {
+         BottomPage = BASE_KEY;
+         Wrapped = true;
+         goto restart;
+       } else if (Wrapped && LowerPage >= LastScanLocation) {
+         // We linear scanned the entire memory range. Give up
+-        return (void*)(uintptr_t)-errno;
++        return reinterpret_cast<void*>(-ENOMEM);
+       } else {
+-        // Try again
+-        if (SearchDown) {
+-          --BottomPage;
+-        } else {
+-          ++BottomPage;
++        // Try again; with the host's mappings recorded the same start already skips them
++        if (!Learned) {
++          if (SearchDown) {
++            --BottomPage;
++          } else {
++            ++BottomPage;
++          }
+         }
+         goto restart;
+       }

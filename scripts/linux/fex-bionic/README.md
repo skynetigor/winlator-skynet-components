@@ -4,6 +4,7 @@ FEX-2610 built as an Android program (no glibc runtime, no PRoot) so a Linux x86
 `build.sh` clones FEX, applies `patches/` in name order and builds `FEX`, `FEXServer` and `FEXOfflineCompiler` for arm64.
 
     ANDROID_NDK_HOME=/path/to/ndk-r29 ./build.sh [out]        # KEEP_SYMBOLS=1 also writes *.debug (unstripped) copies
+                                                              # FEX_LTO=ON builds with LTO (off by default: no measurable gain)
 
 ## Patches
 
@@ -22,6 +23,9 @@ FEX-2610 built as an Android program (no glibc runtime, no PRoot) so a Linux x86
 | 0011 | Code cache: make relocation offsets buffer-relative when generating a cache (see below) |
 | 0012 | `openat2` / `faccessat2`: emulate them where the Android 16 app seccomp filter refuses them |
 | 0013 | A 64-bit guest `MAP_32BIT` request over 1 GiB fails with ENOMEM at once, as in the kernel (Counter-Strike 2 probes for 2 GiB) |
+| 0014 | 32-bit guest allocator: when a fixed mapping fails because the host already maps the range, record the host's mappings from `/proc/self/maps` and rescan instead of stepping one page at a time; exhaustion returns ENOMEM (not a stale EEXIST) |
+| 0015 | The auxv entry FEX calls `AT_PLATFORM` used tag 24 (`AT_BASE_PLATFORM`); it is 15 |
+| 0016 | A file mapping (or `mprotect`) that the kernel refuses with PROT_EXEC (a file on a noexec mount such as Android's shared storage) is retried without PROT_EXEC; the host never executes guest memory. BeamNG then runs from shared storage with no staged copy |
 
 ## Code cache status (`FEX_ENABLECODECACHINGWIP=1`, experimental)
 

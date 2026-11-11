@@ -1,0 +1,75 @@
+diff --git a/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp b/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp
+index 406e4ed..0c6c8f0 100644
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/LinuxAllocator.cpp
+@@ -24,6 +24,16 @@
+ #endif
+ 
+ namespace FEX::HLE {
++// A file on a noexec mount (Android's shared storage) cannot be mapped with PROT_EXEC. The host never executes guest memory (the JIT only
++// reads it), so a refused executable mapping is retried without PROT_EXEC.
++static void* MmapGuest(void* addr, size_t length, int prot, int flags, int fd, off_t offset) {
++  void* Result = ::mmap(addr, length, prot, flags, fd, offset);
++  if (Result == MAP_FAILED && fd != -1 && (prot & PROT_EXEC) && (errno == EACCES || errno == EPERM)) {
++    Result = ::mmap(addr, length, prot & ~PROT_EXEC, flags, fd, offset);
++  }
++  return Result;
++}
++
+ class MemAllocator32Bit final : public FEX::HLE::MemAllocator {
+ private:
+   static constexpr uint64_t BASE_KEY = 16;
+@@ -262,7 +272,7 @@ restart: {
+   {
+     // Try and map the range
+     void* MappedPtr =
+-      ::mmap(reinterpret_cast<void*>(LowerPage << FEXCore::Utils::FEX_PAGE_SHIFT), length, prot, flags | FEX_MAP_FIXED_NOREPLACE, fd, offset);
++      MmapGuest(reinterpret_cast<void*>(LowerPage << FEXCore::Utils::FEX_PAGE_SHIFT), length, prot, flags | FEX_MAP_FIXED_NOREPLACE, fd, offset);
+ 
+     if (MappedPtr == MAP_FAILED && errno != EEXIST) {
+       return reinterpret_cast<void*>(-errno);
+@@ -304,7 +314,7 @@ restart: {
+   if (Addr == 0) {
+     return AllocateNoHint();
+   } else {
+-    void* MappedPtr = ::mmap(reinterpret_cast<void*>(PageAddr << FEXCore::Utils::FEX_PAGE_SHIFT),
++    void* MappedPtr = MmapGuest(reinterpret_cast<void*>(PageAddr << FEXCore::Utils::FEX_PAGE_SHIFT),
+                              PagesLength << FEXCore::Utils::FEX_PAGE_SHIFT, prot, flags, fd, offset);
+ 
+     if (MappedPtr != MAP_FAILED) {
+@@ -596,7 +606,7 @@ uint64_t MemAllocator32Bit::Shmdt(const void* shmaddr) {
+ class MemAllocatorPassThrough final : public FEX::HLE::MemAllocator {
+ public:
+   void* Mmap(void* addr, size_t length, int prot, int flags, int fd, off_t offset) override {
+-    uint64_t Result = (uint64_t)::mmap(addr, length, prot, flags, fd, offset);
++    uint64_t Result = (uint64_t)MmapGuest(addr, length, prot, flags, fd, offset);
+     if (Result == ~0ULL) {
+       return reinterpret_cast<void*>(-errno);
+     }
+diff --git a/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp b/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
+index ce3abf5..273caff 100644
+--- a/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
++++ b/Source/Tools/LinuxEmulation/LinuxSyscalls/SyscallsSMCTracking.cpp
+@@ -333,6 +333,11 @@ void* SyscallHandler::GuestMmap(bool Is64Bit, FEXCore::Core::InternalThreadState
+       LOGMAN_THROW_A_FMT(Is64Bit || (Result >> 32) == 0 || (Result >> 32) == 0xFFFFFFFF, "values must fit to 32 bits");
+     } else {
+       Result = reinterpret_cast<uint64_t>(::mmap(reinterpret_cast<void*>(addr), length, prot, flags, fd, offset));
++      if (Result == ~0ULL && fd != -1 && (prot & PROT_EXEC) && (errno == EACCES || errno == EPERM)) {
++        // The file is on a noexec mount (Android's shared storage). The host never executes guest memory (the JIT only reads it), so map it
++        // without PROT_EXEC; the guest's own view of the protection stays in the VMA tracking.
++        Result = reinterpret_cast<uint64_t>(::mmap(reinterpret_cast<void*>(addr), length, prot & ~PROT_EXEC, flags, fd, offset));
++      }
+       if (Result == ~0ULL) {
+         return reinterpret_cast<void*>(-errno);
+       }
+@@ -483,6 +488,10 @@ uint64_t SyscallHandler::GuestMprotect(FEXCore::Core::InternalThreadState* Threa
+   {
+     auto lk = FEXCore::GuardSignalDeferringSection(VMATracking.Mutex, Thread);
+     Result = ::mprotect(addr, len, prot);
++    if (Result == -1 && (prot & PROT_EXEC) && (errno == EACCES || errno == EPERM)) {
++      // Pages of a file on a noexec mount cannot become executable; the host does not execute guest memory, so keep them without PROT_EXEC.
++      Result = ::mprotect(addr, len, prot & ~PROT_EXEC);
++    }
+     if (Result == -1) {
+       return -errno;
+     }
