@@ -8,7 +8,7 @@
     "name": "Counter-Strike 2, Linux FEX + bionic, no PRoot, 8 cores",
     "screenSize": "native",
     "fullscreenStretched": true,
-    "rendererDriverId": "Turnip Gen8 V37",
+    "rendererDriverId": "auto",
     "linuxRuntime": "bannerlator-r9",
     "cpuList": "0,1,2,3,4,5,6,7",
     "extraData": {
@@ -37,6 +37,6 @@
       "lsfgMultiplier": "0",
       "lsfgLayer": "1"
     },
-    "graphicsDriverConfig": "vulkanVersion=1.3;version=DD-Turnip v0.1.1;blacklistedExtensions=;maxDeviceMemory=0;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device"
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=;blacklistedExtensions=;maxDeviceMemory=0;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device"
   }
 }

@@ -31,6 +31,6 @@
       "lsfgMultiplier": "0",
       "linuxDirectFex": "1"
     },
-    "graphicsDriverConfig": "vulkanVersion=1.3;version=DD-Turnip v0.1.1;blacklistedExtensions=;maxDeviceMemory=0;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device"
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=;blacklistedExtensions=;maxDeviceMemory=0;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device"
   }
 }

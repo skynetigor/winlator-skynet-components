@@ -8,7 +8,7 @@
     "name": "Alien: Isolation, Linux (FEX + bionic, no PRoot)",
     "screenSize": "1280x720",
     "fullscreenStretched": false,
-    "graphicsDriverConfig": "vulkanVersion=1.3;version=DD-Turnip v0.1.1;blacklistedExtensions=;maxDeviceMemory=0;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device",
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=;blacklistedExtensions=;maxDeviceMemory=0;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device",
     "rendererDriverId": "auto",
     "linuxRuntime": "bannerlator-r9",
     "envVars": "FEX_TSOENABLED=1",

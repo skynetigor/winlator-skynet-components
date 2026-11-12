@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 25,
+  "revision": 27,
   "id": "beamng-drive",
   "name": "BeamNG.drive",
   "steam": {
@@ -43,7 +43,7 @@
       "preferredPlatform": "linux",
       "status": "works",
       "default": true,
-      "notes": "Preferred on Snapdragon 8 Elite Gen 5: FEX 2610 + bionic, no PRoot, 960x544 (preset beamng-040-linux-fex-bionic-960x544). On a Redmagic Astra 2 with BeamNG 0.40.4, Lowest graphics, West Coast, no traffic: about 73 FPS average (1% low 45) over three runs, while Box64 0.4.4-r3 managed one valid run (27 FPS) in about twelve launches; Box64 r4, which the Box64 preset below selects, was not tested on that tablet. Older Snapdragons keep their Box64 presets. The notes below describe the Box64 and Windows ARM64 presets. Native Linux 0.40.1 x86-64: startup, CEF UI and Smallgrid rendering verified with published Box64 0.4.4-r4 on Snapdragon 8 Elite Gen 5. Main plus seven CEF helpers shared one read-only libcef code-cache inode; r4 is required for ELF caching, and existing shortcuts must select it explicitly. The preset keeps its legacy r3 identifier for compatibility but selects r4. BOX64_DYNAREC_STRONGMEM=1 retains limited x86 memory ordering: three consecutive cached menu launches passed with this setting after an intermittent CEF renderer crash under PERFORMANCE/STRONGMEM=0; this is a tested mitigation, not proof of the crash's root cause or long-run stability. Existing shortcuts must also apply this environment setting explicitly. Earlier Automation Test Track loading was verified on r3. Long-run performance is not established; uncapped testing reached Android thermal limits. Windows ARM64: retain Proton 9 ARM64EC with DD-Turnip native Vulkan and the current device GPU identity. Disable windows.ui in the ARM64 preset DLL overrides to avoid UISettings text-scaling recursion and a startup stack overflow; the 0.40.1 first-run UI was verified with this workaround. Proton 9 previously loaded GridMapv2; standard Proton 11 and CachyOS 11 failed during Vulkan device creation on the test device. The ARM64 profile remains experimental.",
+      "notes": "FEX 2610 + bionic, no PRoot, direct launch, 960x544 (preset beamng-040-linux-fex-bionic-960x544): the only preset for this version. On a Redmagic Astra 2 with BeamNG 0.40.4, Lowest graphics, West Coast, no traffic: about 73 FPS average (1% low 45) over three runs. Long-run performance is not established; uncapped testing reached Android thermal limits.",
       "testedOn": "Samsung Galaxy Z Fold8 Ultra (SM-F976B), Snapdragon 8 Elite Gen 5; Redmagic Astra 2 (SM8850P), Android 16 (FEX preset, 0.40.4)",
       "match": {
         "versionFile": {
@@ -55,12 +55,7 @@
         }
       },
       "containers": [
-        "beamng-040-linux-fex-bionic-960x544",
-        "beamng-linux-box64-adreno735-performance",
-        "beamng-linux-box64-adreno730-performance",
-        "beamng-linux-box64-adreno740-performance",
-        "beamng-040-linux-box64-r3",
-        "beamng-040-windows-arm64-proton9-dd-turnip-device"
+        "beamng-040-linux-fex-bionic-960x544"
       ],
       "preferredContainer": "beamng-040-linux-fex-bionic-960x544",
       "linux": {
@@ -77,11 +72,6 @@
           "simTouchScreen": "0",
           "lsfgMultiplier": "0"
         }
-      },
-      "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
-        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
-        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     },
     {
@@ -96,7 +86,7 @@
         }
       },
       "status": "untested",
-      "notes": "Alternative Linux preset beamng-039-linux-fex-bionic-960x544: FEX 2610 Performance (TSO off), bionic, no PRoot, direct launch, Vulkan thunks, DD-Turnip v0.1.1, 960x544 with the app upscaler off. West Coast driving measured on a Redmagic Astra 2 and a Z Fold8 Ultra (about 100-110 FPS average at BeamNG's Lowest graphics). TSO off relaxes x86 memory ordering; some launches die at startup; long sessions are unverified. Requires an app build containing the FEX+bionic BeamNG fixes and executable-only shared-storage staging; an older app cannot gain these fixes from a registry refresh. It is not the preferred preset; Box64 recommendations are unchanged. Preset beamng-039-linux-box64-bionic-960x544 runs the Box64 built for Android (bionic, no PRoot, direct from the app): as fast as FEX + bionic without traffic, about a quarter slower with traffic (42 against 56 FPS with 3 driving and 3 parked cars on a Redmagic Astra 2 at Lowest 960x544); an app build with the Box64 fixes is required.",
+      "notes": "FEX 2610 Performance (TSO off), bionic, no PRoot, direct launch, Vulkan thunks, the Turnip driver chosen by the app for the GPU (DD-Turnip v0.1.1 on Adreno 840), 960x544 with the app upscaler off (preset beamng-039-linux-fex-bionic-960x544): the only preset for this version. West Coast driving measured on a Redmagic Astra 2 and a Z Fold8 Ultra (about 100-110 FPS average at BeamNG's Lowest graphics). TSO off relaxes x86 memory ordering; some launches die at startup; long sessions are unverified. Needs an app build with the FEX + bionic BeamNG fixes.",
       "match": {
         "versionFile": {
           "path": "integrity.json",
@@ -107,15 +97,9 @@
         }
       },
       "containers": [
-        "beamng-linux-box64-adreno735-performance",
-        "beamng-linux-box64-adreno730-performance",
-        "beamng-linux-box64-adreno740-performance",
-        "cachyos-arm64ec-box64-dd-turnip",
-        "beamng-linux-box64-performance",
-        "beamng-039-linux-fex-bionic-960x544",
-        "beamng-039-linux-box64-bionic-960x544"
+        "beamng-039-linux-fex-bionic-960x544"
       ],
-      "preferredContainer": "cachyos-arm64ec-box64-dd-turnip",
+      "preferredContainer": "beamng-039-linux-fex-bionic-960x544",
       "linux": {
         "userData": {
           "arg": "-userpath",
@@ -124,11 +108,6 @@
             "current/mods": "userdata/mods"
           }
         }
-      },
-      "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
-        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
-        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     },
     {
