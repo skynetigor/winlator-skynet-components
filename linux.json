@@ -65,10 +65,11 @@
       "size": 3229260,
       "gpus": [
         "735",
-        "740"
+        "740",
+        "750"
       ],
       "testedGpus": [],
-      "notes": "Mesa 26.2.2 packaged library includes FD735 and FD740; exact 735/740 defaults, hardware validation pending. Linux/glibc KGSL driver; Android renderer is a separate package."
+      "notes": "Mesa 26.2.2 packaged library includes FD735, FD740 and FD750; exact 735/740/750 defaults, hardware validation pending. Linux/glibc KGSL driver; Android renderer is a separate package."
     },
     {
       "id": "turnip-v27.0.0-20261024-r6-linux",
@@ -142,6 +143,7 @@
     "driverByGpu": {
       "735": "turnip-mesa-26.2.2-linux-aarch64",
       "740": "turnip-mesa-26.2.2-linux-aarch64",
+      "750": "turnip-mesa-26.2.2-linux-aarch64",
       "730": "turnip-v27.0.0-20261024-r6-linux"
     }
   }

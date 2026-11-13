@@ -2,13 +2,7 @@
   "format": "winlator-skynet-container",
   "version": 1,
   "exportedBy": "SkyNetEmu 2.0.1-pre.3",
-  "components": [
-    {
-      "type": "GraphicsDriver",
-      "version": "Mesa Turnip v27.0.0-20261104-r3-A8xx",
-      "remoteUrl": "https://github.com/The412Banner/Banners-Turnip/releases/download/v27.0.0-20261104-r3/Turnip-v27.0.0-20261104-r3-A8xx.zip"
-    }
-  ],
+  "components": [],
   "container": {
     "type": "linux",
     "name": "BeamNG 0.39, Linux FEX + bionic, no PRoot, 960x544",
@@ -26,7 +20,7 @@
       "linuxFexGl32": "1",
       "linuxGlVendor": "nvidia",
       "linuxGlDriver": "zink",
-      "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
+      "linuxVulkanDriver": "auto",
       "linuxVulkanPresent": "native",
       "linuxBionic": "1",
       "linuxNoProot": "1",

@@ -16,7 +16,7 @@
       "linuxEmulator": "box64",
       "linuxEmulatorId": "box64-0.4.4-r4",
       "linuxEmulatorPreset": "PERFORMANCE",
-      "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
+      "linuxVulkanDriver": "auto",
       "linuxGlDriver": "zink",
       "linuxVulkanPresent": "native",
       "linuxTouchscreen": "1",

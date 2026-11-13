@@ -20,16 +20,6 @@
       "type": "DXVK",
       "version": "2.6-2-gplasync",
       "remoteUrl": "https://github.com/StevenMXZ/Winlator-Contents/raw/refs/heads/main/DXVK/dxvk-2.6-2-gplasync.wcp"
-    },
-    {
-      "type": "GraphicsDriver",
-      "version": "Turnip Gen8 V36",
-      "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v36/Turnip_Gen8_V36.zip"
-    },
-    {
-      "type": "RendererDriver",
-      "version": "Turnip Gen8 V36",
-      "remoteUrl": "https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/download/v36/Turnip_Gen8_V36.zip"
     }
   ],
   "container": {
@@ -39,10 +29,10 @@
     "cpuList": "4,5,6,7",
     "cpuListWoW64": "4,5,6,7",
     "graphicsDriver": "freedreno",
-    "graphicsDriverConfig": "vulkanVersion=1.3;version=Turnip Gen8 V36;blacklistedExtensions=;maxDeviceMemory=4096;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=NVIDIA GeForce GTX 570",
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=auto;blacklistedExtensions=;maxDeviceMemory=4096;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=NVIDIA GeForce GTX 570",
     "rendererNative": false,
     "rendererPresentMode": "mailbox",
-    "rendererDriverId": "Turnip Gen8 V36",
+    "rendererDriverId": "auto",
     "emulator": "Box64",
     "dxwrapper": "dxvk+vkd3d",
     "dxwrapperConfig": "version=2.6-2-gplasync,framerate=0,async=1,asyncCache=1,vkd3dVersion=None,vkd3dLevel=12_1,ddrawrapper=none,csmt=3,gpuName=NVIDIA GeForce GTX 480,videoMemorySize=2048,strict_shader_math=1,OffscreenRenderingMode=fbo,renderer=gl",

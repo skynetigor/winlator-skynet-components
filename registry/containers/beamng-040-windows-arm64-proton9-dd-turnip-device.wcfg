@@ -7,16 +7,6 @@
     {
       "type": "Proton",
       "version": "proton-9.0-arm64ec"
-    },
-    {
-      "type": "GraphicsDriver",
-      "version": "DD-Turnip v0.1.1",
-      "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.1/DD-Turnip-v0.1.1.zip"
-    },
-    {
-      "type": "RendererDriver",
-      "version": "DD-Turnip v0.1.1",
-      "remoteUrl": "https://github.com/Droid-Deck/Drivers-CI/releases/download/DD-Turnip-v0.1.1/DD-Turnip-v0.1.1.zip"
     }
   ],
   "container": {
@@ -24,10 +14,10 @@
     "cpuList": "4,5,6,7",
     "cpuListWoW64": "4,5,6,7",
     "graphicsDriver": "freedreno",
-    "graphicsDriverConfig": "vulkanVersion=1.3;version=DD-Turnip v0.1.1;blacklistedExtensions=VK_EXT_debug_utils,VK_EXT_debug_report;maxDeviceMemory=4096;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device",
+    "graphicsDriverConfig": "vulkanVersion=1.3;version=auto;blacklistedExtensions=VK_EXT_debug_utils,VK_EXT_debug_report;maxDeviceMemory=4096;presentMode=mailbox;syncFrame=0;disablePresentWait=0;resourceType=auto;bcnEmulation=auto;bcnEmulationType=compute;bcnEmulationCache=0;gpuName=Device",
     "rendererNative": false,
     "rendererPresentMode": "mailbox",
-    "rendererDriverId": "DD-Turnip v0.1.1",
+    "rendererDriverId": "auto",
     "audioDriver": "alsa",
     "showFPS": true,
     "fullscreenStretched": false,

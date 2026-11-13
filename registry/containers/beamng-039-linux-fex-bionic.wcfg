@@ -16,7 +16,7 @@
       "linuxFexThunks": "1",
       "linuxFexPreset": "INTERMEDIATE",
       "hudMode": "2",
-      "linuxVulkanDriver": "turnip-v26.3.0-20261011-a8xx-linux",
+      "linuxVulkanDriver": "auto",
       "linuxTouchscreen": "0",
       "fileCache": "1",
       "linuxNoProot": "1",
@@ -31,10 +31,12 @@
     "type": "linux",
     "linuxRuntime": "bannerlator-r9"
   },
-  "components": [{
-    "type": "RendererDriver",
-    "version": "auto"
-  }],
+  "components": [
+    {
+      "type": "RendererDriver",
+      "version": "auto"
+    }
+  ],
   "exportedBy": "Winlator skyNET 2.0.1-pre.3",
   "format": "winlator-skynet-container",
   "exportedAt": "2026-10-31T19:51:28Z",

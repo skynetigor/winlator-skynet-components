@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 27,
+  "revision": 28,
   "id": "beamng-drive",
   "name": "BeamNG.drive",
   "steam": {
@@ -67,6 +67,9 @@
           }
         },
         "resolution": "native",
+        "args": [
+          "-nogfxbindless"
+        ],
         "extras": {
           "linuxTouchMode": "touchpad",
           "simTouchScreen": "0",
@@ -143,9 +146,6 @@
         }
       },
       "containers": [
-        "beamng-linux-box64-adreno735-performance",
-        "beamng-linux-box64-adreno730-performance",
-        "beamng-linux-box64-adreno740-performance",
         "proton11-x64-box64-turnip-stable",
         "cachyos-x64-box64-dd-turnip",
         "beamng-linux-box64-performance"
@@ -159,11 +159,6 @@
             "0.34/mods": "userdata/mods"
           }
         }
-      },
-      "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
-        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
-        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
       }
     },
     {
@@ -181,18 +176,10 @@
         }
       },
       "containers": [
-        "beamng-linux-box64-adreno735-performance",
-        "beamng-linux-box64-adreno730-performance",
-        "beamng-linux-box64-adreno740-performance",
         "beamng-linux-box64-performance"
       ],
       "preferredContainer": "beamng-linux-box64-performance",
-      "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
-        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
-        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
-      },
-      "notes": "Linux driver selection for Adreno 735 / POCO F6 uses Mesa Turnip 26.2.2 and Android renderer Auto. Driver source/binary support is verified; BeamNG 0.31 gameplay on this device is not yet validated."
+      "notes": "The Linux and Android drivers are chosen by the app for the device GPU. BeamNG 0.31 gameplay is not yet validated."
     },
     {
       "id": "0.28",
@@ -209,18 +196,10 @@
         }
       },
       "containers": [
-        "beamng-linux-box64-adreno735-performance",
-        "beamng-linux-box64-adreno730-performance",
-        "beamng-linux-box64-adreno740-performance",
         "proton9-x64-box64-zink-turnip263",
         "beamng-linux-box64-performance"
       ],
       "preferredContainer": "proton9-x64-box64-zink-turnip263",
-      "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
-        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
-        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
-      },
       "linux": {
         "env": {
           "tu_emulate_second_queue": "true"
@@ -242,18 +221,10 @@
         }
       },
       "containers": [
-        "beamng-linux-box64-adreno735-performance",
-        "beamng-linux-box64-adreno730-performance",
-        "beamng-linux-box64-adreno740-performance",
         "proton9-x64-box64-turnip-gen8",
         "beamng-linux-box64-performance"
       ],
-      "preferredContainer": "proton9-x64-box64-turnip-gen8",
-      "preferredBySoc": {
-        "snapdragon-8s-gen-3": "beamng-linux-box64-adreno735-performance",
-        "snapdragon-8-gen-1": "beamng-linux-box64-adreno730-performance",
-        "snapdragon-8-gen-2": "beamng-linux-box64-adreno740-performance"
-      }
+      "preferredContainer": "proton9-x64-box64-turnip-gen8"
     }
   ]
 }

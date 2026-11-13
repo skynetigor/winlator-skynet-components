@@ -5,23 +5,18 @@
       "id": "proton9-x64-box64-turnip-gen8",
       "name": "Snapdragon 8 Gen 3",
       "file": "containers/proton9-x64-box64-turnip-gen8.wcfg",
-      "description": "Proton 9.0 x86_64, Box64 0.4.4, DXVK 2.7.1 gplasync, Turnip Gen8 V36.",
-      "socs": [
-        "snapdragon-8-gen-3"
-      ],
+      "description": "Proton 9.0 x86_64, Box64 0.4.4, DXVK 2.7.1 gplasync, the Turnip driver the app picks for the GPU.",
       "channel": "stable",
       "tags": [
-        "Snapdragon 8 Gen 3",
         "Turnip",
         "Box64"
       ]
     },
     {
       "id": "proton9-x64-box64-zink-turnip263",
-      "name": "Zink + Turnip 26.3, 50 fps cap",
+      "name": "Zink, 50 fps cap",
       "file": "containers/proton9-x64-box64-zink-turnip263.wcfg",
-      "description": "Proton 9.0 x86_64, Box64 0.4.2, DXVK 2.6-2 gplasync, Zink with Turnip 26.3.0-R4 (OneUI). 50 fps cap, FPS counter on.",
-      "socs": [],
+      "description": "Proton 9.0 x86_64, Box64 0.4.2, DXVK 2.6-2 gplasync, Zink with the Turnip driver the app picks for the GPU. 50 fps cap, FPS counter on.",
       "channel": "stable",
       "tags": [
         "Zink",
@@ -34,16 +29,10 @@
       "id": "proton11-x64-box64-turnip-stable",
       "name": "Galaxy Z Fold8 Ultra, stable",
       "file": "containers/proton11-x64-box64-turnip-stable.wcfg",
-      "description": "The most stable setup tried on a Galaxy Z Fold8 Ultra (12 GB / 512 GB): West Coast and Italy load well. Proton 11.0-2 x86_64, Box64 0.4.4, DXVK 2.6-2 gplasync, Turnip Gen8 V36, CPU cores 4-7.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "The most stable setup tried on a Galaxy Z Fold8 Ultra (12 GB / 512 GB): West Coast and Italy load well. Proton 11.0-2 x86_64, Box64 0.4.4, DXVK 2.6-2 gplasync, the Turnip driver the app picks for the GPU, CPU cores 4-7.",
       "channel": "stable",
       "tags": [
         "Stable",
-        "Galaxy Z Fold8 Ultra",
-        "Snapdragon 8 Elite Gen 5",
-        "12 GB RAM",
         "Proton 11",
         "Box64",
         "Turnip"
@@ -54,19 +43,14 @@
     },
     {
       "id": "cachyos-x64-box64-dd-turnip",
-      "name": "CachyOS Wine + DD-Turnip, DXVK 3.1.1",
+      "name": "CachyOS Wine, DXVK 3.1.1",
       "file": "containers/cachyos-x64-box64-dd-turnip.wcfg",
-      "description": "Runs well on a Galaxy Z Fold8 Ultra. CachyOS Wine 11.0 rebuilt for Android (downloaded automatically), DD-Turnip v0.1.1 with 4096 MB reported memory and a GTX 1060 name, DXVK 3.1.1, Box64 0.4.4, alsa audio, 1280x720.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "Runs well on a Galaxy Z Fold8 Ultra. CachyOS Wine 11.0 rebuilt for Android (downloaded automatically), the Turnip driver the app picks for the GPU, 4096 MB reported memory and a GTX 1060 name, DXVK 3.1.1, Box64 0.4.4, alsa audio, 1280x720.",
       "channel": "stable",
       "tags": [
         "CachyOS Wine",
-        "DD-Turnip",
         "DXVK 3.1.1",
-        "Box64",
-        "Galaxy Z Fold8 Ultra"
+        "Box64"
       ],
       "testedOn": [
         "Samsung Galaxy Z Fold8 Ultra (SM-F976B)"
@@ -74,16 +58,14 @@
     },
     {
       "id": "cachyos-arm64ec-box64-dd-turnip",
-      "name": "CachyOS Wine ARM64EC + DD-Turnip, DXVK 3.1.1",
+      "name": "CachyOS Wine ARM64EC, DXVK 3.1.1",
       "file": "containers/cachyos-arm64ec-box64-dd-turnip.wcfg",
-      "description": "Experimental, not tested on a device yet. CachyOS Wine 11.0 ARM64EC build for Android (downloaded automatically), DD-Turnip v0.1.1 with 2048 MB reported memory and a GTX 1060 name, DXVK 3.1.1 gplasync ARM64EC, Box64 0.4.4, all 8 CPU cores, alsa audio, 1280x720. BeamNG 0.39 picks the D3D12 backend by default; this config has no VKD3D, so add -gfx dx11 to the game arguments or install VKD3D-Proton.",
-      "socs": [],
+      "description": "Experimental, not tested on a device yet. CachyOS Wine 11.0 ARM64EC build for Android (downloaded automatically), the Turnip driver the app picks for the GPU, 2048 MB reported memory and a GTX 1060 name, DXVK 3.1.1 gplasync ARM64EC, Box64 0.4.4, all 8 CPU cores, alsa audio, 1280x720. BeamNG 0.39 picks the D3D12 backend by default; this config has no VKD3D, so add -gfx dx11 to the game arguments or install VKD3D-Proton.",
       "channel": "prerelease",
       "tags": [
         "Experimental",
         "CachyOS Wine",
         "ARM64EC",
-        "DD-Turnip",
         "DXVK 3.1.1",
         "Box64"
       ]
@@ -93,10 +75,7 @@
       "name": "Linux, FEX Performance + TSO",
       "platform": "linux",
       "file": "containers/tomb-raider-2013-linux-fex-performance.wcfg",
-      "description": "Tomb Raider (2013), native 32-bit Steam build 9573671. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 32-bit OpenGL thunk, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx. Startup and an in-game scene checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "Tomb Raider (2013), native 32-bit Steam build 9573671. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 32-bit OpenGL thunk, NVIDIA vendor override, Zink and the Turnip driver the app picks for the GPU (Turnip 26.3 on Adreno 8xx). Startup and an in-game scene checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
       "channel": "stable",
       "tags": [
         "Linux",
@@ -116,12 +95,6 @@
       "platform": "linux",
       "file": "containers/shadow-of-the-tomb-raider-linux-fex-bionic.wcfg",
       "description": "Shadow of the Tomb Raider, native x86-64 Steam build 11668867, run by Android FEX 2610 (Performance preset) directly, with no PRoot around the game and the Steam client kept on the glibc runtime. Android Vulkan thunks, the Turnip driver the app chooses for the GPU (DD-Turnip v0.1.1 on Adreno 840), native Vulkan output, 2 GB reported GPU budget, 1280x800. The game reaches its menus and gameplay on a RedMagic Astra 2 (Android 16, Adreno 840) and matches the PRoot preset there: 72-75 FPS against 73-75 in the main menu at 1280x720 on the lowest preset, cold start. Turnip builds from DD-Turnip v0.1.1 to Gen8 V38 behave alike; the stock Qualcomm driver crashes the game. The first run after changing the graphics settings compiles shaders and is slow. Needs the app build with the direct FEX bridge for Shadow and its /tmp and /dev/shm path mapping. Long sessions and Steam cloud/overlay behaviour are untested; the PRoot preset is the fallback.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "gpus": [
-        "Adreno 840"
-      ],
       "channel": "stable",
       "tags": [
         "Linux",
@@ -142,10 +115,7 @@
       "name": "Linux, FEX Performance",
       "platform": "linux",
       "file": "containers/shadow-of-the-tomb-raider-linux-fex-performance.wcfg",
-      "description": "Reports a 2 GB GPU memory budget so the game picks its Medium preset on a first run: about 3.3 GB of GPU memory and 35 FPS in the Peruvian Jungle, against 5.8 GB, 94% RAM and 10-17 FPS on the Highest preset. Shadow of the Tomb Raider, native x86-64 Steam build 11668867. FEX 2610 Performance, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx, native Vulkan output, 1280x800. Gameplay, gamepad and memory fixes checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "Reports a 2 GB GPU memory budget so the game picks its Medium preset on a first run: about 3.3 GB of GPU memory and 35 FPS in the Peruvian Jungle, against 5.8 GB, 94% RAM and 10-17 FPS on the Highest preset. Shadow of the Tomb Raider, native x86-64 Steam build 11668867. FEX 2610 Performance, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and the Turnip driver the app picks for the GPU (Turnip 26.3 on Adreno 8xx), native Vulkan output, 1280x800. Gameplay, gamepad and memory fixes checked on SM-F976B; long-session stability is untested. Keep the game in the container's internal storage.",
       "channel": "stable",
       "tags": [
         "Linux",
@@ -163,11 +133,7 @@
       "name": "Linux, Box64 Performance",
       "platform": "linux",
       "file": "containers/beamng-linux-box64-performance.wcfg",
-      "description": "The Linux build of BeamNG.drive run through Box64 0.4.4 with the Performance preset, on the Linux runtime with Turnip 26.3 for Adreno 8xx and Zink. The program can stay on shared storage (no copy).",
-      "socs": [
-        "snapdragon-8-elite",
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "The Linux build of BeamNG.drive run through Box64 0.4.4 with the Performance preset, on the Linux runtime with the Turnip driver the app picks for the GPU (Turnip 26.3 on Adreno 8xx) and Zink. The program can stay on shared storage (no copy).",
       "channel": "stable",
       "tags": [
         "Linux",
@@ -182,17 +148,13 @@
       "name": "BeamNG 0.40 — Windows ARM64 native (experimental)",
       "platform": "windows",
       "file": "containers/beamng-040-windows-arm64-proton9-dd-turnip-device.wcfg",
-      "description": "Experimental Windows ARM64 build with Proton 9 ARM64EC and DD-Turnip v0.1.1, native Vulkan, the current device GPU identity, Wine built-in libraries, ALSA audio and a 1280x720 desktop. Proton 9 previously loaded GridMapv2 on Snapdragon 8 Elite Gen 5. Standard Proton 11 and CachyOS 11 failed during Vulkan device creation on that device; retain Proton 9 for now.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "Experimental Windows ARM64 build with Proton 9 ARM64EC and the Turnip driver the app picks for the GPU, native Vulkan, the current device GPU identity, Wine built-in libraries, ALSA audio and a 1280x720 desktop. Proton 9 previously loaded GridMapv2 on Snapdragon 8 Elite Gen 5. Standard Proton 11 and CachyOS 11 failed during Vulkan device creation on that device; retain Proton 9 for now.",
       "channel": "prerelease",
       "tags": [
         "Windows ARM64",
         "Native",
         "Vulkan",
         "Proton 9",
-        "DD-Turnip",
         "Experimental"
       ],
       "testedOn": [
@@ -201,77 +163,11 @@
       "windowsArchitecture": "arm64"
     },
     {
-      "id": "beamng-linux-box64-adreno735-performance",
-      "name": "Linux, Adreno 735 / POCO F6",
-      "platform": "linux",
-      "file": "containers/beamng-linux-box64-adreno735-performance.wcfg",
-      "description": "Linux BeamNG with Box64 Performance, Mesa Turnip 26.2.2 for Adreno 735, Zink and native Vulkan output. Android renderer Auto selects Turnip 26.2.0-R8. Source/binary GPU support verified; device gameplay remains unverified.",
-      "socs": [
-        "snapdragon-8s-gen-3"
-      ],
-      "channel": "prerelease",
-      "tags": [
-        "Linux",
-        "Adreno 735",
-        "POCO F6",
-        "Box64",
-        "Turnip",
-        "Zink"
-      ],
-      "testedOn": []
-    },
-    {
-      "id": "beamng-linux-box64-adreno730-performance",
-      "name": "Linux, Adreno 730 / Snapdragon 8 Gen 1",
-      "platform": "linux",
-      "file": "containers/beamng-linux-box64-adreno730-performance.wcfg",
-      "description": "BeamNG Linux profile with Box64 Performance, the A6xx/A7xx Mesa Turnip v27.0.0-20261024-r6 Linux driver and Android Turnip v26.3.0-R6 selected through Renderer Auto. GPU support is present in the driver package; testing on an Adreno 730 device is pending.",
-      "socs": [
-        "snapdragon-8-gen-1"
-      ],
-      "channel": "prerelease",
-      "tags": [
-        "Linux",
-        "Adreno 730",
-        "Snapdragon 8 Gen 1",
-        "Box64",
-        "Turnip",
-        "Zink"
-      ],
-      "testedOn": []
-    },
-    {
-      "id": "beamng-linux-box64-adreno740-performance",
-      "name": "Linux, Adreno 740 / Snapdragon 8 Gen 2",
-      "platform": "linux",
-      "file": "containers/beamng-linux-box64-adreno740-performance.wcfg",
-      "description": "BeamNG Linux profile with Box64 Performance, Mesa Turnip 26.2.2 for Adreno 740 (the Linux driver mapped to this GPU), Zink and native Vulkan output. Android renderer Auto selects Turnip 26.2.0-R8. Both packages contain FD740; testing on an Adreno 740 device is pending.",
-      "socs": [
-        "snapdragon-8-gen-2"
-      ],
-      "channel": "prerelease",
-      "tags": [
-        "Linux",
-        "Adreno 740",
-        "Snapdragon 8 Gen 2",
-        "Box64",
-        "Turnip",
-        "Zink"
-      ],
-      "testedOn": []
-    },
-    {
       "id": "beamng-040-linux-fex-bionic-960x544",
       "name": "BeamNG 0.40 - Linux, FEX + bionic, no PRoot, 960x544",
       "platform": "linux",
       "file": "containers/beamng-040-linux-fex-bionic-960x544.wcfg",
       "description": "BeamNG 0.40.x native Linux build, the configuration measured on West Coast (0.40.4.0): FEX 2610 Performance (TSO off), bionic and direct execution with no PRoot, Vulkan thunks, Turnip driver chosen by the app for the GPU (DD-Turnip v0.1.1 on Adreno 840) for the renderer and the game, native Vulkan output, 960x544 with the app upscaler, post effects and frame generation off, sysmem off, GPU memory 8192 MB. Set BeamNG's own graphics to the Lowest preset with a 960 544 resolution and a settings file whose lastVersion matches the game (about 73 FPS average, 45 for the 1% low, on a Redmagic Astra 2; the same drive on 0.39.4 gave about 101). On the same tablet Box64 0.4.4-r3 (Performance) gave 27 FPS in its only valid run and failed in most launches (CEF UI crash, a pickup that never moves, corrupt floating point in the game's Lua with STRONGMEM=3); Box64 r4, which the Box64 preset selects, was not tested there. Some launches die at startup (1 of 4 on FEX). After a game version change BeamNG's folder cleanup removes the app's LuaJIT-off extension, so the first launch is slow (several minutes of loading). A GPU device loss that crashed SystemUI was seen during tests. TSO off relaxes x86 memory ordering. Long sessions and other phones are untested.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "gpus": [
-        "Adreno 840"
-      ],
       "channel": "prerelease",
       "tags": [
         "Linux",
@@ -291,12 +187,6 @@
       "platform": "linux",
       "file": "containers/beamng-039-linux-fex-bionic-960x544.wcfg",
       "description": "BeamNG 0.39.4 native Linux build, the configuration measured on West Coast: FEX 2610 Performance (TSO off), bionic and direct execution with no PRoot, Vulkan thunks, Turnip driver chosen by the app for the GPU (DD-Turnip v0.1.1 on Adreno 840) for the renderer and the game, native Vulkan output, 960x544 with the app upscaler, post effects and frame generation off, sysmem off, GPU memory 8192 MB. Set BeamNG's own graphics to the Lowest preset with a 960 544 resolution (about 100-110 FPS average on a Redmagic Astra 2 and a Z Fold8 Ultra, 1% lows 50-66) or to the Steam Deck preset (about 50 FPS on both). With 3 traffic cars about 80-90 FPS with 1% lows near 12. The game starts from shared storage. Some launches die at startup (exit 133, a CEF startup race: 3 of about 10 on the Fold, 1 of about 10 on the tablet) and one Fold run froze after a Vulkan transfer-queue error; TSO off relaxes x86 memory ordering. Long sessions are untested.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "gpus": [
-        "Adreno 840"
-      ],
       "channel": "prerelease",
       "tags": [
         "Linux",
@@ -316,10 +206,7 @@
       "name": "Linux, FEX Performance + TSO",
       "platform": "linux",
       "file": "containers/alien-isolation-linux-fex-performance.wcfg",
-      "description": "Alien: Isolation, native x86-64 Steam build 4940658. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and Turnip 26.3 for Adreno 8xx, 1280x720. Menu and first-person gameplay checked on SM-F976B (2026-11-02); long-session stability is untested. Keep the game in the container's internal storage.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "Alien: Isolation, native x86-64 Steam build 4940658. FEX 2610 Performance with TSO enabled, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, NVIDIA vendor override, Zink and the Turnip driver the app picks for the GPU (Turnip 26.3 on Adreno 8xx), 1280x720. Menu and first-person gameplay checked on SM-F976B (2026-11-02); long-session stability is untested. Keep the game in the container's internal storage.",
       "channel": "stable",
       "tags": [
         "Linux",
@@ -339,12 +226,6 @@
       "platform": "linux",
       "file": "containers/alien-isolation-linux-fex-bionic.wcfg",
       "description": "Alien: Isolation, native x86-64 Steam build 4940658, run by Android FEX 2610 directly, with no PRoot around the game; the Steam client stays on the glibc runtime. TSO on (FEX_TSOENABLED=1), as the Performance preset with TSO off left the game waiting on a forked process. The game may sit in a Steam library on shared storage: the Android FEX maps its files without PROT_EXEC, which that noexec storage otherwise refuses. The direct bridge takes the game's legacy libraries (libpcre 3, SDL2_image, libidn, librtmp, libldap and the Heimdal Kerberos libraries) from the Steam Linux Runtime (scout). Turnip sysmem on, Zink over the Android Vulkan thunk, the Turnip driver the app chooses for the GPU (DD-Turnip v0.1.1 on Adreno 840), native Vulkan output, 1280x720. Checked on a RedMagic Astra 2 (Android 16, Adreno 840) on 2026-11-11: the game starts from a Steam library on shared storage and renders its opening scene; gameplay, frame rate and long-session stability are untested. Needs the app build with the Alien: Isolation entry of the direct FEX bridge. The PRoot preset is the fallback.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "gpus": [
-        "Adreno 840"
-      ],
       "channel": "stable",
       "tags": [
         "Linux",
@@ -366,12 +247,6 @@
       "platform": "linux",
       "file": "containers/dead-island-definitive-edition-linux-fex-bionic.wcfg",
       "description": "Dead Island Definitive Edition, native x86-64 Steam build 1837542, run by Android FEX 2610 directly, with no PRoot around the game; the Steam client stays on the glibc runtime. TSO on (FEX_TSOENABLED=1, full x87 precision): with the Performance preset's TSO off the game freezes in its intro cutscene on a RedMagic Astra 2. Turnip sysmem on (needed to avoid rendering artifacts, found by testing on the tablet), Zink over the Android Vulkan thunk, the Turnip driver the app chooses for the GPU (DD-Turnip v0.1.1 on Adreno 840), native Vulkan output, 1280x720 with the fit mode. The game runs without a working Steam API (its Steam IPC is left off). Intro, loading and gameplay checked on a RedMagic Astra 2 (Android 16, Adreno 840): 76 FPS in the first outdoor scene; long-session stability is untested. Needs the app build with the direct FEX bridge for Dead Island and its /tmp path mapping. The PRoot preset is the fallback.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "gpus": [
-        "Adreno 840"
-      ],
       "channel": "stable",
       "tags": [
         "Linux",
@@ -392,10 +267,7 @@
       "name": "Linux, FEX Performance",
       "platform": "linux",
       "file": "containers/dead-island-definitive-edition-linux-fex-performance.wcfg",
-      "description": "Dead Island Definitive Edition, native x86-64 Steam build 1837542. FEX 2610 Performance, Ubuntu 24.04 rootfs, Zink and Turnip 26.3 for Adreno 8xx, 1280x720 with the fit mode. Menu and gameplay checked on SM-F976B (2026-11-02); long-session stability is untested. Keep the game in the container's internal storage.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "Dead Island Definitive Edition, native x86-64 Steam build 1837542. FEX 2610 Performance, Ubuntu 24.04 rootfs, Zink and the Turnip driver the app picks for the GPU (Turnip 26.3 on Adreno 8xx), 1280x720 with the fit mode. Menu and gameplay checked on SM-F976B (2026-11-02); long-session stability is untested. Keep the game in the container's internal storage.",
       "channel": "stable",
       "tags": [
         "Linux",
@@ -414,12 +286,6 @@
       "platform": "linux",
       "file": "containers/rise-of-the-tomb-raider-linux-fex-bionic.wcfg",
       "description": "Rise of the Tomb Raider, native x86-64 Steam build 9575745, run by Android FEX 2610 (Performance preset, TSO on, full x87 precision) directly, with no PRoot around the game; the Steam client stays on the glibc runtime. Android Vulkan thunks, the Turnip driver the app chooses for the GPU (DD-Turnip v0.1.1 on Adreno 840), Turnip sysmem, native Vulkan output, 1280x720. The game does not get a working Steam API in this mode (its Steam IPC is left off: with it the game exits on a broken pipe to the client). Reaches the main menu on a RedMagic Astra 2 (Android 16, Adreno 840): 2 of 3 launches stayed up, the third exited 139 early. Gameplay, FPS and the black rendering artifacts known from the PRoot config are not checked in this mode. Needs the app build with the direct FEX bridge and its /tmp path mapping. The PRoot preset is the fallback.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "gpus": [
-        "Adreno 840"
-      ],
       "channel": "stable",
       "tags": [
         "Linux",
@@ -440,10 +306,7 @@
       "name": "Linux, FEX",
       "platform": "linux",
       "file": "containers/rise-of-the-tomb-raider-linux-fex-performance.wcfg",
-      "description": "Rise of the Tomb Raider, native x86-64 Steam build 9575745. FEX 2610 under PRoot with the Performance preset, TSO on, full x87 precision, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, Turnip 26.3 for Adreno 8xx with sysmem, native Vulkan output, 1280x720. Checked through to gameplay on a fresh install (SM-F976B, 2026-11-02). The Android-bionic direct path has its own preset, which is the preferred config.",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
+      "description": "Rise of the Tomb Raider, native x86-64 Steam build 9575745. FEX 2610 under PRoot with the Performance preset, TSO on, full x87 precision, Ubuntu 24.04 rootfs, 64-bit Vulkan thunks, the Turnip driver the app picks for the GPU (Turnip 26.3 on Adreno 8xx) with sysmem, native Vulkan output, 1280x720. Checked through to gameplay on a fresh install (SM-F976B, 2026-11-02). The Android-bionic direct path has its own preset, which is the preferred config.",
       "channel": "stable",
       "tags": [
         "Linux",
@@ -463,12 +326,6 @@
       "platform": "linux",
       "file": "containers/counter-strike-2-linux-fex-bionic.wcfg",
       "description": "Counter-Strike 2, native x86-64 Steam Linux build 26445667, run by Android FEX 2610 directly with no PRoot; the Steam client stays on the glibc runtime. Direct FEX bridge with TSO emulation, the Turnip driver the app chooses for the GPU (DD-Turnip v0.1.1 on Adreno 840), native Vulkan output, native screen size with the window zoomed to the game (fullscreenStretched=2), all 8 cores. The game's pinning of main/render threads to the prime cores (perfPrimeCores) comes from the game profile. About 124 fps in de_dust2 without bots at 640x480 lowest graphics on a RedMagic Astra 2; a busy online match is slower. Starts only on about every second try (exit 139).",
-      "socs": [
-        "snapdragon-8-elite-gen-5"
-      ],
-      "gpus": [
-        "Adreno 840"
-      ],
       "channel": "stable",
       "tags": [
         "Linux",
@@ -484,5 +341,5 @@
       ]
     }
   ],
-  "revision": 27
+  "revision": 28
 }
