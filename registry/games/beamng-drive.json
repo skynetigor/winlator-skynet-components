@@ -71,6 +71,13 @@
           "linuxTouchMode": "touchpad",
           "simTouchScreen": "0",
           "lsfgMultiplier": "0"
+        },
+        "env": {
+          "MESA_SHADER_CACHE_DISABLE": "false",
+          "FEX_DISABLEL2CACHE": "1",
+          "FEX_DYNAMICL1CACHE": "1",
+          "FEX_DYNAMICL1CACHEINCREASECOUNTHEURISTIC": "250",
+          "FEX_DYNAMICL1CACHEDECREASECOUNTHEURISTIC": "50"
         }
       }
     },
@@ -107,6 +114,13 @@
             "current/settings": "userdata/settings",
             "current/mods": "userdata/mods"
           }
+        },
+        "env": {
+          "MESA_SHADER_CACHE_DISABLE": "false",
+          "FEX_DISABLEL2CACHE": "1",
+          "FEX_DYNAMICL1CACHE": "1",
+          "FEX_DYNAMICL1CACHEINCREASECOUNTHEURISTIC": "250",
+          "FEX_DYNAMICL1CACHEDECREASECOUNTHEURISTIC": "50"
         }
       }
     },
